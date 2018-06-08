@@ -156,16 +156,21 @@
    {% endfor %} 
    <br />
 </table> 
-<p>Student names</p>
-{% for namesList in classeslistStudentIDs  %}
-    {% for name in namesList  %}
-        {{ name }}<br />
+<table id="table2" class="table">
+<tr>
+    <th>Student</th>
+    <th>Class</th>
+</tr>
+
+{% for x in datas  %}
+    {% for y in x  %}
+       <tr> 
+         <th>{{ y }}</th><th>{{ y }}</th>
+      </tr>
     {% endfor %}
 {% endfor %}
-<p>Classes IDs</p>
-{% for id in classeslistClassesIDs  %}
-        {{ id }}<br />
-{% endfor %}
+</table>
+
 
 <script>
  function sortTable(column) {

@@ -1,5 +1,5 @@
 <?php  
-namespace AppBundle\Controller; 
+Namespace AppBundle\Controller; 
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route; 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller; 
@@ -29,8 +29,28 @@ public function displayAction(Request $request) {
         if ($data = $query->fetch()){
             $studentId[] = $data;
         }
-        $classId[] = $row['classes_id'];
+        $query = $this->getDoctrine()->getManager()->getConnection()->prepare("SELECT name FROM class WHERE id = " . (string)$row['classes_id']);
+        $query->execute();
+        if ($data = $query->fetch()){
+            $classId[] = $data;
+        }
     }
+    $data = array();
+    for ($i = 0; $i < count($studentId); $i++){
+        $oldId = "";
+        if ($stud == $oldId){
+            $data[0][$i] = "";
+        } else {
+            $oldId = $studentId;
+            $data[0][$i] = $studentId[$i]['name'];
+        }      
+    }
+    for ($i = 0; $i < count($classId); $i++){
+        $oldId = $classId;
+        $data[1][$i] = $classId[$i]['name'];
+    }      
+    
+    //array(5) { [0]=> array(1) { ["name"]=> string(4) "John" } [1]=> array(1) { ["name"]=> string(4) "John" } [2]=> array(1) { ["name"]=> string(5) "Aaron" } [3]=> array(1) { ["name"]=> string(5) "Aaron" } [4]=> array(1) { ["name"]=> string(5) "Aaron" } }
     $form = $this->createFormBuilder($stud) 
          ->add('name', TextType::class)
          ->add('address', TextType::class)
@@ -65,7 +85,7 @@ public function displayAction(Request $request) {
     $stud = $this->getDoctrine() 
     ->getRepository('AppBundle:Student') 
     ->findAll();
-    return $this->render('student/display.html.twig', array('data' => $stud, 'form' => $form->createView(), 'classeslistStudentIDs' => $studentId, 'classeslistClassesIDs' => $classId)); 
+    return $this->render('student/display.html.twig', array('data' => $stud, 'form' => $form->createView(), 'datas' => $data, )); 
  } 
  /** 
    * @Route("/student/update/{id}") 
