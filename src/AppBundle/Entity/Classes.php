@@ -27,8 +27,8 @@ class Classes {
    private $students; 
 
    public function __construct() {
-    $this->students = new \Doctrine\Common\Collections\ArrayCollection();
-}
+        $this->students = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -65,30 +65,6 @@ class Classes {
     }
 
     /**
-     * Set students
-     *
-     * @param string $students
-     *
-     * @return Classes
-     */
-    public function setStudents(Student $student)
-    {
-        $this->students[] = $student;
-
-        return $this;
-    }
-
-    /**
-     * Get students
-     *
-     * @return string
-     */
-    public function getStudents()
-    {
-        return $this->students;
-    }
-
-    /**
      * Add student
      *
      * @param \AppBundle\Entity\Student $student
@@ -110,5 +86,15 @@ class Classes {
     public function removeStudent(\AppBundle\Entity\Student $student)
     {
         $this->students->removeElement($student);
+    }
+
+    /**
+     * Get students
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getStudents()
+    {
+        return $this->students;
     }
 }

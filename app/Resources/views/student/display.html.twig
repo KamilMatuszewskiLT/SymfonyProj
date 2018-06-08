@@ -82,7 +82,7 @@
       float:left; 
       width: 50px; 
       padding: 5px 10px 5px 10px;
-      text-align:right; 
+      text-align:center; 
       display:block; 
    }  
    .simpleform span { 
@@ -156,6 +156,17 @@
    {% endfor %} 
    <br />
 </table> 
+<p>Student names</p>
+{% for namesList in classeslistStudentIDs  %}
+    {% for name in namesList  %}
+        {{ name }}<br />
+    {% endfor %}
+{% endfor %}
+<p>Classes IDs</p>
+{% for id in classeslistClassesIDs  %}
+        {{ id }}<br />
+{% endfor %}
+
 <script>
  function sortTable(column) {
   var table, rows, switching, i, x, y, shouldSwitch;

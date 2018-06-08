@@ -5,7 +5,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 /** 
    * @ORM\Entity 
-   * @ORM\Table(name = "students") 
+   * @ORM\Table(name = "student") 
 */ 
 class Student { 
    /** 
@@ -96,31 +96,6 @@ class Student {
     }
 
     /**
-     * Set classes
-     *
-     * @param string $classes
-     *
-     * @return Student
-     */
-    public function setClasses(Classes $class)
-    {
-        $class->setStudents($this);
-        $this->classes[] = $class;
-
-        return $this;
-    }
-
-    /**
-     * Get classes
-     *
-     * @return string
-     */
-    public function getClasses()
-    {
-        return $this->classes;
-    }
-
-    /**
      * Add class
      *
      * @param \AppBundle\Entity\Classes $class
@@ -129,7 +104,8 @@ class Student {
      */
     public function addClass(\AppBundle\Entity\Classes $class)
     {
-        $this->classes[] = $class;
+        $class->addStudent($this);
+        $this->classes[] = $class; 
 
         return $this;
     }
@@ -141,6 +117,17 @@ class Student {
      */
     public function removeClass(\AppBundle\Entity\Classes $class)
     {
+        $class->removeStudent($this);
         $this->classes->removeElement($class);
+    }
+
+    /**
+     * Get classes
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getClasses()
+    {
+        return $this->classes;
     }
 }

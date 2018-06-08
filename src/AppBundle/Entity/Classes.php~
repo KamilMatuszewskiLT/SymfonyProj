@@ -5,7 +5,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 /** 
    * @ORM\Entity 
-   * @ORM\Table(name = "classes") 
+   * @ORM\Table(name = "class") 
 */ 
 class Classes { 
    /** 
@@ -27,88 +27,6 @@ class Classes {
    private $students; 
 
    public function __construct() {
-    $this->students = new \Doctrine\Common\Collections\ArrayCollection();
-}
-
-    /**
-     * Get id
-     *
-     * @return integer
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Set name
-     *
-     * @param string $name
-     *
-     * @return Classes
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-
-        return $this;
-    }
-
-    /**
-     * Get name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * Set students
-     *
-     * @param string $students
-     *
-     * @return Classes
-     */
-    public function setStudents(Student $student)
-    {
-        $this->students[] = $student;
-
-        return $this;
-    }
-
-    /**
-     * Get students
-     *
-     * @return string
-     */
-    public function getStudents()
-    {
-        return $this->students;
-    }
-
-    /**
-     * Add student
-     *
-     * @param \AppBundle\Entity\Student $student
-     *
-     * @return Classes
-     */
-    public function addStudent(\AppBundle\Entity\Student $student)
-    {
-        $this->students[] = $student;
-
-        return $this;
-    }
-
-    /**
-     * Remove student
-     *
-     * @param \AppBundle\Entity\Student $student
-     */
-    public function removeStudent(\AppBundle\Entity\Student $student)
-    {
-        $this->students->removeElement($student);
+        $this->students = new \Doctrine\Common\Collections\ArrayCollection();
     }
 }

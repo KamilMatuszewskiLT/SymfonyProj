@@ -14,27 +14,23 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class StudentController extends Controller { 
    /** 
-      * @Route("/student/add") 
-   */ 
-   public function addAction() { 
-      $stud = new Student(); 
-      $stud->setName('Adam'); 
-      $stud->setAddress('12 north street'); 
-      $doct = $this->getDoctrine()->getManager();
-      
-      // tells Doctrine you want to save the Product 
-      $doct->persist($stud);
-      
-      //executes the queries (i.e. the INSERT query) 
-      $doct->flush(); 
-      
-      return new Response('Saved new student with id ' . $stud->getId()); 
-   } 
-   /** 
    * @Route("/student/display") 
 */ 
 public function displayAction(Request $request) { 
     $stud = new Student();
+    $connection = $this->getDoctrine()->getManager()->getConnection();
+    $classesList= $connection->prepare("SELECT * FROM classes");
+    $classesList->execute();
+    $studentId = array();
+    $classId = array();
+    while ($row = $classesList->fetch()) {
+        $query = $this->getDoctrine()->getManager()->getConnection()->prepare("SELECT name FROM student WHERE id = " . (string)$row['student_id']);
+        $query->execute();
+        if ($data = $query->fetch()){
+            $studentId[] = $data;
+        }
+        $classId[] = $row['classes_id'];
+    }
     $form = $this->createFormBuilder($stud) 
          ->add('name', TextType::class)
          ->add('address', TextType::class)
@@ -69,7 +65,7 @@ public function displayAction(Request $request) {
     $stud = $this->getDoctrine() 
     ->getRepository('AppBundle:Student') 
     ->findAll();
-    return $this->render('student/display.html.twig', array('data' => $stud, 'form' => $form->createView(),)); 
+    return $this->render('student/display.html.twig', array('data' => $stud, 'form' => $form->createView(), 'classeslistStudentIDs' => $studentId, 'classeslistClassesIDs' => $classId)); 
  } 
  /** 
    * @Route("/student/update/{id}") 
