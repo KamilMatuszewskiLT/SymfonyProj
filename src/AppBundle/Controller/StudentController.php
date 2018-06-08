@@ -5,6 +5,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller; 
 use Symfony\Component\HttpFoundation\Response;  
 use AppBundle\Entity\Student; 
+use AppBundle\Entity\Classes;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 use Symfony\Component\HttpFoundation\Request; 
 use Symfony\Component\Form\Extension\Core\Type\TextType; 
@@ -36,6 +38,17 @@ public function displayAction(Request $request) {
     $form = $this->createFormBuilder($stud) 
          ->add('name', TextType::class)
          ->add('address', TextType::class)
+         ->add('classes', EntityType::class, array(
+            // looks for choices from this entity
+            'class' => Classes::class,
+        
+            // uses the Classes.name property as the visible option string
+            'choice_label' => 'name',
+        
+            // used to render a select box, check boxes or radios
+            'multiple' => true,
+            'expanded' => true,
+        ))
          ->add('save', SubmitType::class, array('label' => 'Submit'))
          ->getForm();
          $form->handleRequest($request);  

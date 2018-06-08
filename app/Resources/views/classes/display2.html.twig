@@ -65,15 +65,14 @@
    tr td{
         background-color: initial;
     }   
-    input[type="checkbox"] {
-        width: 20px !important;
-    }
+
     tr:nth-child(even) td:nth-child(odd), 
     tr:nth-child(odd) td:nth-child(even){
         background-color: #003100;
     }
 
    .simpleform { 
+      width:20%;
       border: none; 
       padding:14px; 
    }  
@@ -126,7 +125,7 @@
        color: #bbb;
    }
 </style>  
-<a href="/class/display">->Add new class<-</a>
+<a href="/student/display">->Add new student<-</a>
 <div id="saveForm" class="simpleform"> 
       {{ form_start(form) }} 
       {{ form_widget(form) }} 
@@ -141,17 +140,15 @@
    <tr>
       <th>Sort by:</th>   
       <th><input class="sortButton" type="button" onclick="sortTable(1)" value="Id"></th>
-      <th><input class="sortButton" type="button" onclick="sortTable(2)" value="Name"></th>  
-      <th><input class="sortButton" type="button" onclick="sortTable(3)" value="Address"></th> 
+      <th><input class="sortButton" type="button" onclick="sortTable(2)" value="Name"></th>
       <th>Delete from DB</th>  
    </tr>  
    {% for x in data %} 
    <tr>  
       <td style="background-color: initial;"></td>
       <td>{{ x.Id }}</td>
-      <td>{{ x.Name }}</td>   
-      <td>{{ x.Address }}</td> 
-      <td style="text-align: center; background-color: initial;"><a id="deleter" href="{{ path('student_delete', { 'id' : x.Id }) }}">X</a></td>    
+      <td>{{ x.Name }}</td>
+      <td style="text-align: center; background-color: initial;"><a id="deleter" href="{{ path('class_delete', { 'id' : x.Id }) }}">X</a></td>    
    </tr>  
    {% endfor %} 
    <br />

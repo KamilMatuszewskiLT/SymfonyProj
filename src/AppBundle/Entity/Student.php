@@ -5,7 +5,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 /** 
    * @ORM\Entity 
-   * @ORM\Table(name = "students") 
+   * @ORM\Table(name = "student") 
 */ 
 class Student { 
    /** 
@@ -28,9 +28,14 @@ class Student {
    private $address; 
 
    /**
-     * @ManyToMany(targetEntity="Classes")
+     * @ORM\ManyToMany(targetEntity="Classes", inversedBy="students")
+     * @ORM\JoinTable(name="classes")
      */
     private $classes; 
+
+    public function __construct() {
+        $this->classes = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -97,9 +102,10 @@ class Student {
      *
      * @return Student
      */
-    public function setClasses($classes)
+    public function setClasses(Classes $class)
     {
-        $this->classes = $classes;
+        $class->setStudents($this);
+        $this->classes[] = $class;
 
         return $this;
     }
@@ -112,5 +118,29 @@ class Student {
     public function getClasses()
     {
         return $this->classes;
+    }
+
+    /**
+     * Add class
+     *
+     * @param \AppBundle\Entity\Classes $class
+     *
+     * @return Student
+     */
+    public function addClass(\AppBundle\Entity\Classes $class)
+    {
+        $this->classes[] = $class;
+
+        return $this;
+    }
+
+    /**
+     * Remove class
+     *
+     * @param \AppBundle\Entity\Classes $class
+     */
+    public function removeClass(\AppBundle\Entity\Classes $class)
+    {
+        $this->classes->removeElement($class);
     }
 }
