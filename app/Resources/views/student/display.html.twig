@@ -14,6 +14,17 @@
         cursor: pointer;
         color: yellow;
     }
+    .column {
+    float: left;
+    width: 10%;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+    content: "";
+    display: table;
+    clear: both;
+    }
     .sortButton{
         border: none;
         background: initial;
@@ -156,20 +167,30 @@
    {% endfor %} 
    <br />
 </table> 
-<table id="table2" class="table">
+<div class="row">
+<table id="table2" class="table column">
 <tr>
-    <th>Student</th>
-    <th>Class</th>
+    <th><h2>Student</h2></th>
 </tr>
-
-{% for x in datas  %}
-    {% for y in x  %}
-       <tr> 
-         <th>{{ y }}</th><th>{{ y }}</th>
-      </tr>
-    {% endfor %}
+{% for student in students %}
+<tr>
+    <th>{{ student.name }}</th>
+</tr>
+{% endfor %}
+</table> 
+<table id="table3" class="table column">
+<tr>
+    <th><h2>Class</h2></th>
+</tr>
+{% for class in classes %}
+<tr>
+    <th>{{ class.name }}</th>
+</tr>
 {% endfor %}
 </table>
+</div>
+
+
 
 
 <script>

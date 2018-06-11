@@ -35,33 +35,22 @@ public function displayAction(Request $request) {
             $classId[] = $data;
         }
     }
-    $data = array();
-    for ($i = 0; $i < count($studentId); $i++){
-        $oldId = "";
-        if ($stud == $oldId){
-            $data[0][$i] = "";
+    // Replace duplicate names in the students name column with '--'
+    $oldName = "";
+    for ($i = 0 ; $i < count($studentId); $i++ ){
+        if ($studentId[$i] != $oldName){
+            $oldName = $studentId[$i];
         } else {
-            $oldId = $studentId;
-            $data[0][$i] = $studentId[$i]['name'];
-        }      
+            $studentId[$i]['name'] = '--';    
+        }
     }
-    for ($i = 0; $i < count($classId); $i++){
-        $oldId = $classId;
-        $data[1][$i] = $classId[$i]['name'];
-    }      
-    
-    //array(5) { [0]=> array(1) { ["name"]=> string(4) "John" } [1]=> array(1) { ["name"]=> string(4) "John" } [2]=> array(1) { ["name"]=> string(5) "Aaron" } [3]=> array(1) { ["name"]=> string(5) "Aaron" } [4]=> array(1) { ["name"]=> string(5) "Aaron" } }
+    // End
     $form = $this->createFormBuilder($stud) 
          ->add('name', TextType::class)
          ->add('address', TextType::class)
          ->add('classes', EntityType::class, array(
-            // looks for choices from this entity
             'class' => Classes::class,
-        
-            // uses the Classes.name property as the visible option string
             'choice_label' => 'name',
-        
-            // used to render a select box, check boxes or radios
             'multiple' => true,
             'expanded' => true,
         ))
@@ -70,12 +59,8 @@ public function displayAction(Request $request) {
          $form->handleRequest($request);  
    if ($form->isSubmitted() && $form->isValid()) { 
       $stud = $form->getData(); 
-      $doctrine = $this->getDoctrine()->getManager();  
-      
-      // tells Doctrine you want to save the Product 
-      $doctrine -> persist($stud);  
-        
-      //executes the queries (i.e. the INSERT query) 
+      $doctrine = $this->getDoctrine()->getManager();
+      $doctrine -> persist($stud);
       $doctrine -> flush();
       $this->addFlash(
         'notice',
@@ -85,25 +70,8 @@ public function displayAction(Request $request) {
     $stud = $this->getDoctrine() 
     ->getRepository('AppBundle:Student') 
     ->findAll();
-    return $this->render('student/display.html.twig', array('data' => $stud, 'form' => $form->createView(), 'datas' => $data, )); 
+    return $this->render('student/display.html.twig', array('data' => $stud, 'form' => $form->createView(), 'students' => $studentId, 'classes' => $classId, )); 
  } 
- /** 
-   * @Route("/student/update/{id}") 
-*/ 
-public function updateAction($id) { 
-    $doct = $this->getDoctrine()->getManager(); 
-    $stud = $doct->getRepository('AppBundle:Student')->find($id);  
-    
-    if (!$stud) { 
-       throw $this->createNotFoundException( 
-          'No student found for id '.$id 
-       ); 
-    } 
-    $stud->setAddress('7 south street'); 
-    $doct->flush(); 
-    
-    return new Response('Changes updated!'); 
- }
  /** 
    * @Route("/student/delete/{id}", name="student_delete") 
 */ 
