@@ -35,6 +35,9 @@ public function displayAction(Request $request) {
             $classId[] = $data;
         }
     }
+
+
+
     // Replace duplicate names in the students name column with '--'
     $oldName = "";
     for ($i = 0 ; $i < count($studentId); $i++ ){
@@ -52,7 +55,7 @@ public function displayAction(Request $request) {
             'class' => Classes::class,
             'choice_label' => 'name',
             'multiple' => true,
-            'expanded' => true,
+            'expanded' => false,
         ))
          ->add('save', SubmitType::class, array('label' => 'Submit'))
          ->getForm();
