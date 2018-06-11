@@ -49,7 +49,7 @@ class Classes {
      */
     public function setName($name)
     {
-        $this->name = $name;
+        $this->name = ucfirst($name);
 
         return $this;
     }
