@@ -1,23 +1,26 @@
 {% extends 'base.html.twig' %}
 {% block body %} 
+{% for message in app.flashes('notice') %}
+    <div style="margin: 30px; width: 300px;font-size:25px; color: red; background:white;"class="flash-notice">
+       Error: {{ message }}
+    </div>
+{% endfor %}
 <a href="/class/display">=>Add new class<=</a>
+
 <div id="saveForm" class="simpleform"> 
       {{ form_start(form) }} 
       {{ form_widget(form) }} 
       {{ form_end(form) }} 
 </div>  
-{% for message in app.flashes('notice') %}
-    <div class="flash-notice">
-        {{ message }}
-    </div>
-{% endfor %}
+
 <table id="table1" class="table">  
    <tr>
       <th>Sort by:</th>   
       <th><input class="sortButton" type="button" onclick="sortTable(1)" value="Id"></th>
       <th><input class="sortButton" type="button" onclick="sortTable(2)" value="Name"></th>  
       <th><input class="sortButton" type="button" onclick="sortTable(3)" value="Address"></th> 
-      <th>Delete from DB</th>  
+      <th>Delete from DB</th>        
+      <th>Edit</th>
    </tr>  
    {% for x in data %} 
    <tr>  
@@ -25,7 +28,8 @@
       <td>{{ x.Id }}</td>
       <td>{{ x.Name }}</td>   
       <td>{{ x.Address }}</td> 
-      <td style="text-align: center; background-color: initial;"><a id="deleter" href="{{ path('student_delete', { 'id' : x.Id }) }}">X</a></td>    
+      <td style="text-align: center; background-color: initial;"><a id="deleter" href="{{ path('student_delete', { 'id' : x.Id }) }}">X</a></td>  
+      <td style="text-align: center; background-color: initial;"><a id="deleter" href="{{ path('student_update', { 'id' : x.Id }) }}">Edit</a></td>    
    </tr>  
    {% endfor %} 
    <br />
