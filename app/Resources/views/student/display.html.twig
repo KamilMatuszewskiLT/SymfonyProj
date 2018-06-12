@@ -5,7 +5,7 @@
        Error: {{ message }}
     </div>
 {% endfor %}
-<a href="/class/display">=>Add new class<=</a>
+<a href="/class/display">Add new class</a>
 
 <div id="saveForm" class="simpleform"> 
       {{ form_start(form) }} 
@@ -20,7 +20,7 @@
       <th><input class="sortButton" type="button" onclick="sortTable(2)" value="Name"></th>  
       <th><input class="sortButton" type="button" onclick="sortTable(3)" value="Address"></th> 
       <th>Delete from DB</th>        
-      <th>Edit</th>
+      <th></th>
    </tr>  
    {% for x in data %} 
    <tr>  

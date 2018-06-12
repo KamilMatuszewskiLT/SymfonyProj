@@ -7,6 +7,17 @@ a{
     text-decoration: none;
     color: inherit;
 }
+a:not([id="deleter"]){
+    color: red;
+    border: solid 1px red;
+    font-size: 20px;
+    border-radius: 5px;
+    padding: 2px;
+}
+a:not([id="deleter"]):hover{
+    color: white;
+    background: red;
+}
 a:hover{
     cursor: pointer;
     color: yellow;
@@ -119,6 +130,8 @@ tr:nth-child(odd) td:nth-child(even){
 }  
 .simpleform select { 
   margin: 0 0 20px 10px; 
+  background: black; 
+  color: #bbb; 
 }  
 .simpleform button { 
   clear:both; 
