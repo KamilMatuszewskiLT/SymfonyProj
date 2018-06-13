@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <meta charset="UTF-8"/>
+        <title>
+            {% block title %}Welcome!{% endblock %}
+        </title>
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
         {% block stylesheets %}
-        <link href="{{ asset('CSS/Style.css') }}" rel="stylesheet" type="text/css"/>
+            <link href="{{ asset('CSS/Style.css') }}" rel="stylesheet" type="text/css"/>
         {% endblock %}
         {% block my_javascripts %}
-    {% javascripts
-        'js/scripts.js'
-        filter='?uglifyjs2'
-    %}
-    <script src="{{ asset_url }}" type="text/javascript"></script>
-    {% endjavascripts %}
-{% endblock %}
+            {% javascripts
+            'js/scripts.js'
+            filter = '?uglifyjs2'
+ %}
+            <script src="{{ asset_url }}" type="text/javascript"></script>
+            {% endjavascripts %}
+        {% endblock %}
     </head>
     <body>
         {% block body %}{% endblock %}

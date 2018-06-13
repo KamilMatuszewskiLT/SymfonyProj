@@ -2,6 +2,7 @@ body, html {
     height: 100%;
     background: black;
     color: #bbb;
+    margin: 1% 0 0 1%;
 }
 
 a {
@@ -9,13 +10,12 @@ a {
     color: inherit;
     margin: 3px;
 }
-
 a:not([id="deleter"]) {
     color: red;
     border: solid 1px red;
     font-size: 20px;
     border-radius: 5px;
-    padding: 2px;
+    padding: 3px;
 }
 
 a:not([id="deleter"]):hover {
