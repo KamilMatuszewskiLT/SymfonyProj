@@ -30,16 +30,18 @@ class StudentController_UpdateClassAction extends Controller
             );
             return $this->redirect("/student/display");
         }
-        if ($action == "rm") {
-            $stud->removeClass($class);
-            $doct->flush();
-        } else if ($action == "add") {
-            $stud->addClass($class);
-            $doct->flush();
-        } else {
-            return $this->redirect("/student/update/$id");
+        switch ($action) {
+            case "rm":
+                $stud->removeClass($class);
+                $doct->flush();
+                break;
+            case "add":
+                $stud->addClass($class);
+                $doct->flush();
+                break;
+            default:
+                return $this->redirect("/student/update/$id");
         }
-
         return $this->redirect("/student/update/$id");
     }
 }

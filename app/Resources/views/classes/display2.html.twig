@@ -1,31 +1,35 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-<a href="/student/display">Add new student</a>
-<div id="saveForm" class="simpleform"> 
-      {{ form_start(form) }} 
-      {{ form_widget(form) }} 
-      {{ form_end(form) }} 
-</div>  
-{% for message in app.flashes('notice') %}
-    <div class="flash-notice">
-        {{ message }}
+    <a href="/student/display">Add new student</a>
+    {% if form %}
+    <div id="saveForm" class="simpleform">
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        {{ form_end(form) }}
     </div>
-{% endfor %}
-<table id="table1" class="table">  
-   <tr>
-      <th>Sort by:</th>   
-      <th><input class="sortButton" type="button" onclick="sortTable(1)" value="Id"></th>
-      <th><input class="sortButton" type="button" onclick="sortTable(2)" value="Name"></th>
-      <th>Delete from DB</th>  
-   </tr>  
-   {% for x in data %} 
-   <tr>  
-      <td style="background-color: initial;"></td>
-      <td>{{ x.Id }}</td>
-      <td>{{ x.Name }}</td>
-      <td style="text-align: center; background-color: initial;"><a id="deleter" href="{{ path('class_delete', { 'id' : x.Id }) }}">X</a></td>      
-   </tr>  
-   {% endfor %} 
-   <br />
-</table> 
+    {% endif %}
+    <table id="table1" class="table">
+        <tr>
+            <th>Sort by:</th>
+            <th><input class="sortButton" type="button" onclick="sortTable(1)" value="Id"></th>
+            <th><input class="sortButton" type="button" onclick="sortTable(2)" value="Name"></th>
+            <th>Delete from DB</th>
+        </tr>
+        {% for x in data %}
+            <tr>
+                <td style="background-color: initial;"></td>
+                <td>{{ x.Id }}</td>
+                <td>{{ x.Name }}</td>
+                <td style="text-align: center; background-color: initial;">
+                    <a id="deleter" href="{{ path('class_delete', { 'id' : x.Id }) }}">X</a>
+                </td>
+            </tr>
+        {% endfor %}
+        <br/>
+    </table>
+    {% for message in app.flashes('notice') %}
+        <div class="flash-notice">
+            {{ message }} <a style="vertical-align: super; font-size: 14px; background: red; color: white;" href="#" onclick="window.location.reload(true);"> X</a>
+        </div>
+    {% endfor %}
 {% endblock %}

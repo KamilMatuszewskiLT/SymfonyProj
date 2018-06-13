@@ -73,3 +73,14 @@ assetic:
     use_controller: '%kernel.debug%'
     filters:
         cssrewrite: ~
+        
+knp_snappy:
+    temporary_folder: C:\wamp64\bin\php\php7.2.4\DBExample\vendor\wemersonjanuario\wkhtmltopdf-windows\bin\64bit\temp\
+    pdf:
+        enabled:    true
+        binary:     C:\wamp64\bin\php\php7.2.4\DBExample\vendor\wemersonjanuario\wkhtmltopdf-windows\bin\64bit\wkhtmltopdf
+        options:    []
+    image:
+        enabled:    true
+        binary:     C:\wamp64\bin\php\php7.2.4\DBExample\vendor\wemersonjanuario\wkhtmltopdf-windows\bin\64bit\wkhtmltopdf
+        options:    []

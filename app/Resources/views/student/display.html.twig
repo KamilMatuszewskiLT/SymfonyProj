@@ -1,11 +1,6 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-    {% for message in app.flashes('notice') %}
-        <div style="margin: 30px; width: 300px;font-size:25px; color: red; background:white;" class="flash-notice">
-            Error:
-            {{ message }}
-        </div>
-    {% endfor %}
+    <br/>
     <a href="/class/display">Add new class</a>
     <div class="row">
         <div class="column">
@@ -22,7 +17,7 @@
                     <th><input class="sortButton" type="button" onclick="sortTable(2)" value="Name"></th>
                     <th><input class="sortButton" type="button" onclick="sortTable(3)" value="Address"></th>
                     <th>Delete from DB</th>
-                    <th></th>
+                    <th style="width: 70px;"></th>
                 </tr>
                 {% for x in data %}
                     <tr>
@@ -70,4 +65,9 @@
             </div>
         </div>
     </div>
+    {% for message in app.flashes('notice') %}
+        <div class="flash-notice">
+            {{ message }} <a style="vertical-align: super; font-size: 14px; background: red; color: white;" href="#" onclick="window.location.reload(true);"> X</a>
+        </div>
+    {% endfor %}
 {% endblock %}

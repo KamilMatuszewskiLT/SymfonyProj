@@ -50,6 +50,15 @@ a:hover {
     clear: both;
 }
 
+.flash-notice {
+    margin: 30px;
+    display: inline-block;
+    font-size: 25px;
+    color: red;
+    background: white;
+    border-radius: 5px;
+}
+
 .sortButton {
     border: none;
     background: initial;

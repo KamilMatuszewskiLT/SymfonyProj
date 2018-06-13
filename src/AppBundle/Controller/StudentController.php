@@ -77,6 +77,7 @@ class StudentController extends Controller
                 'notice',
                 'New student added.'
             );
+            return $this->redirect($request->getUri());
         }
         $stud = $this->getDoctrine()
             ->getRepository('AppBundle:Student')
@@ -96,12 +97,18 @@ class StudentController extends Controller
         }
         $doct->remove($stud);
         $doct->flush();
+        $this->addFlash(
+            'notice',
+            'Student deleted.'
+        );
         return $this->redirect("/student/display");
     }
     /**
      * @Route("/student/update/{id}", name="student_update", requirements={"id"="\d+"})
+     * @Route("/student/update/{id}/{param}", name="student_update_pdf", requirements={"id"="\d+"}) 
      */
-    public function updateAction($id, LoggerInterface $logger)
+    // Funkcjonalność tworzenia pliku .pdf z widoku strony nie działa, ponieważ brakuje biblioteki z MSVisualCPP 2013  (mscvp mscvr 120 dll)
+    public function updateAction($id, LoggerInterface $logger, $param = null)
     {
         $doct = $this->getDoctrine()->getManager();
         $stud = $doct->getRepository('AppBundle:Student')->find($id);
@@ -133,7 +140,23 @@ class StudentController extends Controller
                 }
             }
         }
-
+        switch ($param) {
+            case "pdf":
+                $this->get('knp_snappy.pdf')->generateFromHtml(
+                    $this->renderView(
+                        'student/update.html.twig',
+                        array(
+                            'student' => $stud, 'allClasses' => $allClasses, 'classes' => $classes,
+                        )
+                    ),
+                    '/Resources/PDFs/'.$stud->getName()."_ID".$stud->getId().'file.pdf'
+                );
+                // Error while loading shared libraries: MSVCR120.dll -> html to pdf nie działa, bo brakuje biblioteki.
+                break;
+            case null:
+            default:
+                return $this->render("student/update.html.twig", array('student' => $stud, 'allClasses' => $allClasses, 'classes' => $classes));
+        }
         return $this->render("student/update.html.twig", array('student' => $stud, 'allClasses' => $allClasses, 'classes' => $classes));
     }
 }
