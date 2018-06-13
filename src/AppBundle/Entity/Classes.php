@@ -1,32 +1,35 @@
-<?php  
-namespace AppBundle\Entity;  
+<?php
+namespace AppBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;  
+use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
-/** 
-   * @ORM\Entity 
-   * @ORM\Table(name = "class") 
-*/ 
-class Classes { 
-   /** 
-      * @ORM\Column(type = "integer") 
-      * @ORM\Id 
-      * @ORM\GeneratedValue(strategy = "AUTO") 
-   */ 
-   private $id;  
-    
-   /** 
-      * @ORM\Column(type = "string", length = 50) 
-      * @Assert\NotBlank(message="Wpisz nazwę zajęć.") 
-   */ 
-   private $name;  
-   
-  /**
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name = "class")
+ */
+class Classes
+{
+    /**
+     * @ORM\Column(type = "integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy = "AUTO")
+     */
+    private $id;
+
+    /**
+     * @ORM\Column(type = "string", length = 50)
+     * @Assert\NotBlank(message="Wpisz nazwę zajęć.")
+     */
+    private $name;
+
+    /**
      * @ORM\ManyToMany(targetEntity="Student", mappedBy="classes")
      */
-   private $students; 
+    private $students;
 
-   public function __construct() {
+    public function __construct()
+    {
         $this->students = new \Doctrine\Common\Collections\ArrayCollection();
     }
 

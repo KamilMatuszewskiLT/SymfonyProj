@@ -1,114 +1,73 @@
 {% extends 'base.html.twig' %}
-{% block body %} 
-{% for message in app.flashes('notice') %}
-    <div style="margin: 30px; width: 300px;font-size:25px; color: red; background:white;"class="flash-notice">
-       Error: {{ message }}
+{% block body %}
+    {% for message in app.flashes('notice') %}
+        <div style="margin: 30px; width: 300px;font-size:25px; color: red; background:white;" class="flash-notice">
+            Error:
+            {{ message }}
+        </div>
+    {% endfor %}
+    <a href="/class/display">Add new class</a>
+    <div class="row">
+        <div class="column">
+            <div id="saveForm" class="simpleform">
+                {{ form_start(form) }}
+                {{ form_widget(form) }}
+                {{ form_end(form) }}
+            </div>
+
+            <table id="table1" class="table">
+                <tr>
+                    <th>Sort by:</th>
+                    <th><input class="sortButton" type="button" onclick="sortTable(1)" value="Id"></th>
+                    <th><input class="sortButton" type="button" onclick="sortTable(2)" value="Name"></th>
+                    <th><input class="sortButton" type="button" onclick="sortTable(3)" value="Address"></th>
+                    <th>Delete from DB</th>
+                    <th></th>
+                </tr>
+                {% for x in data %}
+                    <tr>
+                        <td style="background-color: initial;"></td>
+                        <td>{{ x.Id }}</td>
+                        <td>{{ x.Name }}</td>
+                        <td>{{ x.Address }}</td>
+                        <td style="text-align: center; background-color: initial;">
+                            <a id="deleter" href="{{ path('student_delete', { 'id' : x.Id }) }}">X</a>
+                        </td>
+                        <td style="text-align: center; background-color: initial;">
+                            <a id="deleter" href="{{ path('student_update', { 'id' : x.Id }) }}">Edit</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                <br/>
+            </table>
+        </div>
+        <div class="column">
+            <div class="row">
+                <table id="table2" class="table column10">
+                    <tr>
+                        <th>
+                            <h2>Student</h2>
+                        </th>
+                    </tr>
+                    {% for student in students %}
+                        <tr>
+                            <th>{{ student.name }}</th>
+                        </tr>
+                    {% endfor %}
+                </table>
+                <table id="table3" class="table column20">
+                    <tr>
+                        <th>
+                            <h2>Class</h2>
+                        </th>
+                    </tr>
+                    {% for class in classes %}
+                        <tr>
+                            <th>{{ class.name }}</th>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
     </div>
-{% endfor %}
-<a href="/class/display">Add new class</a>
-
-<div id="saveForm" class="simpleform"> 
-      {{ form_start(form) }} 
-      {{ form_widget(form) }} 
-      {{ form_end(form) }} 
-</div>  
-
-<table id="table1" class="table">  
-   <tr>
-      <th>Sort by:</th>   
-      <th><input class="sortButton" type="button" onclick="sortTable(1)" value="Id"></th>
-      <th><input class="sortButton" type="button" onclick="sortTable(2)" value="Name"></th>  
-      <th><input class="sortButton" type="button" onclick="sortTable(3)" value="Address"></th> 
-      <th>Delete from DB</th>        
-      <th></th>
-   </tr>  
-   {% for x in data %} 
-   <tr>  
-      <td style="background-color: initial;"></td>
-      <td>{{ x.Id }}</td>
-      <td>{{ x.Name }}</td>   
-      <td>{{ x.Address }}</td> 
-      <td style="text-align: center; background-color: initial;"><a id="deleter" href="{{ path('student_delete', { 'id' : x.Id }) }}">X</a></td>  
-      <td style="text-align: center; background-color: initial;"><a id="deleter" href="{{ path('student_update', { 'id' : x.Id }) }}">Edit</a></td>    
-   </tr>  
-   {% endfor %} 
-   <br />
-</table> 
-<div class="row">
-<table id="table2" class="table column">
-<tr>
-    <th><h2>Student</h2></th>
-</tr>
-{% for student in students %}
-<tr>
-    <th>{{ student.name }}</th>
-</tr>
-{% endfor %}
-</table> 
-<table id="table3" class="table column">
-<tr>
-    <th><h2>Class</h2></th>
-</tr>
-{% for class in classes %}
-<tr>
-    <th>{{ class.name }}</th>
-</tr>
-{% endfor %}
-</table>
-</div>
-
-
-<script>
- function sortTable(column) {
-  var table, rows, switching, i, x, y, shouldSwitch;
-  table = document.getElementById("table1");
-  switching = true;
-  /* Make a loop that will continue until
-  no switching has been done: */
-  while (switching) {
-    // Start by saying: no switching is done:
-    switching = false;
-    rows = table.getElementsByTagName("TR");
-    /* Loop through all table rows (except the
-    first, which contains table headers): */
-    for (i = 1; i < (rows.length - 1); i++) {
-      // Start by saying there should be no switching:
-      shouldSwitch = false;
-      /* Get the two elements you want to compare,
-      one from current row and one from the next: */
-      x = rows[i].getElementsByTagName("TD")[column];
-      y = rows[i + 1].getElementsByTagName("TD")[column];
-      x = x.innerHTML.toLowerCase();
-      y = y.innerHTML.toLowerCase();
-      // Check if the two rows should switch place:
-      if (TryParseInt(x, "nan")!="nan" & TryParseInt(y, "nan")!="nan") {
-        x=TryParseInt(x, "nan");
-        y=TryParseInt(y, "nan");
-      }
-        if (x > y) {
-        // If so, mark as a switch and break the loop:
-        shouldSwitch = true;
-        break;
-      }
-    }
-    if (shouldSwitch) {
-      /* If a switch has been marked, make the switch
-      and mark that a switch has been done: */
-      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-      switching = true;
-    }
-  }
- }
- function TryParseInt(str,defaultValue) {
-     var retValue = defaultValue;
-     if(str !== null) {
-         if(str.length > 0) {
-             if (!isNaN(str)) {
-                 retValue = parseInt(str);
-             }
-         }
-     }
-     return retValue;
- }
-</script>
 {% endblock %}
