@@ -13,6 +13,8 @@ use Symfony\Component\HttpFoundation\Request;
 
 class StudentController extends Controller
 {
+
+    private const PDF_PRINT_LOCATION = 'C:\wamp64\bin\php\php7.2.4\DBExample\app\Resources\PDFs\\';
     /* Doesn't work.
     public $students;
     public $classes;
@@ -107,7 +109,6 @@ class StudentController extends Controller
      * @Route("/student/update/{id}", name="student_update", requirements={"id"="\d+"})
      * @Route("/student/update/{id}/{param}", name="student_update_pdf", requirements={"id"="\d+"}) 
      */
-    // Funkcjonalność tworzenia pliku .pdf z widoku strony nie działa, ponieważ brakuje biblioteki z MSVisualCPP 2013  (mscvp mscvr 120 dll)
     public function updateAction($id, LoggerInterface $logger, $param = null)
     {
         $doct = $this->getDoctrine()->getManager();
@@ -144,14 +145,18 @@ class StudentController extends Controller
             case "pdf":
                 $this->get('knp_snappy.pdf')->generateFromHtml(
                     $this->renderView(
-                        'student/update.html.twig',
+                        'student/studentPDF.html.twig',
                         array(
                             'student' => $stud, 'allClasses' => $allClasses, 'classes' => $classes,
                         )
                     ),
-                    '/Resources/PDFs/'.$stud->getName()."_ID".$stud->getId().'file.pdf'
+                    $this::PDF_PRINT_LOCATION.$stud->getName().'_ID'.$stud->getId().'.pdf'
                 );
-                // Error while loading shared libraries: MSVCR120.dll -> html to pdf nie działa, bo brakuje biblioteki.
+                $this->addFlash(
+                    'notice',
+                    "Created file: ".$this::PDF_PRINT_LOCATION.$stud->getName().'_ID'.$stud->getId().'.pdf'
+                );
+                return $this->redirect("/student/update/$id");
                 break;
             case null:
             default:

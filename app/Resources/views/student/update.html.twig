@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 {% block body %} 
-<a href="/student/display">Go back</a>
+<a href="/student/display">Go back</a><a href="/student/update/{{ student.id }}/pdf">Print to PDF</a>
 
 <table style="font-size: 20px;" id="studentData" class="table">
     <tr>
@@ -20,5 +20,10 @@
         {% else %}
         <div style="font-size: 20px;"><p style="margin-left: 14px;"> Is not attending {{ class.name }}. <br /><a id="deleter" href="/student/update/{{ student.id }}/{{ class.id }}/add">Add to class.</a></p></div><br />
     {% endif %}
+{% endfor %}
+{% for message in app.flashes('notice') %}
+        <div class="flash-notice">
+            {{ message }} <a style="vertical-align: super; font-size: 14px; background: red; color: white;" href="#" onclick="window.location.reload(true);"> X</a>
+        </div>
 {% endfor %}
 {% endblock %}
