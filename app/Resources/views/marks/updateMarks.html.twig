@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+{% block body %} 
+
+<table style="font-size: 20px;" id="studentData" class="table">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>class</th>
+    </tr>
+    <tr>
+        <th>{{ student.id }}</th>
+        <th>{{ student.name }}</th>
+        <th>{{ student.class }}</th>
+    </tr>
+</table>
+{% for mark in allMarks %}
+        {{ mark.markValue }}.
+{% endblock %}

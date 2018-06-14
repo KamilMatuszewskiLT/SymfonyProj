@@ -1,39 +1,42 @@
-<?php  
-namespace AppBundle\Entity;  
+<?php
+namespace AppBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;  
+use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
-/** 
-   * @ORM\Entity 
-   * @ORM\Table(name = "student") 
-*/ 
-class Student { 
-   /** 
-      * @ORM\Column(type = "integer") 
-      * @ORM\Id 
-      * @ORM\GeneratedValue(strategy = "AUTO") 
-   */ 
-   private $id;  
-    
-   /** 
-      * @ORM\Column(type = "string", length = 50) 
-      * @Assert\NotBlank(message="Wpisz imię.") 
-   */ 
-   private $name;  
-   
-   /** 
-     * @ORM\Column(type = "text") 
-     * @Assert\NotBlank(message="Podaj adres.") 
-     */ 
-   private $address; 
 
-   /**
+/**
+ * @ORM\Entity
+ * @ORM\Table(name = "student")
+ */
+class Student
+{
+    /**
+     * @ORM\Column(type = "integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy = "AUTO") 
+     */
+    private $id;
+
+    /**
+     * @ORM\Column(type = "string", length = 50)
+     * @Assert\NotBlank(message="Wpisz imię.")
+     */
+    private $name;
+
+    /**
+     * @ORM\Column(type = "text")
+     * @Assert\NotBlank(message="Podaj adres.")
+     */
+    private $address;
+
+    /**
      * @ORM\ManyToMany(targetEntity="Classes", inversedBy="students")
      * @ORM\JoinTable(name="classes")
      */
-    private $classes; 
+    private $classes;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->classes = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
@@ -56,7 +59,7 @@ class Student {
      */
     public function setName($name)
     {
-        $this->name = $name;
+        $this->name = ucfirst($name);
 
         return $this;
     }
@@ -105,7 +108,7 @@ class Student {
     public function addClass(\AppBundle\Entity\Classes $class)
     {
         $class->addStudent($this);
-        $this->classes[] = $class; 
+        $this->classes[] = $class;
 
         return $this;
     }

@@ -66,7 +66,9 @@
     </div>
     {% for message in app.flashes('notice') %}
         <div class="flash-notice">
-            {{ message }} <a style="vertical-align: super; font-size: 14px; background: red; color: white;" href="#" onclick="window.location.reload(true);"> X</a>
+            {{ message }}
+            <a style="vertical-align: super; font-size: 14px; background: red; color: white;" href="#" onclick="window.location.reload(true);">
+                X</a>
         </div>
     {% endfor %}
 {% endblock %}
