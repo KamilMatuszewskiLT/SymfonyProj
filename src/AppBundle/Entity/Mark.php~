@@ -28,18 +28,18 @@ class Mark
     /**
      * @ORM\ManyToMany(targetEntity="Student")
      * @ORM\JoinTable(name="students_marks",
-     *      joinColumns={@ORM\JoinColumn(name="student_id", referencedColumnName="id")}
+     *      joinColumns={@ORM\JoinColumn(name="mark_id", referencedColumnName="id")}
      * )
      */
-    private $studentMarkId;
+    private $studentId;
 
     /**
      * @ORM\ManyToMany(targetEntity="Classes")
      * @ORM\JoinTable(name="classes_marks",
-     *      joinColumns={@ORM\JoinColumn(name="class_id", referencedColumnName="id")}
+     *      joinColumns={@ORM\JoinColumn(name="mark_id", referencedColumnName="id")}
      * )
      */
-    private $classMarkId;
+    private $classId;
 
     public function __construct()
     {
@@ -147,5 +147,73 @@ class Mark
     public function getClassId()
     {
         return $this->classId;
+    }
+
+    /**
+     * Add studentMarkId
+     *
+     * @param \AppBundle\Entity\Student $studentMarkId
+     *
+     * @return Mark
+     */
+    public function addStudentMarkId(\AppBundle\Entity\Student $studentMarkId)
+    {
+        $this->studentMarkId[] = $studentMarkId;
+
+        return $this;
+    }
+
+    /**
+     * Remove studentMarkId
+     *
+     * @param \AppBundle\Entity\Student $studentMarkId
+     */
+    public function removeStudentMarkId(\AppBundle\Entity\Student $studentMarkId)
+    {
+        $this->studentMarkId->removeElement($studentMarkId);
+    }
+
+    /**
+     * Get studentMarkId
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getStudentMarkId()
+    {
+        return $this->studentMarkId;
+    }
+
+    /**
+     * Add classMarkId
+     *
+     * @param \AppBundle\Entity\Classes $classMarkId
+     *
+     * @return Mark
+     */
+    public function addClassMarkId(\AppBundle\Entity\Classes $classMarkId)
+    {
+        $this->classMarkId[] = $classMarkId;
+
+        return $this;
+    }
+
+    /**
+     * Remove classMarkId
+     *
+     * @param \AppBundle\Entity\Classes $classMarkId
+     */
+    public function removeClassMarkId(\AppBundle\Entity\Classes $classMarkId)
+    {
+        $this->classMarkId->removeElement($classMarkId);
+    }
+
+    /**
+     * Get classMarkId
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getClassMarkId()
+    {
+        return $this->classMarkId;
     }
 }

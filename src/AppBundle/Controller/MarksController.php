@@ -40,6 +40,10 @@ class MarksController extends Controller
             ->getRepository('AppBundle:Classes')
             ->findAll();
         return $this->render('classes/display2.html.twig', array('data' => $class, 'form' => $form->createView()));
+
+
+        // CUSTOM SQL => " SELECT * FROM students_marks INNER JOIN classes_marks ON students_marks.mark_id=classes_marks.mark_id "
+
     }
     /**
      * @Route("/class/delete/{id}", name="class_delete")
