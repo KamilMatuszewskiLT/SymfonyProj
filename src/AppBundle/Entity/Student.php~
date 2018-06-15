@@ -34,6 +34,10 @@ class Student
      * @ORM\JoinTable(name="classes")
      */
     private $classes;
+    /**
+     * @ORM\OneToMany(targetEntity="Mark", mappedBy="studentId")
+     */
+    private $marks;
 
     public function __construct()
     {

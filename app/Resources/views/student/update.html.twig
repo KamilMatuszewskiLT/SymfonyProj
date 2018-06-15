@@ -1,29 +1,73 @@
 {% extends 'base.html.twig' %}
-{% block body %} 
-<a href="/student/display">Go back</a><a href="/student/update/{{ student.id }}/pdf">Print to PDF</a>
+{% block body %}
+    <div class="row">
+        <div class="column30">
+        <a href="/student/display">Go back</a>
+        <a href="/student/update/{{ student.id }}/pdf">Print to PDF</a>
 
-<table style="font-size: 20px;" id="studentData" class="table">
-    <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Address</th>
-    </tr>
-    <tr>
-        <th>{{ student.id }}</th>
-        <th>{{ student.name }}</th>
-        <th>{{ student.address }}</th>
-    </tr>
-</table>
-{% for class in allClasses %}
-    {% if class.isAttending %}
-        <div style="font-size: 20px;"><p style="margin-left: 14px;"> Is attending {{ class.name }}. <br /><a id="deleter" href="/student/update/{{ student.id }}/{{ class.id }}/rm">Remove from class.</a></p></div><br />
-        {% else %}
-        <div style="font-size: 20px;"><p style="margin-left: 14px;"> Is not attending {{ class.name }}. <br /><a id="deleter" href="/student/update/{{ student.id }}/{{ class.id }}/add">Add to class.</a></p></div><br />
-    {% endif %}
-{% endfor %}
-{% for message in app.flashes('notice') %}
-        <div class="flash-notice">
-            {{ message }} <a style="vertical-align: super; font-size: 14px; background: red; color: white;" href="#" onclick="window.location.reload(true);"> X</a>
+        <table id="studentData" class="table">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Address</th>
+            </tr>
+            <tr>
+                <th>{{ student.id }}</th>
+                <th>{{ student.name }}</th>
+                <th>{{ student.address }}</th>
+            </tr>
+        </table>
+        {% for class in allClasses %}
+            {% if class.isAttending %}
+                <div style="font-size: 20px;">
+                    <p style="margin-left: 14px;">
+                        Is attending
+                        {{ class.name }}.
+                        <br/>
+                        Add mark:
+                        <a id="deleter" href="/student/addMark/{{ student.id }}/{{ class.id }}/1">1</a>
+                        <a id="deleter" href="/student/addMark/{{ student.id }}/{{ class.id }}/2">2</a>
+                        <a id="deleter" href="/student/addMark/{{ student.id }}/{{ class.id }}/3">3</a>
+                        <a id="deleter" href="/student/addMark/{{ student.id }}/{{ class.id }}/4">4</a>
+                        <a id="deleter" href="/student/addMark/{{ student.id }}/{{ class.id }}/5">5</a>
+                        <a id="deleter" href="/student/addMark/{{ student.id }}/{{ class.id }}/6">6</a>
+                        <br/>
+                        <a id="deleter" href="/student/update/{{ student.id }}/{{ class.id }}/rm">Remove from class.</a>
+                    </p>
+                </div><br/>
+            {% else %}
+                <div style="font-size: 20px;">
+                    <p style="margin-left: 14px;">
+                        Is not attending
+                        {{ class.name }}.
+                        <br/>
+                        <a id="deleter" href="/student/update/{{ student.id }}/{{ class.id }}/add">Add to class.</a>
+                    </p>
+                </div><br/>
+            {% endif %}
+        {% endfor %}
         </div>
-{% endfor %}
-{% endblock %}
+        <div class="column30">
+        <table class="table">
+            <tr>
+                <th>Class</th>
+                <th>Mark</th>
+            </tr>
+            {% for mark in marks %}
+                <tr>
+                    <th>{{ mark.classId }}</th>
+                    <th>{{ mark.markValue }}</th>
+                </tr>
+            {% endfor %}
+        </table>
+        </div>
+        <div>
+            {% for message in app.flashes('notice') %}
+                <div class="flash-notice">
+                    {{ message }}
+                    <a style="vertical-align: super; font-size: 14px; background: red; color: white;" href="#" onclick="window.location.reload(true);">
+                        X</a>
+                </div>
+            {% endfor %}
+
+        {% endblock %}

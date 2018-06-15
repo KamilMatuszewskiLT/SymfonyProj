@@ -26,18 +26,12 @@ class Mark
     private $markValue;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Student")
-     * @ORM\JoinTable(name="students_marks",
-     *      joinColumns={@ORM\JoinColumn(name="mark_id", referencedColumnName="id")}
-     * )
+     * @ORM\ManyToOne(targetEntity="Student", inversedBy="marks")
      */
     private $studentId;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Classes")
-     * @ORM\JoinTable(name="classes_marks",
-     *      joinColumns={@ORM\JoinColumn(name="mark_id", referencedColumnName="id")}
-     * )
+     * @ORM\ManyToOne(targetEntity="Classes")
      */
     private $classId;
 
@@ -45,7 +39,7 @@ class Mark
     {
         $this->studentId = new \Doctrine\Common\Collections\ArrayCollection();
         $this->classId = new \Doctrine\Common\Collections\ArrayCollection();
-    }
+    }    
 
     /**
      * Get id
@@ -82,33 +76,23 @@ class Mark
     }
 
     /**
-     * Add studentId
+     * Set studentId
      *
      * @param \AppBundle\Entity\Student $studentId
      *
      * @return Mark
      */
-    public function addStudentId(\AppBundle\Entity\Student $studentId)
+    public function setStudentId(\AppBundle\Entity\Student $studentId = null)
     {
-        $this->studentId[] = $studentId;
+        $this->studentId = $studentId;
 
         return $this;
     }
 
     /**
-     * Remove studentId
-     *
-     * @param \AppBundle\Entity\Student $studentId
-     */
-    public function removeStudentId(\AppBundle\Entity\Student $studentId)
-    {
-        $this->studentId->removeElement($studentId);
-    }
-
-    /**
      * Get studentId
      *
-     * @return \Doctrine\Common\Collections\Collection
+     * @return \AppBundle\Entity\Student
      */
     public function getStudentId()
     {
@@ -116,104 +100,26 @@ class Mark
     }
 
     /**
-     * Add classId
+     * Set classId
      *
      * @param \AppBundle\Entity\Classes $classId
      *
      * @return Mark
      */
-    public function addClassId(\AppBundle\Entity\Classes $classId)
+    public function setClassId(\AppBundle\Entity\Classes $classId = null)
     {
-        $this->classId[] = $classId;
+        $this->classId = $classId;
 
         return $this;
-    }
-
-    /**
-     * Remove classId
-     *
-     * @param \AppBundle\Entity\Classes $classId
-     */
-    public function removeClassId(\AppBundle\Entity\Classes $classId)
-    {
-        $this->classId->removeElement($classId);
     }
 
     /**
      * Get classId
      *
-     * @return \Doctrine\Common\Collections\Collection
+     * @return \AppBundle\Entity\Classes
      */
     public function getClassId()
     {
         return $this->classId;
-    }
-
-    /**
-     * Add studentMarkId
-     *
-     * @param \AppBundle\Entity\Student $studentMarkId
-     *
-     * @return Mark
-     */
-    public function addStudentMarkId(\AppBundle\Entity\Student $studentMarkId)
-    {
-        $this->studentMarkId[] = $studentMarkId;
-
-        return $this;
-    }
-
-    /**
-     * Remove studentMarkId
-     *
-     * @param \AppBundle\Entity\Student $studentMarkId
-     */
-    public function removeStudentMarkId(\AppBundle\Entity\Student $studentMarkId)
-    {
-        $this->studentMarkId->removeElement($studentMarkId);
-    }
-
-    /**
-     * Get studentMarkId
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getStudentMarkId()
-    {
-        return $this->studentMarkId;
-    }
-
-    /**
-     * Add classMarkId
-     *
-     * @param \AppBundle\Entity\Classes $classMarkId
-     *
-     * @return Mark
-     */
-    public function addClassMarkId(\AppBundle\Entity\Classes $classMarkId)
-    {
-        $this->classMarkId[] = $classMarkId;
-
-        return $this;
-    }
-
-    /**
-     * Remove classMarkId
-     *
-     * @param \AppBundle\Entity\Classes $classMarkId
-     */
-    public function removeClassMarkId(\AppBundle\Entity\Classes $classMarkId)
-    {
-        $this->classMarkId->removeElement($classMarkId);
-    }
-
-    /**
-     * Get classMarkId
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getClassMarkId()
-    {
-        return $this->classMarkId;
     }
 }

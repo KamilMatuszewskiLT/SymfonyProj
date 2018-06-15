@@ -15,16 +15,7 @@ class StudentController extends Controller
 {
 
     private const PDF_PRINT_LOCATION = 'C:\wamp64\bin\php\php7.2.4\DBExample\app\Resources\PDFs\\';
-    /* Doesn't work.
-    public $students;
-    public $classes;
 
-    function __construct(){
-    $doct = $this->getDoctrine()->getManager(); //FatalThrowableErrorHTTP 500 Internal Server Error Call to a member function has() on null
-    $this->$students = $doct->getRepository('AppBundle:Student');
-    $this->$classes = $doct->getRepository('AppBundle:Classes');
-    }
-     */
     /**
      * @Route("/student/display")
      */
@@ -107,12 +98,30 @@ class StudentController extends Controller
     }
     /**
      * @Route("/student/update/{id}", name="student_update", requirements={"id"="\d+"})
-     * @Route("/student/update/{id}/{param}", name="student_update_pdf", requirements={"id"="\d+"}) 
+     * @Route("/student/update/{id}/{param}", name="student_update_pdf", requirements={"id"="\d+"})
      */
     public function updateAction($id, LoggerInterface $logger, $param = null)
     {
         $doct = $this->getDoctrine()->getManager();
         $stud = $doct->getRepository('AppBundle:Student')->find($id);
+        $allMarks = $stud->getMarks();
+        $marks = array(
+        );
+        for ($i = 0; $i < count($allMarks); $i++) {
+            $marks[$i] = array(
+                "classId" => $allMarks[$i]->getClassId()->getName(),
+                "markValue" => $allMarks[$i]->getMarkValue(),
+            );
+        }
+        // Replace duplicate names in the class name column with '--'
+        $oldName = "";
+        for ($i = 0; $i < count($marks); $i++) {
+            if ($marks[$i]['classId'] != $oldName) {
+                $oldName = $marks[$i]['classId'];
+            } else {
+                $marks[$i]['classId'] = '--';
+            }
+        }
         if (!$stud) {
             $this->addFlash(
                 'notice',
@@ -130,7 +139,7 @@ class StudentController extends Controller
         $classes = $stud->getClasses();
 
         for ($i = 0; $i < count($allClasses); $i++) {
-            $allClasses[$i]["isAttending"] = false; // First add the "isAttending" field to each class, so it exists.
+            $allClasses[$i]["isAttending"] = false; // First add the "isAttending" field to each class, so the field exists.
             for ($j = 0; $j < count($classes); $j++) {
                 //$logger->info($classes[$j]->getId() . ' ' . $allClasses[$i]['id']);
                 if ($classes[$j]->getId() == $allClasses[$i]['id']) {
@@ -147,21 +156,20 @@ class StudentController extends Controller
                     $this->renderView(
                         'student/studentPDF.html.twig',
                         array(
-                            'student' => $stud, 'allClasses' => $allClasses, 'classes' => $classes,
+                            'student' => $stud, 'allClasses' => $allClasses, 'classes' => $classes, 'marks' => $marks,
                         )
                     ),
-                    $this::PDF_PRINT_LOCATION.$stud->getName().'_ID'.$stud->getId().'.pdf'
+                    $this::PDF_PRINT_LOCATION . $stud->getName() . '_ID' . $stud->getId() . '.pdf'
                 );
                 $this->addFlash(
                     'notice',
-                    "Created file: ".$this::PDF_PRINT_LOCATION.$stud->getName().'_ID'.$stud->getId().'.pdf'
+                    "Created file: " . $this::PDF_PRINT_LOCATION . $stud->getName() . '_ID' . $stud->getId() . '.pdf'
                 );
                 return $this->redirect("/student/update/$id");
                 break;
             case null:
             default:
-                return $this->render("student/update.html.twig", array('student' => $stud, 'allClasses' => $allClasses, 'classes' => $classes));
+                return $this->render("student/update.html.twig", array('student' => $stud, 'allClasses' => $allClasses, 'classes' => $classes, 'marks' => $marks));
         }
-        return $this->render("student/update.html.twig", array('student' => $stud, 'allClasses' => $allClasses, 'classes' => $classes));
     }
 }
