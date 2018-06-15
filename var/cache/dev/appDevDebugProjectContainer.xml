@@ -590,6 +590,9 @@
     <service id="AppBundle\Controller\StudentController" class="AppBundle\Controller\StudentController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
     </service>
+    <service id="AppBundle\Controller\StudentController_UpdateAction" class="AppBundle\Controller\StudentController_UpdateAction" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+    </service>
     <service id="AppBundle\Controller\StudentController_UpdateClassAction" class="AppBundle\Controller\StudentController_UpdateClassAction" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
     </service>
@@ -610,7 +613,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
       <tag name="controller.argument_value_resolver" priority="-50"/>
-      <argument type="service" id="service_locator.lvrw7wg"/>
+      <argument type="service" id="service_locator.rietil4"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false">
       <tag name="controller.argument_value_resolver" priority="-100"/>
@@ -3985,19 +3988,21 @@
     <service id="abstract.instanceof.AppBundle\Controller\MarksController" class="AppBundle\Controller\MarksController" public="true" autowire="true" autoconfigure="true" abstract="true"/>
     <service id="instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.AppBundle\Controller\StudentController" class="AppBundle\Controller\StudentController" public="true" autowire="true" abstract="true"/>
     <service id="abstract.instanceof.AppBundle\Controller\StudentController" class="AppBundle\Controller\StudentController" public="true" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id="instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.AppBundle\Controller\StudentController_UpdateAction" class="AppBundle\Controller\StudentController_UpdateAction" public="true" autowire="true" abstract="true"/>
+    <service id="abstract.instanceof.AppBundle\Controller\StudentController_UpdateAction" class="AppBundle\Controller\StudentController_UpdateAction" public="true" autowire="true" autoconfigure="true" abstract="true"/>
     <service id="instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.AppBundle\Controller\StudentController_UpdateClassAction" class="AppBundle\Controller\StudentController_UpdateClassAction" public="true" autowire="true" abstract="true"/>
     <service id="abstract.instanceof.AppBundle\Controller\StudentController_UpdateClassAction" class="AppBundle\Controller\StudentController_UpdateClassAction" public="true" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id="service_locator.dnot1vr" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id="service_locator.pxjt33e" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="logger" type="service" id="monolog.logger" on-invalid="ignore"/>
       </argument>
     </service>
-    <service id="service_locator.lvrw7wg" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id="service_locator.rietil4" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="AppBundle\Controller\StudentController:updateAction" type="service" id="service_locator.dnot1vr"/>
-        <argument key="AppBundle\Controller\StudentController::updateAction" type="service" id="service_locator.dnot1vr"/>
+        <argument key="AppBundle\Controller\StudentController_UpdateAction:updateAction" type="service" id="service_locator.pxjt33e"/>
+        <argument key="AppBundle\Controller\StudentController_UpdateAction::updateAction" type="service" id="service_locator.pxjt33e"/>
       </argument>
     </service>
     <service id="console.command_loader" class="Symfony\Component\Console\CommandLoader\ContainerCommandLoader" public="true">

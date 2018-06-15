@@ -44,6 +44,16 @@ class Student
         $this->classes = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
+    public function checkIfAttendsClass(Classes $class){
+        $classesOfStudent = $this->getClasses();
+        for ($i = 0; $i < count($classesOfStudent); $i++) {
+            if ($class->getId() == $classesOfStudent[$i]->getId()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     /**
      * Get id
      *

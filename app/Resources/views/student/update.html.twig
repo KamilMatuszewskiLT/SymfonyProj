@@ -12,9 +12,9 @@
                 <th>Address</th>
             </tr>
             <tr>
-                <th>{{ student.id }}</th>
-                <th>{{ student.name }}</th>
-                <th>{{ student.address }}</th>
+                <td>{{ student.id }}</td>
+                <td>{{ student.name }}</td>
+                <td>{{ student.address }}</td>
             </tr>
         </table>
         {% for class in allClasses %}
@@ -52,11 +52,13 @@
             <tr>
                 <th>Class</th>
                 <th>Mark</th>
+                <th>Delete</th>
             </tr>
             {% for mark in marks %}
                 <tr>
-                    <th>{{ mark.classId }}</th>
-                    <th>{{ mark.markValue }}</th>
+                    <td>{{ mark.classId }}</td>
+                    <td>{{ mark.markValue }}</td>
+                    <td><a id="deleter" href="{{ path('mark_delete', { 'markId' : mark.markId, 'studId' : student.id }) }}">X</a></th>
                 </tr>
             {% endfor %}
         </table>

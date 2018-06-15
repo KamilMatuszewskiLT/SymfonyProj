@@ -30,22 +30,12 @@ class MarksController extends Controller
             );
             return $this->redirect("/student/display/$studId");
         }
-        function checkClasses()
-        {
-            $classesOfStudent = $stud->getClasses();
-            for ($i = 0; $i < count($classesOfStudent); $i++) {
-                if ($classId == $classesOfStudent[$i]->getId()) {
-                    return true;
-                }
-            }
-            return false;
-        }
-        if (!$class || $mark > 6 || $mark < 1) {
+        if (!$stud->checkIfAttendsClass($class) || $mark > 6 || $mark < 1) {
             $this->addFlash(
                 'notice',
                 'Improper data in student/addMark/.'
             );
-            return $this->redirect("/student/display/$studId");
+            return $this->redirect("/student/update/$studId");
         }
 
         $newMark = new Mark;
@@ -58,6 +48,32 @@ class MarksController extends Controller
         $this->addFlash(
             'notice',
             'Added mark with value of ' . $mark . ' to student ID ' . $studId .' '.$stud->getName().  ' for class ID ' . $classId . ' ' . $class->getName() . '.'
+        );
+        return $this->redirect("/student/update/$studId");
+    }
+
+    /**
+      * @Route("/student/delMark/{studId}/{markId}",name="mark_delete" , requirements={
+     *       "markId"="\d+",
+     *       "studId"="\d+",
+     * },)
+     */
+    public function deleteAction($markId, $studId)
+    {
+        $doct = $this->getDoctrine()->getManager();
+        $stud = $doct->getRepository('AppBundle:Student')->find($studId);
+        $mark = $doct->getRepository('AppBundle:Mark')->find($markId);
+
+        if (!$stud) {
+            throw $this->createNotFoundException('No student found for id ' . $studId);
+        } else if (!$mark) {
+            throw $this->createNotFoundException('No mark found for id ' . $markId);
+        }
+        $doct->remove($mark);
+        $doct->flush();
+        $this->addFlash(
+            'notice',
+            'Mark deleted.'
         );
         return $this->redirect("/student/update/$studId");
     }

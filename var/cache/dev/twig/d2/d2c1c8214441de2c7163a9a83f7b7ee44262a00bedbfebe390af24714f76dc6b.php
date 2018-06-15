@@ -61,18 +61,18 @@ class __TwigTemplate_605daf3f181ad970e990d545bf28f055105a238973d6d462c7440cd2e50
                 <th>Address</th>
             </tr>
             <tr>
-                <th>";
+                <td>";
         // line 15
         echo twig_escape_filter($this->env, $this->getAttribute(($context["student"] ?? $this->getContext($context, "student")), "id", array()), "html", null, true);
-        echo "</th>
-                <th>";
+        echo "</td>
+                <td>";
         // line 16
         echo twig_escape_filter($this->env, $this->getAttribute(($context["student"] ?? $this->getContext($context, "student")), "name", array()), "html", null, true);
-        echo "</th>
-                <th>";
+        echo "</td>
+                <td>";
         // line 17
         echo twig_escape_filter($this->env, $this->getAttribute(($context["student"] ?? $this->getContext($context, "student")), "address", array()), "html", null, true);
-        echo "</th>
+        echo "</td>
             </tr>
         </table>
         ";
@@ -172,41 +172,46 @@ class __TwigTemplate_605daf3f181ad970e990d545bf28f055105a238973d6d462c7440cd2e50
             <tr>
                 <th>Class</th>
                 <th>Mark</th>
+                <th>Delete</th>
             </tr>
             ";
-        // line 56
+        // line 57
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["marks"] ?? $this->getContext($context, "marks")));
         foreach ($context['_seq'] as $context["_key"] => $context["mark"]) {
-            // line 57
-            echo "                <tr>
-                    <th>";
             // line 58
-            echo twig_escape_filter($this->env, $this->getAttribute($context["mark"], "classId", array()), "html", null, true);
-            echo "</th>
-                    <th>";
+            echo "                <tr>
+                    <td>";
             // line 59
+            echo twig_escape_filter($this->env, $this->getAttribute($context["mark"], "classId", array()), "html", null, true);
+            echo "</td>
+                    <td>";
+            // line 60
             echo twig_escape_filter($this->env, $this->getAttribute($context["mark"], "markValue", array()), "html", null, true);
-            echo "</th>
+            echo "</td>
+                    <td><a id=\"deleter\" href=\"";
+            // line 61
+            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("mark_delete", array("markId" => $this->getAttribute($context["mark"], "markId", array()), "studId" => $this->getAttribute(($context["student"] ?? $this->getContext($context, "student")), "id", array()))), "html", null, true);
+            echo "\">X</a></th>
                 </tr>
             ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['mark'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 62
+        // line 64
         echo "        </table>
         </div>
         <div>
             ";
-        // line 65
+        // line 67
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable($this->getAttribute(($context["app"] ?? $this->getContext($context, "app")), "flashes", array(0 => "notice"), "method"));
         foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-            // line 66
+            // line 68
             echo "                <div class=\"flash-notice\">
                     ";
-            // line 67
+            // line 69
             echo twig_escape_filter($this->env, $context["message"], "html", null, true);
             echo "
                     <a style=\"vertical-align: super; font-size: 14px; background: red; color: white;\" href=\"#\" onclick=\"window.location.reload(true);\">
@@ -217,7 +222,7 @@ class __TwigTemplate_605daf3f181ad970e990d545bf28f055105a238973d6d462c7440cd2e50
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 72
+        // line 74
         echo "
         ";
         
@@ -240,7 +245,7 @@ class __TwigTemplate_605daf3f181ad970e990d545bf28f055105a238973d6d462c7440cd2e50
 
     public function getDebugInfo()
     {
-        return array (  221 => 72,  210 => 67,  207 => 66,  203 => 65,  198 => 62,  189 => 59,  185 => 58,  182 => 57,  178 => 56,  169 => 49,  163 => 48,  154 => 44,  149 => 42,  144 => 39,  135 => 35,  128 => 33,  122 => 32,  116 => 31,  110 => 30,  104 => 29,  98 => 28,  92 => 25,  87 => 22,  84 => 21,  80 => 20,  74 => 17,  70 => 16,  66 => 15,  54 => 6,  49 => 3,  40 => 2,  11 => 1,);
+        return array (  226 => 74,  215 => 69,  212 => 68,  208 => 67,  203 => 64,  194 => 61,  190 => 60,  186 => 59,  183 => 58,  179 => 57,  169 => 49,  163 => 48,  154 => 44,  149 => 42,  144 => 39,  135 => 35,  128 => 33,  122 => 32,  116 => 31,  110 => 30,  104 => 29,  98 => 28,  92 => 25,  87 => 22,  84 => 21,  80 => 20,  74 => 17,  70 => 16,  66 => 15,  54 => 6,  49 => 3,  40 => 2,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -267,9 +272,9 @@ class __TwigTemplate_605daf3f181ad970e990d545bf28f055105a238973d6d462c7440cd2e50
                 <th>Address</th>
             </tr>
             <tr>
-                <th>{{ student.id }}</th>
-                <th>{{ student.name }}</th>
-                <th>{{ student.address }}</th>
+                <td>{{ student.id }}</td>
+                <td>{{ student.name }}</td>
+                <td>{{ student.address }}</td>
             </tr>
         </table>
         {% for class in allClasses %}
@@ -307,11 +312,13 @@ class __TwigTemplate_605daf3f181ad970e990d545bf28f055105a238973d6d462c7440cd2e50
             <tr>
                 <th>Class</th>
                 <th>Mark</th>
+                <th>Delete</th>
             </tr>
             {% for mark in marks %}
                 <tr>
-                    <th>{{ mark.classId }}</th>
-                    <th>{{ mark.markValue }}</th>
+                    <td>{{ mark.classId }}</td>
+                    <td>{{ mark.markValue }}</td>
+                    <td><a id=\"deleter\" href=\"{{ path('mark_delete', { 'markId' : mark.markId, 'studId' : student.id }) }}\">X</a></th>
                 </tr>
             {% endfor %}
         </table>

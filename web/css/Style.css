@@ -127,7 +127,7 @@ input[type="checkbox"] {
     width: 20px !important;
 }
 
-tr:nth-child(even) td:nth-child(odd), tr:nth-child(odd) td:nth-child(even) {
+tr:nth-child(even) {
     background-color: #003100;
 }
 

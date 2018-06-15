@@ -148,25 +148,33 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'app_marks_addmark')), array (  '_controller' => 'AppBundle\\Controller\\MarksController::addMark',));
             }
 
-            // app_student_display
-            if ('/student/display' === $pathinfo) {
-                return array (  '_controller' => 'AppBundle\\Controller\\StudentController::displayAction',  '_route' => 'app_student_display',);
+            if (0 === strpos($pathinfo, '/student/d')) {
+                // mark_delete
+                if (0 === strpos($pathinfo, '/student/delMark') && preg_match('#^/student/delMark/(?P<studId>\\d+)/(?P<markId>\\d+)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'mark_delete')), array (  '_controller' => 'AppBundle\\Controller\\MarksController::deleteAction',));
+                }
+
+                // student_delete
+                if (0 === strpos($pathinfo, '/student/delete') && preg_match('#^/student/delete/(?P<id>\\d+)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'student_delete')), array (  '_controller' => 'AppBundle\\Controller\\StudentController::deleteAction',));
+                }
+
+                // app_student_display
+                if ('/student/display' === $pathinfo) {
+                    return array (  '_controller' => 'AppBundle\\Controller\\StudentController::displayAction',  '_route' => 'app_student_display',);
+                }
+
             }
 
-            // student_delete
-            if (0 === strpos($pathinfo, '/student/delete') && preg_match('#^/student/delete/(?P<id>\\d+)$#sD', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'student_delete')), array (  '_controller' => 'AppBundle\\Controller\\StudentController::deleteAction',));
-            }
-
-            if (0 === strpos($pathinfo, '/student/update')) {
+            elseif (0 === strpos($pathinfo, '/student/update')) {
                 // student_update
                 if (preg_match('#^/student/update/(?P<id>\\d+)$#sD', $pathinfo, $matches)) {
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'student_update')), array (  '_controller' => 'AppBundle\\Controller\\StudentController::updateAction',));
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'student_update')), array (  '_controller' => 'AppBundle\\Controller\\StudentController_UpdateAction::updateAction',));
                 }
 
                 // student_update_pdf
                 if (preg_match('#^/student/update/(?P<id>\\d+)(?:/(?P<param>[^/]++))?$#sD', $pathinfo, $matches)) {
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'student_update_pdf')), array (  'param' => NULL,  '_controller' => 'AppBundle\\Controller\\StudentController::updateAction',));
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'student_update_pdf')), array (  'param' => NULL,  '_controller' => 'AppBundle\\Controller\\StudentController_UpdateAction::updateAction',));
                 }
 
                 // app_student_updateclassaction_updateclass
