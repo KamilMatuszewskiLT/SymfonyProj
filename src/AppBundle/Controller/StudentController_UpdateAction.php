@@ -1,15 +1,10 @@
 <?php
 namespace AppBundle\Controller;
 
-use AppBundle\Entity\Classes;
 use AppBundle\Entity\Student;
 use Psr\Log\LoggerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\HttpFoundation\Request;
 
 class StudentController_UpdateAction extends Controller
 {
@@ -33,7 +28,14 @@ class StudentController_UpdateAction extends Controller
                 "markValue" => $allMarks[$i]->getMarkValue(),
             );
         }
-        /*
+
+        // Sort classes in the array by name.
+        $className = array();
+        foreach ($marks as $key => $row) {
+            $className[$key] = $row['classId'];
+        }
+        array_multisort($className, SORT_DESC, $marks);
+
         // Replace duplicate names in the class name column with '--'
         $oldName = "";
         for ($i = 0; $i < count($marks); $i++) {
@@ -43,7 +45,7 @@ class StudentController_UpdateAction extends Controller
                 $marks[$i]['classId'] = '--';
             }
         }
-        */
+
         if (!$stud) {
             $this->addFlash(
                 'notice',
