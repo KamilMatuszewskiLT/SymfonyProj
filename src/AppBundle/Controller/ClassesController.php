@@ -52,6 +52,10 @@ class ClassesController extends Controller
         if (!$class) {
             throw $this->createNotFoundException('No class found for id ' . $id);
         }
+        $marks = $class->getMarks();
+        for($i = 0 ; $i < count($marks); $i++){
+            $doct->remove($marks[$i]);
+        }
         $doct->remove($class);
         $doct->flush();
         $this->addFlash(

@@ -28,6 +28,11 @@ class Classes
      */
     private $students;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Mark", mappedBy="classId")
+     */
+    private $marks;
+
     public function __construct()
     {
         $this->students = new \Doctrine\Common\Collections\ArrayCollection();
@@ -99,5 +104,39 @@ class Classes
     public function getStudents()
     {
         return $this->students;
+    }
+
+    /**
+     * Add mark
+     *
+     * @param \AppBundle\Entity\Mark $mark
+     *
+     * @return Classes
+     */
+    public function addMark(\AppBundle\Entity\Mark $mark)
+    {
+        $this->marks[] = $mark;
+
+        return $this;
+    }
+
+    /**
+     * Remove mark
+     *
+     * @param \AppBundle\Entity\Mark $mark
+     */
+    public function removeMark(\AppBundle\Entity\Mark $mark)
+    {
+        $this->marks->removeElement($mark);
+    }
+
+    /**
+     * Get marks
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getMarks()
+    {
+        return $this->marks;
     }
 }

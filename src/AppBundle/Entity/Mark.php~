@@ -31,7 +31,7 @@ class Mark
     private $studentId;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Classes")
+     * @ORM\ManyToOne(targetEntity="Classes", inversedBy="marks")
      */
     private $classId;
 
@@ -40,4 +40,86 @@ class Mark
         $this->studentId = new \Doctrine\Common\Collections\ArrayCollection();
         $this->classId = new \Doctrine\Common\Collections\ArrayCollection();
     }    
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set markValue
+     *
+     * @param integer $markValue
+     *
+     * @return Mark
+     */
+    public function setMarkValue($markValue)
+    {
+        $this->markValue = $markValue;
+
+        return $this;
+    }
+
+    /**
+     * Get markValue
+     *
+     * @return integer
+     */
+    public function getMarkValue()
+    {
+        return $this->markValue;
+    }
+
+    /**
+     * Set studentId
+     *
+     * @param \AppBundle\Entity\Student $studentId
+     *
+     * @return Mark
+     */
+    public function setStudentId(\AppBundle\Entity\Student $studentId = null)
+    {
+        $this->studentId = $studentId;
+
+        return $this;
+    }
+
+    /**
+     * Get studentId
+     *
+     * @return \AppBundle\Entity\Student
+     */
+    public function getStudentId()
+    {
+        return $this->studentId;
+    }
+
+    /**
+     * Set classId
+     *
+     * @param \AppBundle\Entity\Classes $classId
+     *
+     * @return Mark
+     */
+    public function setClassId(\AppBundle\Entity\Classes $classId = null)
+    {
+        $this->classId = $classId;
+
+        return $this;
+    }
+
+    /**
+     * Get classId
+     *
+     * @return \AppBundle\Entity\Classes
+     */
+    public function getClassId()
+    {
+        return $this->classId;
+    }
 }

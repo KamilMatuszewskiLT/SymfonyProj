@@ -31,7 +31,7 @@ class Mark
     private $studentId;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Classes")
+     * @ORM\ManyToOne(targetEntity="Classes", inversedBy="marks")
      */
     private $classId;
 

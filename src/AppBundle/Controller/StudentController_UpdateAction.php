@@ -25,7 +25,7 @@ class StudentController_UpdateAction extends Controller
         $doct = $this->getDoctrine()->getManager();
         $stud = $doct->getRepository('AppBundle:Student')->find($id);
         $allMarks = $stud->getMarks();
-        $marks = array( "markId", "classId", "markValue");
+        $marks = array();
         for ($i = 0; $i < count($allMarks); $i++) {
             $marks[$i] = array(
                 "markId" => $allMarks[$i]->getId(),

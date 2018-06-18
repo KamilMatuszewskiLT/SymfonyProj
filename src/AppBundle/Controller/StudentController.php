@@ -88,6 +88,10 @@ class StudentController extends Controller
         if (!$stud) {
             throw $this->createNotFoundException('No student found for id ' . $id);
         }
+        $marks = $stud->getMarks();
+        for($i = 0 ; $i < count($marks); $i++){
+            $doct->remove($marks[$i]);
+        }
         $doct->remove($stud);
         $doct->flush();
         $this->addFlash(

@@ -28,6 +28,11 @@ class Classes
      */
     private $students;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Mark", mappedBy="classId")
+     */
+    private $marks;
+
     public function __construct()
     {
         $this->students = new \Doctrine\Common\Collections\ArrayCollection();
