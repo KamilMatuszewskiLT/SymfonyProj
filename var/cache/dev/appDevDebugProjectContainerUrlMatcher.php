@@ -28,17 +28,43 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             $canonicalMethod = 'GET';
         }
 
-        // _assetic_508b264
-        if ('/js/508b264.js' === $pathinfo) {
-            return array (  '_controller' => 'assetic.controller:render',  'name' => '508b264',  'pos' => NULL,  '_format' => 'js',  '_route' => '_assetic_508b264',);
+        if (0 === strpos($pathinfo, '/js')) {
+            // _assetic_4a5f0f3
+            if ('/js/4a5f0f3.js' === $pathinfo) {
+                return array (  '_controller' => 'assetic.controller:render',  'name' => '4a5f0f3',  'pos' => NULL,  '_format' => 'js',  '_route' => '_assetic_4a5f0f3',);
+            }
+
+            if (0 === strpos($pathinfo, '/js/4a5f0f3_')) {
+                // _assetic_4a5f0f3_0
+                if ('/js/4a5f0f3_jquery.min_1.js' === $pathinfo) {
+                    return array (  '_controller' => 'assetic.controller:render',  'name' => '4a5f0f3',  'pos' => 0,  '_format' => 'js',  '_route' => '_assetic_4a5f0f3_0',);
+                }
+
+                // _assetic_4a5f0f3_1
+                if ('/js/4a5f0f3_scripts_2.js' === $pathinfo) {
+                    return array (  '_controller' => 'assetic.controller:render',  'name' => '4a5f0f3',  'pos' => 1,  '_format' => 'js',  '_route' => '_assetic_4a5f0f3_1',);
+                }
+
+                // _assetic_4a5f0f3_2
+                if ('/js/4a5f0f3_JQueryScripts_3.js' === $pathinfo) {
+                    return array (  '_controller' => 'assetic.controller:render',  'name' => '4a5f0f3',  'pos' => 2,  '_format' => 'js',  '_route' => '_assetic_4a5f0f3_2',);
+                }
+
+            }
+
+            // _assetic_508b264
+            if ('/js/508b264.js' === $pathinfo) {
+                return array (  '_controller' => 'assetic.controller:render',  'name' => '508b264',  'pos' => NULL,  '_format' => 'js',  '_route' => '_assetic_508b264',);
+            }
+
+            // _assetic_508b264_0
+            if ('/js/508b264_scripts_1.js' === $pathinfo) {
+                return array (  '_controller' => 'assetic.controller:render',  'name' => '508b264',  'pos' => 0,  '_format' => 'js',  '_route' => '_assetic_508b264_0',);
+            }
+
         }
 
-        // _assetic_508b264_0
-        if ('/js/508b264_scripts_1.js' === $pathinfo) {
-            return array (  '_controller' => 'assetic.controller:render',  'name' => '508b264',  'pos' => 0,  '_format' => 'js',  '_route' => '_assetic_508b264_0',);
-        }
-
-        if (0 === strpos($pathinfo, '/_')) {
+        elseif (0 === strpos($pathinfo, '/_')) {
             // _wdt
             if (0 === strpos($pathinfo, '/_wdt') && preg_match('#^/_wdt/(?P<token>[^/]++)$#sD', $pathinfo, $matches)) {
                 return $this->mergeDefaults(array_replace($matches, array('_route' => '_wdt')), array (  '_controller' => 'web_profiler.controller.profiler:toolbarAction',));

@@ -1,0 +1,11 @@
+$(document).ready(function(){
+   var names = $(".className").toArray();
+   names.sort(function(a,b){
+       return $(a).text().localCompare($(b).text())
+   })
+   for(var i = 0 ; i < names.length; i++){
+    console.log(names[i].innerHTML);
+   }
+
+});
+

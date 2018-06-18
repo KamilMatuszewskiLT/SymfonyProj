@@ -47,16 +47,16 @@ class __TwigTemplate_890f9266ef8455b8440fa5079534e487593bbb20fc49fa19dd18b7764cf
         // line 12
         echo "        ";
         $this->displayBlock('my_javascripts', $context, $blocks);
-        // line 20
+        // line 21
         echo "    </head>
     <body>
         ";
-        // line 22
-        $this->displayBlock('body', $context, $blocks);
         // line 23
+        $this->displayBlock('body', $context, $blocks);
+        // line 24
         echo "        ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 24
+        // line 25
         echo "    </body>
 </html>";
         
@@ -119,23 +119,35 @@ class __TwigTemplate_890f9266ef8455b8440fa5079534e487593bbb20fc49fa19dd18b7764cf
         // line 13
         echo "            ";
         if (isset($context['assetic']['debug']) && $context['assetic']['debug']) {
-            // asset "508b264_0"
-            $context["asset_url"] = isset($context['assetic']['use_controller']) && $context['assetic']['use_controller'] ? $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("_assetic_508b264_0") : $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("_controller/js/508b264_scripts_1.js");
-            // line 17
+            // asset "4a5f0f3_0"
+            $context["asset_url"] = isset($context['assetic']['use_controller']) && $context['assetic']['use_controller'] ? $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("_assetic_4a5f0f3_0") : $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("_controller/js/4a5f0f3_jquery.min_1.js");
+            // line 18
+            echo "            <script src=\"";
+            echo twig_escape_filter($this->env, ($context["asset_url"] ?? $this->getContext($context, "asset_url")), "html", null, true);
+            echo "\" type=\"text/javascript\"></script>
+            ";
+            // asset "4a5f0f3_1"
+            $context["asset_url"] = isset($context['assetic']['use_controller']) && $context['assetic']['use_controller'] ? $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("_assetic_4a5f0f3_1") : $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("_controller/js/4a5f0f3_scripts_2.js");
+            echo "            <script src=\"";
+            echo twig_escape_filter($this->env, ($context["asset_url"] ?? $this->getContext($context, "asset_url")), "html", null, true);
+            echo "\" type=\"text/javascript\"></script>
+            ";
+            // asset "4a5f0f3_2"
+            $context["asset_url"] = isset($context['assetic']['use_controller']) && $context['assetic']['use_controller'] ? $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("_assetic_4a5f0f3_2") : $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("_controller/js/4a5f0f3_JQueryScripts_3.js");
             echo "            <script src=\"";
             echo twig_escape_filter($this->env, ($context["asset_url"] ?? $this->getContext($context, "asset_url")), "html", null, true);
             echo "\" type=\"text/javascript\"></script>
             ";
         } else {
-            // asset "508b264"
-            $context["asset_url"] = isset($context['assetic']['use_controller']) && $context['assetic']['use_controller'] ? $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("_assetic_508b264") : $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("_controller/js/508b264.js");
+            // asset "4a5f0f3"
+            $context["asset_url"] = isset($context['assetic']['use_controller']) && $context['assetic']['use_controller'] ? $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("_assetic_4a5f0f3") : $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("_controller/js/4a5f0f3.js");
             echo "            <script src=\"";
             echo twig_escape_filter($this->env, ($context["asset_url"] ?? $this->getContext($context, "asset_url")), "html", null, true);
             echo "\" type=\"text/javascript\"></script>
             ";
         }
         unset($context["asset_url"]);
-        // line 19
+        // line 20
         echo "        ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -145,7 +157,7 @@ class __TwigTemplate_890f9266ef8455b8440fa5079534e487593bbb20fc49fa19dd18b7764cf
 
     }
 
-    // line 22
+    // line 23
     public function block_body($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
@@ -162,7 +174,7 @@ class __TwigTemplate_890f9266ef8455b8440fa5079534e487593bbb20fc49fa19dd18b7764cf
 
     }
 
-    // line 23
+    // line 24
     public function block_javascripts($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
@@ -191,7 +203,7 @@ class __TwigTemplate_890f9266ef8455b8440fa5079534e487593bbb20fc49fa19dd18b7764cf
 
     public function getDebugInfo()
     {
-        return array (  166 => 23,  149 => 22,  139 => 19,  125 => 17,  120 => 13,  111 => 12,  98 => 10,  89 => 9,  71 => 6,  60 => 24,  57 => 23,  55 => 22,  51 => 20,  48 => 12,  46 => 9,  42 => 8,  39 => 7,  37 => 6,  30 => 1,);
+        return array (  178 => 24,  161 => 23,  151 => 20,  125 => 18,  120 => 13,  111 => 12,  98 => 10,  89 => 9,  71 => 6,  60 => 25,  57 => 24,  55 => 23,  51 => 21,  48 => 12,  46 => 9,  42 => 8,  39 => 7,  37 => 6,  30 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -217,8 +229,9 @@ class __TwigTemplate_890f9266ef8455b8440fa5079534e487593bbb20fc49fa19dd18b7764cf
         {% endblock %}
         {% block my_javascripts %}
             {% javascripts
+            'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'
             'js/scripts.js'
-            filter = '?uglifyjs2'
+            'js/JQueryScripts.js'
  %}
             <script src=\"{{ asset_url }}\" type=\"text/javascript\"></script>
             {% endjavascripts %}

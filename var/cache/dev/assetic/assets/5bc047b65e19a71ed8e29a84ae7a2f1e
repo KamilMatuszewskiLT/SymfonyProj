@@ -1,0 +1,7 @@
+$(document).ready(function(){
+   $names = $(".className").toArray();
+   console.log($names);
+   $names.sort();
+   console.log($names);
+});
+

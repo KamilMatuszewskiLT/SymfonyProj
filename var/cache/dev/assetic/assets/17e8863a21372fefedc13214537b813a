@@ -1,0 +1,5 @@
+$(document).ready(function(){
+   $names = $(".className").html();
+   console.log($names);
+});
+

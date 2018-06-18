@@ -1,0 +1,12 @@
+$(document).ready(function(){
+   var names = $(".className").toArray();
+   names.sort(function(a,b){
+       console.log(a.innerHTML + " : " + b.innerHTML);
+       return (a < b) ? -1 : (a > b) ? 1 : 0;
+    })
+   for(var i = 0 ; i < names.length; i++){
+    console.log(names[i].innerHTML);
+   }
+
+});
+

@@ -33,6 +33,7 @@ class StudentController_UpdateAction extends Controller
                 "markValue" => $allMarks[$i]->getMarkValue(),
             );
         }
+        /*
         // Replace duplicate names in the class name column with '--'
         $oldName = "";
         for ($i = 0; $i < count($marks); $i++) {
@@ -42,6 +43,7 @@ class StudentController_UpdateAction extends Controller
                 $marks[$i]['classId'] = '--';
             }
         }
+        */
         if (!$stud) {
             $this->addFlash(
                 'notice',

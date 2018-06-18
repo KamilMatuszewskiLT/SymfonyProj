@@ -11,8 +11,9 @@
         {% endblock %}
         {% block my_javascripts %}
             {% javascripts
+            'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'
             'js/scripts.js'
-            filter = '?uglifyjs2'
+            'js/JQueryScripts.js'
  %}
             <script src="{{ asset_url }}" type="text/javascript"></script>
             {% endjavascripts %}

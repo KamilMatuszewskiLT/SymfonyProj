@@ -168,10 +168,10 @@ class __TwigTemplate_605daf3f181ad970e990d545bf28f055105a238973d6d462c7440cd2e50
         // line 49
         echo "        </div>
         <div class=\"column30\">
-        <table class=\"table\">
+        <table id=\"table1\" class=\"table\">
             <tr>
-                <th>Class</th>
-                <th>Mark</th>
+                <th><input class=\"sortButton\" type=\"button\" onclick=\"sortTable(0)\" value=\"Class\"></th>
+                <th><input class=\"sortButton\" type=\"button\" onclick=\"sortTable(1)\" value=\"Mark\"></th>
                 <th>Delete</th>
             </tr>
             ";
@@ -181,7 +181,7 @@ class __TwigTemplate_605daf3f181ad970e990d545bf28f055105a238973d6d462c7440cd2e50
         foreach ($context['_seq'] as $context["_key"] => $context["mark"]) {
             // line 58
             echo "                <tr>
-                    <td>";
+                    <td class=\"className\">";
             // line 59
             echo twig_escape_filter($this->env, $this->getAttribute($context["mark"], "classId", array()), "html", null, true);
             echo "</td>
@@ -308,15 +308,15 @@ class __TwigTemplate_605daf3f181ad970e990d545bf28f055105a238973d6d462c7440cd2e50
         {% endfor %}
         </div>
         <div class=\"column30\">
-        <table class=\"table\">
+        <table id=\"table1\" class=\"table\">
             <tr>
-                <th>Class</th>
-                <th>Mark</th>
+                <th><input class=\"sortButton\" type=\"button\" onclick=\"sortTable(0)\" value=\"Class\"></th>
+                <th><input class=\"sortButton\" type=\"button\" onclick=\"sortTable(1)\" value=\"Mark\"></th>
                 <th>Delete</th>
             </tr>
             {% for mark in marks %}
                 <tr>
-                    <td>{{ mark.classId }}</td>
+                    <td class=\"className\">{{ mark.classId }}</td>
                     <td>{{ mark.markValue }}</td>
                     <td><a id=\"deleter\" href=\"{{ path('mark_delete', { 'markId' : mark.markId, 'studId' : student.id }) }}\">X</a></th>
                 </tr>
