@@ -86,8 +86,13 @@ class StudentController extends Controller
         $stud = $doct->getRepository('AppBundle:Student')->find($id);
 
         if (!$stud) {
-            throw $this->createNotFoundException('No student found for id ' . $id);
+            $this->addFlash(
+                'notice',
+                'No student found for ID '.$id.'.'
+            );
+            return $this->redirect("/student/display");
         }
+        // Remove all marks tied to this student
         $marks = $stud->getMarks();
         for($i = 0 ; $i < count($marks); $i++){
             $doct->remove($marks[$i]);

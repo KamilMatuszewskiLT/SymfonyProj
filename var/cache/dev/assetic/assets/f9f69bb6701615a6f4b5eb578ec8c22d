@@ -1,6 +1,0 @@
-$(document).ready(function(){
-   $names = $(".className").toArray();
-   foreach($name in $names)
-   console.log($name.html());
-});
-

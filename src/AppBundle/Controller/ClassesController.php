@@ -50,8 +50,13 @@ class ClassesController extends Controller
         $class = $doct->getRepository('AppBundle:Classes')->find($id);
 
         if (!$class) {
-            throw $this->createNotFoundException('No class found for id ' . $id);
+            $this->addFlash(
+                'notice',
+                'No class found for ID '.$id.'.'
+            );
+            return $this->redirect("/class/display");
         }
+        // Remove all marks tied to this class
         $marks = $class->getMarks();
         for($i = 0 ; $i < count($marks); $i++){
             $doct->remove($marks[$i]);

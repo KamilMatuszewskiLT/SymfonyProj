@@ -56,9 +56,17 @@ class ComposerStaticInita012dbda041c75bd179b65bd9c6508f3
             'Psr\\Container\\' => 14,
             'Psr\\Cache\\' => 10,
         ),
+        'N' => 
+        array (
+            'Nyholm\\' => 7,
+        ),
         'M' => 
         array (
             'Monolog\\' => 8,
+        ),
+        'L' => 
+        array (
+            'League\\Flysystem\\' => 17,
         ),
         'K' => 
         array (
@@ -86,6 +94,11 @@ class ComposerStaticInita012dbda041c75bd179b65bd9c6508f3
         'C' => 
         array (
             'Composer\\CaBundle\\' => 18,
+        ),
+        'B' => 
+        array (
+            'BackupManager\\' => 14,
+            'BM\\BackupManagerBundle\\' => 23,
         ),
         'A' => 
         array (
@@ -198,9 +211,17 @@ class ComposerStaticInita012dbda041c75bd179b65bd9c6508f3
         array (
             0 => __DIR__ . '/..' . '/psr/cache/src',
         ),
+        'Nyholm\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/nyholm/dsn/src',
+        ),
         'Monolog\\' => 
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
+        ),
+        'League\\Flysystem\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/league/flysystem/src',
         ),
         'Knp\\Snappy\\' => 
         array (
@@ -249,6 +270,14 @@ class ComposerStaticInita012dbda041c75bd179b65bd9c6508f3
         'Composer\\CaBundle\\' => 
         array (
             0 => __DIR__ . '/..' . '/composer/ca-bundle/src',
+        ),
+        'BackupManager\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/backup-manager/backup-manager/src',
+        ),
+        'BM\\BackupManagerBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/backup-manager/symfony',
         ),
         'AppBundle\\' => 
         array (

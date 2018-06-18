@@ -42,6 +42,7 @@ class Student
     public function __construct()
     {
         $this->classes = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->marks = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     public function checkIfAttendsClass(Classes $class){
