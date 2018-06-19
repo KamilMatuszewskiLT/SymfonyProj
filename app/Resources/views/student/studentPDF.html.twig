@@ -3,58 +3,58 @@
     <head>
         <meta charset="UTF-8"/>
         <title>
-            {% block title %}Welcome!{% endblock %}
+            #{{ student.id }}-{{ student.name }}
         </title>
-        <body>
-            <div class="row">
-                <div class="column30">
-
-                    <table id="studentData" class="table">
+    </head>
+    <body>
+        <div class="row">
+            <div class="column30">
+                <table id="studentData" class="table">
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Address</th>
+                    </tr>
+                    <tr>
+                        <th>{{ student.id }}</th>
+                        <th>{{ student.name }}</th>
+                        <th>{{ student.address }}</th>
+                    </tr>
+                </table>
+                {% for class in allClasses %}
+                    {% if class.isAttending %}
+                        <div style="font-size: 20px;">
+                            <p style="margin-left: 14px;">
+                                Is attending
+                                {{ class.name }}.
+                                <br/>
+                            </p>
+                        </div><br/>
+                    {% else %}
+                        <div style="font-size: 20px;">
+                            <p style="margin-left: 14px;">
+                                Is not attending
+                                {{ class.name }}.
+                                <br/>
+                            </p>
+                        </div><br/>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="column30">
+                <table class="table">
+                    <tr>
+                        <th>Class</th>
+                        <th>Mark</th>
+                    </tr>
+                    {% for mark in marks %}
                         <tr>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Address</th>
+                            <th>{{ mark.classId }}</th>
+                            <th>{{ mark.markValue }}</th>
                         </tr>
-                        <tr>
-                            <th>{{ student.id }}</th>
-                            <th>{{ student.name }}</th>
-                            <th>{{ student.address }}</th>
-                        </tr>
-                    </table>
-                    {% for class in allClasses %}
-                        {% if class.isAttending %}
-                            <div style="font-size: 20px;">
-                                <p style="margin-left: 14px;">
-                                    Is attending
-                                    {{ class.name }}.
-                                    <br/>
-                                </p>
-                            </div><br/>
-                        {% else %}
-                            <div style="font-size: 20px;">
-                                <p style="margin-left: 14px;">
-                                    Is not attending
-                                    {{ class.name }}.
-                                    <br/>
-                                </p>
-                            </div><br/>
-                        {% endif %}
                     {% endfor %}
-                </div>
-                <div class="column30">
-                    <table class="table">
-                        <tr>
-                            <th>Class</th>
-                            <th>Mark</th>
-                        </tr>
-                        {% for mark in marks %}
-                            <tr>
-                                <th>{{ mark.classId }}</th>
-                                <th>{{ mark.markValue }}</th>
-                            </tr>
-                        {% endfor %}
-                    </table>
-                </div>
-                <div>
-                </body>
-            </html>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

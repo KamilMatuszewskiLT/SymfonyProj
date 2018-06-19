@@ -20,6 +20,16 @@ class StudentController_UpdateAction extends Controller
         $doct = $this->getDoctrine()->getManager();
         $stud = $doct->getRepository('AppBundle:Student')->find($id);
         $allMarks = $stud->getMarks();
+
+        if (!$stud) {
+            $this->addFlash(
+                'notice',
+                'No student for id ' . $id . '.'
+            );
+            return $this->redirect("/student/display");
+        }
+
+        // Cast marks from objects to an array
         $marks = array();
         for ($i = 0; $i < count($allMarks); $i++) {
             $marks[$i] = array(
@@ -46,13 +56,7 @@ class StudentController_UpdateAction extends Controller
             }
         }
 
-        if (!$stud) {
-            $this->addFlash(
-                'notice',
-                'No student for id ' . $id . '.'
-            );
-            return $this->redirect("/student/display");
-        }
+        // Get all available classes.
         $connection = $this->getDoctrine()->getManager()->getConnection();
         $allClassesQuery = $connection->prepare("SELECT * FROM class");
         $allClassesQuery->execute();
@@ -60,12 +64,13 @@ class StudentController_UpdateAction extends Controller
         while ($row = $allClassesQuery->fetch()) {
             $allClasses[] = $row;
         }
+
+        //Get only classes into which the student has enrolled.
         $classes = $stud->getClasses();
 
         for ($i = 0; $i < count($allClasses); $i++) {
-            $allClasses[$i]["isAttending"] = false; // First add the "isAttending" field to each class, so the field exists.
+            $allClasses[$i]["isAttending"] = false; // First add the "isAttending" field to each class, so this field exists.
             for ($j = 0; $j < count($classes); $j++) {
-                //$logger->info($classes[$j]->getId() . ' ' . $allClasses[$i]['id']);
                 if ($classes[$j]->getId() == $allClasses[$i]['id']) {
                     $allClasses[$i]["isAttending"] = true;
                     break;
@@ -74,20 +79,31 @@ class StudentController_UpdateAction extends Controller
                 }
             }
         }
+
+        // Print to PDF
         switch ($param) {
             case "pdf":
+            $counter = 0; // Check if file already exists. If it does, add number after the name.
+                do {
+                    if ($counter > 0) {
+                        $PrintFileName = $stud->getName() . '_ID' . $stud->getId() . "_" . $counter . '.pdf';
+                    } else {
+                        $PrintFileName = $stud->getName() . '_ID' . $stud->getId() . '.pdf';
+                    }
+                    $counter++;
+                } while (file_exists($this::PDF_PRINT_LOCATION . $PrintFileName));
                 $this->get('knp_snappy.pdf')->generateFromHtml(
                     $this->renderView(
-                        'student/studentPDF.html.twig',
+                        'student/studentPDF.html.twig', // This file determines how the PDF looks.
                         array(
                             'student' => $stud, 'allClasses' => $allClasses, 'classes' => $classes, 'marks' => $marks,
                         )
                     ),
-                    $this::PDF_PRINT_LOCATION . $stud->getName() . '_ID' . $stud->getId() . '.pdf'
+                    $this::PDF_PRINT_LOCATION . $PrintFileName
                 );
                 $this->addFlash(
                     'notice',
-                    "Created file: " . $this::PDF_PRINT_LOCATION . $stud->getName() . '_ID' . $stud->getId() . '.pdf'
+                    "Created file: " . $this::PDF_PRINT_LOCATION . $PrintFileName
                 );
                 return $this->redirect("/student/update/$id");
                 break;
