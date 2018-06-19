@@ -19,8 +19,8 @@ class StudentController_UpdateAction extends Controller
     {
         $doct = $this->getDoctrine()->getManager();
         $stud = $doct->getRepository('AppBundle:Student')->find($id);
-        $allMarks = $stud->getMarks();
 
+        // First need to check if the student even exists
         if (!$stud) {
             $this->addFlash(
                 'notice',
@@ -28,6 +28,8 @@ class StudentController_UpdateAction extends Controller
             );
             return $this->redirect("/student/display");
         }
+
+        $allMarks = $stud->getMarks();
 
         // Cast marks from objects to an array
         $marks = array();
@@ -86,12 +88,12 @@ class StudentController_UpdateAction extends Controller
             $counter = 0; // Check if file already exists. If it does, add number after the name.
                 do {
                     if ($counter > 0) {
-                        $PrintFileName = $stud->getName() . '_ID' . $stud->getId() . "_" . $counter . '.pdf';
+                        $PrintFilename = $stud->getName() . '_ID' . $stud->getId() . "_" . $counter . '.pdf';
                     } else {
-                        $PrintFileName = $stud->getName() . '_ID' . $stud->getId() . '.pdf';
+                        $PrintFilename = $stud->getName() . '_ID' . $stud->getId() . '.pdf';
                     }
                     $counter++;
-                } while (file_exists($this::PDF_PRINT_LOCATION . $PrintFileName));
+                } while (file_exists($this::PDF_PRINT_LOCATION . $PrintFilename));
                 $this->get('knp_snappy.pdf')->generateFromHtml(
                     $this->renderView(
                         'student/studentPDF.html.twig', // This file determines how the PDF looks.
@@ -99,11 +101,11 @@ class StudentController_UpdateAction extends Controller
                             'student' => $stud, 'allClasses' => $allClasses, 'classes' => $classes, 'marks' => $marks,
                         )
                     ),
-                    $this::PDF_PRINT_LOCATION . $PrintFileName
+                    $this::PDF_PRINT_LOCATION . $PrintFilename
                 );
                 $this->addFlash(
                     'notice',
-                    "Created file: " . $this::PDF_PRINT_LOCATION . $PrintFileName
+                    "Created file: " . $this::PDF_PRINT_LOCATION . $PrintFilename
                 );
                 return $this->redirect("/student/update/$id");
                 break;

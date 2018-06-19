@@ -214,7 +214,7 @@ class __TwigTemplate_605daf3f181ad970e990d545bf28f055105a238973d6d462c7440cd2e50
             // line 69
             echo twig_escape_filter($this->env, $context["message"], "html", null, true);
             echo "
-                    <a style=\"vertical-align: super; font-size: 14px; background: red; color: white;\" href=\"#\" onclick=\"window.location.reload(true);\">
+                    <a class=\"flash-notice-X\" href=\"#\" onclick=\"window.location.reload(true);\">
                         X</a>
                 </div>
             ";
@@ -327,7 +327,7 @@ class __TwigTemplate_605daf3f181ad970e990d545bf28f055105a238973d6d462c7440cd2e50
             {% for message in app.flashes('notice') %}
                 <div class=\"flash-notice\">
                     {{ message }}
-                    <a style=\"vertical-align: super; font-size: 14px; background: red; color: white;\" href=\"#\" onclick=\"window.location.reload(true);\">
+                    <a class=\"flash-notice-X\" href=\"#\" onclick=\"window.location.reload(true);\">
                         X</a>
                 </div>
             {% endfor %}

@@ -46,7 +46,7 @@ class __TwigTemplate_afe51f26e7547da8538d3a8a443f1c9a630df2fcf3a3dc6b65ea902bf00
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 3
-        echo "    <a href=\"/student/display\">Add new student</a>
+        echo "    <a href=\"/student/display\">Edit students</a>
     ";
         // line 4
         if (($context["form"] ?? $this->getContext($context, "form"))) {
@@ -116,7 +116,7 @@ class __TwigTemplate_afe51f26e7547da8538d3a8a443f1c9a630df2fcf3a3dc6b65ea902bf00
             ";
             // line 32
             echo twig_escape_filter($this->env, $context["message"], "html", null, true);
-            echo " <a style=\"vertical-align: super; font-size: 14px; background: red; color: white;\" href=\"#\" onclick=\"window.location.reload(true);\"> X</a>
+            echo " <a class=\"flash-notice-X\" href=\"#\" onclick=\"window.location.reload(true);\"> X</a>
         </div>
     ";
         }
@@ -158,7 +158,7 @@ class __TwigTemplate_afe51f26e7547da8538d3a8a443f1c9a630df2fcf3a3dc6b65ea902bf00
     {
         return new Twig_Source("{% extends 'base.html.twig' %}
 {% block body %}
-    <a href=\"/student/display\">Add new student</a>
+    <a href=\"/student/display\">Edit students</a>
     {% if form %}
     <div id=\"saveForm\" class=\"simpleform\">
         {{ form_start(form) }}
@@ -187,7 +187,7 @@ class __TwigTemplate_afe51f26e7547da8538d3a8a443f1c9a630df2fcf3a3dc6b65ea902bf00
     </table>
     {% for message in app.flashes('notice') %}
         <div class=\"flash-notice\">
-            {{ message }} <a style=\"vertical-align: super; font-size: 14px; background: red; color: white;\" href=\"#\" onclick=\"window.location.reload(true);\"> X</a>
+            {{ message }} <a class=\"flash-notice-X\" href=\"#\" onclick=\"window.location.reload(true);\"> X</a>
         </div>
     {% endfor %}
 {% endblock %}", "classes/display2.html.twig", "C:\\wamp64\\bin\\php\\php7.2.4\\DBExample\\app\\Resources\\views\\classes\\display2.html.twig");

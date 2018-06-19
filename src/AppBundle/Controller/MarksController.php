@@ -47,7 +47,7 @@ class MarksController extends Controller
         $doct->flush();
         $this->addFlash(
             'notice',
-            'Added mark with value of ' . $mark . ' to student ID ' . $studId .' '.$stud->getName().  ' for class ID ' . $classId . ' ' . $class->getName() . '.'
+            'Added mark with value of ' . $mark . ' to student ID ' . $studId .  '-' .$stud->getName().  ' for class ID ' . $classId . '-' . $class->getName() . '.'
         );
         return $this->redirect("/student/update/$studId");
     }
@@ -65,9 +65,17 @@ class MarksController extends Controller
         $mark = $doct->getRepository('AppBundle:Mark')->find($markId);
 
         if (!$stud) {
-            throw $this->createNotFoundException('No student found for id ' . $studId);
+            $this->addFlash(
+                'notice',
+                'No student for ID ' . $studId
+            );
+            return $this->redirect("/student/display/");
         } else if (!$mark) {
-            throw $this->createNotFoundException('No mark found for id ' . $markId);
+            $this->addFlash(
+                'notice',
+                'No mark for ID ' . $markId
+            );
+            return $this->redirect("/student/update/$studId");
         }
         $doct->remove($mark);
         $doct->flush();

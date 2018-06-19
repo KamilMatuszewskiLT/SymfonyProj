@@ -46,7 +46,7 @@ class __TwigTemplate_5a05de10e9019b9205159b530afc067a458b8600fdd2af7ceb6b21bb0d8
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 3
-        echo "    <a href=\"/class/display\">Add new class</a>
+        echo "    <a href=\"/class/display\">Edit classes</a>
     <div class=\"row\">
         <div class=\"column\">
             <div id=\"saveForm\" class=\"simpleform\">
@@ -181,7 +181,7 @@ class __TwigTemplate_5a05de10e9019b9205159b530afc067a458b8600fdd2af7ceb6b21bb0d8
             // line 69
             echo twig_escape_filter($this->env, $context["message"], "html", null, true);
             echo "
-            <a style=\"vertical-align: super; font-size: 14px; background: red; color: white;\" href=\"#\" onclick=\"window.location.reload(true);\">
+            <a class=\"flash-notice-X\" href=\"#\" onclick=\"window.location.reload(true);\">
                 X</a>
         </div>
     ";
@@ -224,7 +224,7 @@ class __TwigTemplate_5a05de10e9019b9205159b530afc067a458b8600fdd2af7ceb6b21bb0d8
     {
         return new Twig_Source("{% extends 'base.html.twig' %}
 {% block body %}
-    <a href=\"/class/display\">Add new class</a>
+    <a href=\"/class/display\">Edit classes</a>
     <div class=\"row\">
         <div class=\"column\">
             <div id=\"saveForm\" class=\"simpleform\">
@@ -291,7 +291,7 @@ class __TwigTemplate_5a05de10e9019b9205159b530afc067a458b8600fdd2af7ceb6b21bb0d8
     {% for message in app.flashes('notice') %}
         <div class=\"flash-notice\">
             {{ message }}
-            <a style=\"vertical-align: super; font-size: 14px; background: red; color: white;\" href=\"#\" onclick=\"window.location.reload(true);\">
+            <a class=\"flash-notice-X\" href=\"#\" onclick=\"window.location.reload(true);\">
                 X</a>
         </div>
     {% endfor %}
