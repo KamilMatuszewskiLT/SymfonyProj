@@ -8,7 +8,7 @@
 
 namespace AppBundle\Service;
 
-use Tests\AppBundle\Service\IsArray;
+use \AppBundle\Service\IsArray;
 
 
 class AverageMarkCalculator
@@ -19,6 +19,9 @@ class AverageMarkCalculator
     {
         if(!(count($marks) > 0)) {
             throw new \InvalidArgumentException ('Count of array given as method argument is < 0');
+        }
+        if(IsArray::all($marks, 'is_int')){
+            throw new \InvalidArgumentException ('Not all values in array are of type int');
         }
             $marks = array_filter($marks);
             $average = array_sum($marks)/count($marks);

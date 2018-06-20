@@ -596,7 +596,7 @@
     <service id="AppBundle\Controller\StudentController_UpdateClassAction" class="AppBundle\Controller\StudentController_UpdateClassAction" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
     </service>
-    <service id="AppBundle\Service\srvc" class="AppBundle\Service\srvc" public="false" autowire="true" autoconfigure="true"/>
+    <service id="AppBundle\Service\AverageMarkCalculator" class="AppBundle\Service\AverageMarkCalculator" public="false" autowire="true" autoconfigure="true"/>
     <service id="controller_name_converter" class="Symfony\Bundle\FrameworkBundle\Controller\ControllerNameParser" public="false">
       <tag name="monolog.logger" channel="request"/>
       <argument type="service" id="kernel"/>

@@ -38,7 +38,7 @@ class AverageMarkCalculatorTest extends \PHPUnit_Framework_TestCase
 
     public function testArrayOfNonNumbersAsArgument()
     {
-
+        $this->expectException(\InvalidArgumentException::class);
         $this->averageCalc->calculateAverage(array("k","dfg","45"));
     }
 }
