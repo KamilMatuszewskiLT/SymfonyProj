@@ -597,6 +597,8 @@
       <tag name="controller.service_arguments"/>
     </service>
     <service id="AppBundle\Service\AverageMarkCalculator" class="AppBundle\Service\AverageMarkCalculator" public="false" autowire="true" autoconfigure="true"/>
+    <service id="AppBundle\Service\AveragesCalculator" class="AppBundle\Service\AveragesCalculator" public="false" autowire="true" autoconfigure="true"/>
+    <service id="AppBundle\Service\IsArrayOfType" class="AppBundle\Service\IsArrayOfType" public="false" autowire="true" autoconfigure="true"/>
     <service id="controller_name_converter" class="Symfony\Bundle\FrameworkBundle\Controller\ControllerNameParser" public="false">
       <tag name="monolog.logger" channel="request"/>
       <argument type="service" id="kernel"/>

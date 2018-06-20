@@ -2,15 +2,457 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4c8f638d-6e82-4eda-aa2a-70eb94c114ad" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/AppBundle/Service/AveragesCalculator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/AppBundle/Service/AveragesCalculatorTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AppBundle/Service/AverageMarkCalculator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Service/AverageMarkCalculator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Service/IsArray.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/AppBundle/Service/AverageMarkCalculatorTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/AppBundle/Service/AverageMarkCalculatorTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/AppBundle/Service/IsArray.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Service/IsArray.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5.legacy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/appDevDebugProjectContainer.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getAnnotations_CacheService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getAnnotations_CacheWarmerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getArgumentResolver_DefaultService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getArgumentResolver_RequestAttributeService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getArgumentResolver_RequestService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getArgumentResolver_ServiceService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getArgumentResolver_SessionService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getArgumentResolver_VariadicService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getAssetic_AssetManagerCacheWarmerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getAssetic_AssetManagerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getAssetic_ControllerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getAssetic_FilterManagerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getAssetic_Filter_CssrewriteService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getCacheClearerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getCacheWarmerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getCache_DefaultClearerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getCache_GlobalClearerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getCache_SystemClearerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getClassesControllerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getConfig_Resource_SelfCheckingResourceCheckerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getConsole_CommandLoaderService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getConsole_Command_AboutService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getConsole_Command_AssetsInstallService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getConsole_Command_CacheClearService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getConsole_Command_CachePoolClearService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getConsole_Command_CachePoolPruneService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getConsole_Command_CacheWarmupService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getConsole_Command_ConfigDebugService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getConsole_Command_ConfigDumpReferenceService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getConsole_Command_ContainerDebugService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getConsole_Command_DebugAutowiringService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getConsole_Command_EventDispatcherDebugService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getConsole_Command_FormDebugService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getConsole_Command_RouterDebugService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getConsole_Command_RouterMatchService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getConsole_Command_XliffLintService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getConsole_Command_YamlLintService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getConsole_ErrorListenerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getDebug_DumpListenerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getDebug_FileLinkFormatter_UrlFormatService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getDefaultControllerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getDependencyInjection_Config_ContainerParametersResourceCheckerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getDeprecated_Form_RegistryService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getDeprecated_Form_Registry_CsrfService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getDoctrineCache_ContainsCommandService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getDoctrineCache_DeleteCommandService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getDoctrineCache_FlushCommandService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getDoctrineCache_Providers_Doctrine_Orm_DefaultMetadataCacheService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getDoctrineCache_Providers_Doctrine_Orm_DefaultQueryCacheService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getDoctrineCache_Providers_Doctrine_Orm_DefaultResultCacheService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getDoctrineCache_StatsCommandService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getDoctrine_CacheClearMetadataCommandService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getDoctrine_CacheClearQueryCacheCommandService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getDoctrine_CacheClearResultCommandService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getDoctrine_CacheCollectionRegionCommandService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getDoctrine_ClearEntityRegionCommandService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getDoctrine_ClearQueryRegionCommandService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getDoctrine_DatabaseCreateCommandService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getDoctrine_DatabaseDropCommandService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getDoctrine_DatabaseImportCommandService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getDoctrine_Dbal_ConnectionFactoryService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getDoctrine_Dbal_DefaultConnectionService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getDoctrine_EnsureProductionSettingsCommandService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getDoctrine_GenerateEntitiesCommandService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getDoctrine_MappingConvertCommandService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getDoctrine_MappingImportCommandService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getDoctrine_MappingInfoCommandService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getDoctrine_Orm_DefaultEntityListenerResolverService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getDoctrine_Orm_DefaultEntityManagerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getDoctrine_Orm_DefaultEntityManager_PropertyInfoExtractorService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getDoctrine_Orm_DefaultListeners_AttachEntityListenersService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getDoctrine_Orm_DefaultManagerConfiguratorService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getDoctrine_Orm_ProxyCacheWarmerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getDoctrine_Orm_Validator_UniqueService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getDoctrine_QueryDqlCommandService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getDoctrine_QuerySqlCommandService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getDoctrine_SchemaCreateCommandService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getDoctrine_SchemaDropCommandService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getDoctrine_SchemaUpdateCommandService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getDoctrine_SchemaValidateCommandService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getFilesystemService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getForm_FactoryService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getForm_RegistryService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getForm_ResolvedTypeFactoryService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getForm_ServerParamsService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getForm_TypeExtension_CsrfService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getForm_TypeExtension_Form_DataCollectorService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getForm_TypeExtension_Form_HttpFoundationService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getForm_TypeExtension_Form_ValidatorService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getForm_TypeExtension_Repeated_ValidatorService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getForm_TypeExtension_Submit_ValidatorService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getForm_TypeExtension_Upload_ValidatorService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getForm_TypeGuesser_DoctrineService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getForm_TypeGuesser_ValidatorService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getForm_Type_BirthdayService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getForm_Type_ButtonService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getForm_Type_CheckboxService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getForm_Type_ChoiceService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getForm_Type_CollectionService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getForm_Type_CountryService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getForm_Type_CurrencyService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getForm_Type_DateService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getForm_Type_DatetimeService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getForm_Type_EmailService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getForm_Type_EntityService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getForm_Type_FileService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getForm_Type_FormService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getForm_Type_HiddenService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getForm_Type_IntegerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getForm_Type_LanguageService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getForm_Type_LocaleService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getForm_Type_MoneyService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getForm_Type_NumberService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getForm_Type_PasswordService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getForm_Type_PercentService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getForm_Type_RadioService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getForm_Type_RangeService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getForm_Type_RepeatedService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getForm_Type_ResetService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getForm_Type_SearchService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getForm_Type_SubmitService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getForm_Type_TextService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getForm_Type_TextareaService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getForm_Type_TimeService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getForm_Type_TimezoneService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getForm_Type_UrlService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getFragment_HandlerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getFragment_Renderer_HincludeService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getFragment_Renderer_InlineService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getHttpExceptionListenerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getKernel_ClassCache_CacheWarmerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getKnpSnappy_ImageService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getKnpSnappy_PdfService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getMarksControllerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getMonolog_Handler_NullInternalService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getMonolog_Logger_AsseticService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getMonolog_Logger_ConsoleService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getMonolog_Logger_DoctrineService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getMonolog_Logger_SecurityService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getMonolog_Logger_SnappyService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getMonolog_Logger_TemplatingService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getPropertyAccessorService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getRedirectControllerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getRouter_CacheWarmerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getRouting_LoaderService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getSecurity_AccessListenerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getSecurity_AccessMapService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getSecurity_Access_AuthenticatedVoterService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getSecurity_Access_ExpressionVoterService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getSecurity_Access_SimpleRoleVoterService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getSecurity_AuthenticationUtilsService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getSecurity_Authentication_GuardHandlerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getSecurity_Authentication_Listener_Anonymous_MainService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getSecurity_Authentication_Provider_Anonymous_MainService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getSecurity_ChannelListenerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getSecurity_Command_UserPasswordEncoderService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getSecurity_ContextListener_0Service.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getSecurity_Csrf_TokenManagerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getSecurity_EncoderFactoryService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getSecurity_Firewall_Map_Context_DevService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getSecurity_Firewall_Map_Context_MainService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getSecurity_PasswordEncoderService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getSecurity_RequestMatcher_Zfhj2lwService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getSecurity_UserValueResolverService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getSecurity_User_Provider_Concrete_InMemoryService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getSecurity_Validator_UserPasswordService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getSensioDistribution_SecurityCheckerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getSensioDistribution_SecurityChecker_CommandService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getServiceLocator_Pxjt33eService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getServicesResetterService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getSessionService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getSession_HandlerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getSession_Storage_FilesystemService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getSession_Storage_MetadataBagService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getSession_Storage_NativeService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getSession_Storage_PhpBridgeService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getStudentControllerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getStudentControllerUpdateActionService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getStudentControllerUpdateClassActionService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getSwiftmailer_EmailSender_ListenerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getSwiftmailer_Mailer_DefaultService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getSwiftmailer_Mailer_Default_Plugin_MessageloggerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getSwiftmailer_Mailer_Default_SpoolService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getSwiftmailer_Mailer_Default_TransportService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getSwiftmailer_Mailer_Default_Transport_EventdispatcherService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getSwiftmailer_Mailer_Default_Transport_RealService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getTemplateControllerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getTemplatingService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getTemplating_CacheWarmer_TemplatePathsService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getTemplating_FilenameParserService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getTemplating_FinderService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getTemplating_Helper_LogoutUrlService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getTemplating_Helper_SecurityService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getTemplating_LoaderService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getTwig_CacheWarmerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getTwig_Command_DebugService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getTwig_Command_LintService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getTwig_Controller_ExceptionService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getTwig_Controller_PreviewErrorService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getTwig_ExceptionListenerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getTwig_Form_RendererService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getTwig_Runtime_HttpkernelService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getTwig_TemplateCacheWarmerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getTwig_Translation_ExtractorService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getValidator_EmailService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getValidator_ExpressionService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getValidator_Mapping_CacheWarmerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getVarDumper_CliDumperService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getWebProfiler_Controller_ExceptionService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getWebProfiler_Controller_ProfilerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getWebProfiler_Controller_RouterService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getWebServer_Command_ServerLogService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getWebServer_Command_ServerRunService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getWebServer_Command_ServerStartService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getWebServer_Command_ServerStatusService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/getWebServer_Command_ServerStopService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerKbdmnz5/removed-ids.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/appDevDebugProjectContainer.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getAnnotations_CacheService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getAnnotations_CacheWarmerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getArgumentResolver_DefaultService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getArgumentResolver_RequestAttributeService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getArgumentResolver_RequestService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getArgumentResolver_ServiceService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getArgumentResolver_SessionService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getArgumentResolver_VariadicService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getAssetic_AssetManagerCacheWarmerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getAssetic_AssetManagerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getAssetic_ControllerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getAssetic_FilterManagerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getAssetic_Filter_CssrewriteService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getCacheClearerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getCacheWarmerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getCache_DefaultClearerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getCache_GlobalClearerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getCache_SystemClearerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getClassesControllerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getConfig_Resource_SelfCheckingResourceCheckerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getConsole_CommandLoaderService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getConsole_Command_AboutService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getConsole_Command_AssetsInstallService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getConsole_Command_CacheClearService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getConsole_Command_CachePoolClearService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getConsole_Command_CachePoolPruneService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getConsole_Command_CacheWarmupService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getConsole_Command_ConfigDebugService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getConsole_Command_ConfigDumpReferenceService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getConsole_Command_ContainerDebugService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getConsole_Command_DebugAutowiringService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getConsole_Command_EventDispatcherDebugService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getConsole_Command_FormDebugService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getConsole_Command_RouterDebugService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getConsole_Command_RouterMatchService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getConsole_Command_XliffLintService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getConsole_Command_YamlLintService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getConsole_ErrorListenerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getDebug_DumpListenerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getDebug_FileLinkFormatter_UrlFormatService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getDefaultControllerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getDependencyInjection_Config_ContainerParametersResourceCheckerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getDeprecated_Form_RegistryService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getDeprecated_Form_Registry_CsrfService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getDoctrineCache_ContainsCommandService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getDoctrineCache_DeleteCommandService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getDoctrineCache_FlushCommandService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getDoctrineCache_Providers_Doctrine_Orm_DefaultMetadataCacheService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getDoctrineCache_Providers_Doctrine_Orm_DefaultQueryCacheService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getDoctrineCache_Providers_Doctrine_Orm_DefaultResultCacheService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getDoctrineCache_StatsCommandService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getDoctrine_CacheClearMetadataCommandService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getDoctrine_CacheClearQueryCacheCommandService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getDoctrine_CacheClearResultCommandService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getDoctrine_CacheCollectionRegionCommandService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getDoctrine_ClearEntityRegionCommandService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getDoctrine_ClearQueryRegionCommandService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getDoctrine_DatabaseCreateCommandService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getDoctrine_DatabaseDropCommandService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getDoctrine_DatabaseImportCommandService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getDoctrine_Dbal_ConnectionFactoryService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getDoctrine_Dbal_DefaultConnectionService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getDoctrine_EnsureProductionSettingsCommandService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getDoctrine_GenerateEntitiesCommandService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getDoctrine_MappingConvertCommandService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getDoctrine_MappingImportCommandService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getDoctrine_MappingInfoCommandService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getDoctrine_Orm_DefaultEntityListenerResolverService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getDoctrine_Orm_DefaultEntityManagerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getDoctrine_Orm_DefaultEntityManager_PropertyInfoExtractorService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getDoctrine_Orm_DefaultListeners_AttachEntityListenersService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getDoctrine_Orm_DefaultManagerConfiguratorService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getDoctrine_Orm_ProxyCacheWarmerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getDoctrine_Orm_Validator_UniqueService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getDoctrine_QueryDqlCommandService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getDoctrine_QuerySqlCommandService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getDoctrine_SchemaCreateCommandService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getDoctrine_SchemaDropCommandService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getDoctrine_SchemaUpdateCommandService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getDoctrine_SchemaValidateCommandService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getFilesystemService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getForm_FactoryService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getForm_RegistryService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getForm_ResolvedTypeFactoryService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getForm_ServerParamsService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getForm_TypeExtension_CsrfService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getForm_TypeExtension_Form_DataCollectorService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getForm_TypeExtension_Form_HttpFoundationService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getForm_TypeExtension_Form_ValidatorService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getForm_TypeExtension_Repeated_ValidatorService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getForm_TypeExtension_Submit_ValidatorService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getForm_TypeExtension_Upload_ValidatorService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getForm_TypeGuesser_DoctrineService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getForm_TypeGuesser_ValidatorService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getForm_Type_BirthdayService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getForm_Type_ButtonService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getForm_Type_CheckboxService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getForm_Type_ChoiceService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getForm_Type_CollectionService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getForm_Type_CountryService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getForm_Type_CurrencyService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getForm_Type_DateService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getForm_Type_DatetimeService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getForm_Type_EmailService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getForm_Type_EntityService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getForm_Type_FileService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getForm_Type_FormService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getForm_Type_HiddenService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getForm_Type_IntegerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getForm_Type_LanguageService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getForm_Type_LocaleService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getForm_Type_MoneyService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getForm_Type_NumberService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getForm_Type_PasswordService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getForm_Type_PercentService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getForm_Type_RadioService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getForm_Type_RangeService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getForm_Type_RepeatedService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getForm_Type_ResetService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getForm_Type_SearchService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getForm_Type_SubmitService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getForm_Type_TextService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getForm_Type_TextareaService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getForm_Type_TimeService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getForm_Type_TimezoneService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getForm_Type_UrlService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getFragment_HandlerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getFragment_Renderer_HincludeService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getFragment_Renderer_InlineService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getHttpExceptionListenerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getKernel_ClassCache_CacheWarmerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getKnpSnappy_ImageService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getKnpSnappy_PdfService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getMarksControllerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getMonolog_Handler_NullInternalService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getMonolog_Logger_AsseticService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getMonolog_Logger_ConsoleService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getMonolog_Logger_DoctrineService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getMonolog_Logger_SecurityService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getMonolog_Logger_SnappyService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getMonolog_Logger_TemplatingService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getPropertyAccessorService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getRedirectControllerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getRouter_CacheWarmerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getRouting_LoaderService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getSecurity_AccessListenerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getSecurity_AccessMapService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getSecurity_Access_AuthenticatedVoterService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getSecurity_Access_ExpressionVoterService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getSecurity_Access_SimpleRoleVoterService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getSecurity_AuthenticationUtilsService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getSecurity_Authentication_GuardHandlerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getSecurity_Authentication_Listener_Anonymous_MainService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getSecurity_Authentication_Provider_Anonymous_MainService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getSecurity_ChannelListenerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getSecurity_Command_UserPasswordEncoderService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getSecurity_ContextListener_0Service.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getSecurity_Csrf_TokenManagerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getSecurity_EncoderFactoryService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getSecurity_Firewall_Map_Context_DevService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getSecurity_Firewall_Map_Context_MainService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getSecurity_PasswordEncoderService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getSecurity_RequestMatcher_Zfhj2lwService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getSecurity_UserValueResolverService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getSecurity_User_Provider_Concrete_InMemoryService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getSecurity_Validator_UserPasswordService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getSensioDistribution_SecurityCheckerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getSensioDistribution_SecurityChecker_CommandService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getServiceLocator_Pxjt33eService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getServicesResetterService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getSessionService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getSession_HandlerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getSession_Storage_FilesystemService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getSession_Storage_MetadataBagService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getSession_Storage_NativeService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getSession_Storage_PhpBridgeService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getStudentControllerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getStudentControllerUpdateActionService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getStudentControllerUpdateClassActionService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getSwiftmailer_EmailSender_ListenerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getSwiftmailer_Mailer_DefaultService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getSwiftmailer_Mailer_Default_Plugin_MessageloggerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getSwiftmailer_Mailer_Default_SpoolService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getSwiftmailer_Mailer_Default_TransportService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getSwiftmailer_Mailer_Default_Transport_EventdispatcherService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getSwiftmailer_Mailer_Default_Transport_RealService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getTemplateControllerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getTemplatingService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getTemplating_CacheWarmer_TemplatePathsService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getTemplating_FilenameParserService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getTemplating_FinderService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getTemplating_Helper_LogoutUrlService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getTemplating_Helper_SecurityService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getTemplating_LoaderService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getTwig_CacheWarmerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getTwig_Command_DebugService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getTwig_Command_LintService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getTwig_Controller_ExceptionService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getTwig_Controller_PreviewErrorService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getTwig_ExceptionListenerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getTwig_Form_RendererService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getTwig_Runtime_HttpkernelService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getTwig_TemplateCacheWarmerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getTwig_Translation_ExtractorService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getValidator_EmailService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getValidator_ExpressionService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getValidator_Mapping_CacheWarmerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getVarDumper_CliDumperService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getWebProfiler_Controller_ExceptionService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getWebProfiler_Controller_ProfilerService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getWebProfiler_Controller_RouterService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getWebServer_Command_ServerLogService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getWebServer_Command_ServerRunService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getWebServer_Command_ServerStartService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getWebServer_Command_ServerStatusService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/getWebServer_Command_ServerStopService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/ContainerMskyf2k/removed-ids.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php.meta" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml.meta" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerCompiler.log" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerCompiler.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/logs/dev.log" beforeDir="false" afterPath="$PROJECT_DIR$/var/logs/dev.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/sessions/dev/sess_23o3lbe7v8468j8gjdpjcnl7vg" beforeDir="false" afterPath="$PROJECT_DIR$/var/sessions/dev/sess_23o3lbe7v8468j8gjdpjcnl7vg" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,8 +469,8 @@
       <file leaf-file-name="MarksController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/MarksController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="16" column="29" selection-end-line="88" />
+            <state relative-caret-position="306">
+              <caret line="33" column="28" selection-start-line="33" selection-start-column="28" selection-end-line="33" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -36,8 +478,17 @@
       <file leaf-file-name="StudentController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/StudentController.php">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="25" column="69" lean-forward="true" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="69" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AveragesCalculator.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/AveragesCalculator.php">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="476">
-              <caret line="66" column="38" selection-start-line="66" selection-start-column="38" selection-end-line="66" selection-end-column="38" />
+              <caret line="33" column="10" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -45,17 +496,11 @@
       <file leaf-file-name="AverageMarkCalculator.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/AverageMarkCalculator.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="23" column="89" selection-start-line="23" selection-start-column="89" selection-end-line="23" selection-end-column="89" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IsArray.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/IsArray.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="17" column="48" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
+            <state relative-caret-position="323">
+              <caret line="19" column="47" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
+              <folding>
+                <element signature="e#131#162#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -63,8 +508,29 @@
       <file leaf-file-name="AverageMarkCalculatorTest.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tests/AppBundle/Service/AverageMarkCalculatorTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="40" column="65" selection-start-line="40" selection-start-column="65" selection-end-line="40" selection-end-column="65" />
+            <state relative-caret-position="238">
+              <caret line="19" column="62" lean-forward="true" selection-start-line="19" selection-start-column="62" selection-end-line="19" selection-end-column="62" />
+              <folding>
+                <element signature="e#137#163#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AveragesCalculatorTest.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/AppBundle/Service/AveragesCalculatorTest.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="32" column="4" lean-forward="true" selection-start-line="32" selection-start-column="4" selection-end-line="36" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IsArrayOfType.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/IsArrayOfType.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="20" column="59" selection-start-line="20" selection-start-column="59" selection-end-line="20" selection-end-column="59" />
             </state>
           </provider>
         </entry>
@@ -72,8 +538,8 @@
       <file leaf-file-name="Mark.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Mark.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="18" column="7" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
+            <state relative-caret-position="170">
+              <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -90,6 +556,11 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/BackupController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Service/srvc.php" />
         <option value="$PROJECT_DIR$/tests/AppBundle/Service/IsArray.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Service/IsArray.php" />
+        <option value="$PROJECT_DIR$/tests/AppBundle/Service/AveragesCalculatorTest.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Service/IsArrayOfType.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Mark.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Service/AveragesCalculator.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Service/AverageMarkCalculator.php" />
         <option value="$PROJECT_DIR$/tests/AppBundle/Service/AverageMarkCalculatorTest.php" />
       </list>
@@ -378,6 +849,9 @@
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\bin\php\php7.2.4\DBExample\src\AppBundle\Service" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\wamp64\bin\php\php7.2.4\DBExample\src\AppBundle\Service" />
     </key>
@@ -394,19 +868,36 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="PHPUnit.tests">
-    <configuration name="tests" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner directory="$PROJECT_DIR$/tests" />
+  <component name="RunManager" selected="PHPUnit.AveragesCalculatorTest.testNonArrayAsArgument">
+    <configuration name="AverageMarkCalculatorTest.testAverage" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\AppBundle\Service\AverageMarkCalculatorTest" file="$PROJECT_DIR$/tests/AppBundle/Service/AveragesCalculatorTest.php" method="testAverage" scope="Method" />
     </configuration>
-    <configuration name="StudentController.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/src/AppBundle/Controller/StudentController.php" />
+    <configuration name="AveragesCalculatorTest.testArrayOfNonNumbersAsArgument" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\AppBundle\Service\AveragesCalculatorTest" file="$PROJECT_DIR$/tests/AppBundle/Service/AveragesCalculatorTest.php" method="testArrayOfNonNumbersAsArgument" scope="Method" />
+    </configuration>
+    <configuration name="AveragesCalculatorTest.testAverage" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\AppBundle\Service\AveragesCalculatorTest" file="$PROJECT_DIR$/tests/AppBundle/Service/AveragesCalculatorTest.php" method="testAverage" scope="Method" />
+    </configuration>
+    <configuration name="AveragesCalculatorTest.testEmptyArray" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\AppBundle\Service\AveragesCalculatorTest" file="$PROJECT_DIR$/tests/AppBundle/Service/AveragesCalculatorTest.php" method="testEmptyArray" scope="Method" />
+    </configuration>
+    <configuration name="AveragesCalculatorTest.testNonArrayAsArgument" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\AppBundle\Service\AveragesCalculatorTest" file="$PROJECT_DIR$/tests/AppBundle/Service/AveragesCalculatorTest.php" method="testNonArrayAsArgument" scope="Method" />
+    </configuration>
     <list>
-      <item itemvalue="PHP Script.StudentController.php" />
-      <item itemvalue="PHPUnit.tests" />
+      <item itemvalue="PHPUnit.AverageMarkCalculatorTest.testAverage" />
+      <item itemvalue="PHPUnit.AveragesCalculatorTest.testAverage" />
+      <item itemvalue="PHPUnit.AveragesCalculatorTest.testEmptyArray" />
+      <item itemvalue="PHPUnit.AveragesCalculatorTest.testArrayOfNonNumbersAsArgument" />
+      <item itemvalue="PHPUnit.AveragesCalculatorTest.testNonArrayAsArgument" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="PHPUnit.tests" />
-        <item itemvalue="PHP Script.StudentController.php" />
+        <item itemvalue="PHPUnit.AveragesCalculatorTest.testNonArrayAsArgument" />
+        <item itemvalue="PHPUnit.AveragesCalculatorTest.testArrayOfNonNumbersAsArgument" />
+        <item itemvalue="PHPUnit.AveragesCalculatorTest.testEmptyArray" />
+        <item itemvalue="PHPUnit.AveragesCalculatorTest.testAverage" />
+        <item itemvalue="PHPUnit.AverageMarkCalculatorTest.testAverage" />
       </list>
     </recent_temporary>
   </component>
@@ -422,32 +913,59 @@
       <updated>1529403598153</updated>
       <workItem from="1529403607181" duration="345000" />
       <workItem from="1529403994363" duration="5041000" />
-      <workItem from="1529476156275" duration="6326000" />
+      <workItem from="1529476156275" duration="16447000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="tests - 2018.06.20 at 09h 04m 30s.xml">
+    <history-entry file="tests - 2018.06.20 at 10h 37m 51s.xml">
       <configuration name="tests" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="AverageMarkCalculatorTest_testNonArrayAsArgument - 2018.06.20 at 10h 46m 34s.xml">
+      <configuration name="AverageMarkCalculatorTest.testNonArrayAsArgument" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="AverageMarkCalculatorTest_testArrayOfNonNumbersAsArgument - 2018.06.20 at 10h 46m 45s.xml">
+      <configuration name="AverageMarkCalculatorTest.testArrayOfNonNumbersAsArgument" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="AverageMarkCalculatorTest_testAverage - 2018.06.20 at 10h 53m 41s.xml">
+      <configuration name="AverageMarkCalculatorTest.testAverage" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="AveragesCalculatorTest_testAverage - 2018.06.20 at 13h 33m 14s.xml">
+      <configuration name="AveragesCalculatorTest.testAverage" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="AveragesCalculatorTest_testAverage - 2018.06.20 at 13h 33m 56s.xml">
+      <configuration name="AveragesCalculatorTest.testAverage" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="AveragesCalculatorTest_testAverage - 2018.06.20 at 13h 34m 26s.xml">
+      <configuration name="AveragesCalculatorTest.testAverage" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="AveragesCalculatorTest_testEmptyArray - 2018.06.20 at 13h 34m 28s.xml">
+      <configuration name="AveragesCalculatorTest.testEmptyArray" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="AveragesCalculatorTest_testArrayOfNonNumbersAsArgument - 2018.06.20 at 13h 34m 30s.xml">
+      <configuration name="AveragesCalculatorTest.testArrayOfNonNumbersAsArgument" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="AveragesCalculatorTest_testNonArrayAsArgument - 2018.06.20 at 13h 34m 33s.xml">
+      <configuration name="AveragesCalculatorTest.testNonArrayAsArgument" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11712000" />
+    <option name="totallyTimeSpent" value="21833000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1096" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18020834" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32925585" />
-      <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32925585" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18020834" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32925585" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39959225" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -456,7 +974,6 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32925585" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -501,13 +1018,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/MarksController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="16" column="29" selection-end-line="88" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/var/cache/dev/ContainerXn5csx3/getBackupControllerService.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -519,41 +1029,75 @@
     <entry file="file://$PROJECT_DIR$/serverRun.bash">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/srvc.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/MarksController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="33" column="28" selection-start-line="33" selection-start-column="28" selection-end-line="33" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/phpunit/phpunit/src/Framework/TestCase.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="2115" column="23" selection-start-line="2115" selection-start-column="23" selection-end-line="2115" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/IsArrayOfType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="20" column="59" selection-start-line="20" selection-start-column="59" selection-end-line="20" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Mark.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="18" column="7" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
+        <state relative-caret-position="170">
+          <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/StudentController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="66" column="38" selection-start-line="66" selection-start-column="38" selection-end-line="66" selection-end-column="38" />
+        <state relative-caret-position="187">
+          <caret line="25" column="69" lean-forward="true" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="69" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/srvc.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/IsArray.php">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/AveragesCalculator.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="17" column="48" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
+        <state relative-caret-position="476">
+          <caret line="33" column="10" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/AverageMarkCalculator.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="23" column="89" selection-start-line="23" selection-start-column="89" selection-end-line="23" selection-end-column="89" />
+        <state relative-caret-position="323">
+          <caret line="19" column="47" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
+          <folding>
+            <element signature="e#131#162#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/AppBundle/Service/AveragesCalculatorTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="32" column="4" lean-forward="true" selection-start-line="32" selection-start-column="4" selection-end-line="36" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/AppBundle/Service/AverageMarkCalculatorTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="40" column="65" selection-start-line="40" selection-start-column="65" selection-end-line="40" selection-end-column="65" />
+        <state relative-caret-position="238">
+          <caret line="19" column="62" lean-forward="true" selection-start-line="19" selection-start-column="62" selection-end-line="19" selection-end-column="62" />
+          <folding>
+            <element signature="e#137#163#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

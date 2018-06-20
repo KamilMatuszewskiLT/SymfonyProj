@@ -26,3 +26,6 @@ a2c887,127.0.0.1,GET,http://localhost:8000/student/update/23,1529483301,,200
 430f61,127.0.0.1,GET,http://localhost:8000/student/update/23,1529483304,,200
 dbb9fd,127.0.0.1,GET,http://localhost:8000/student/update/23/10/rm,1529483493,,302
 3b1b0b,127.0.0.1,GET,http://localhost:8000/student/update/23,1529483493,,200
+1298d0,127.0.0.1,GET,http://localhost:8000/student/display,1529484772,,200
+f83b11,127.0.0.1,GET,http://localhost:8000/student/display,1529503020,,200
+da7f39,127.0.0.1,GET,http://localhost:8000/student/update/13,1529503023,,200
