@@ -74,6 +74,11 @@ class Student
 
     }
 
+    // This function is used for EasyAdmin virtual property
+    public function getIDName(){
+        return $this->getId().'-'.$this->getName();
+    }
+
     /**
      * Get id
      *

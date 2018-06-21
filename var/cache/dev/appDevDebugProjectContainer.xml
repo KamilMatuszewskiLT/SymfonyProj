@@ -411,11 +411,10 @@
     <parameter key="knp_snappy.image.options" type="collection"/>
     <parameter key="knp_snappy.image.env" type="collection"/>
     <parameter key="easyadmin.config" type="collection">
-      <parameter key="entities" type="collection">
-        <parameter key="Student" type="collection">
-          <parameter key="class">AppBundle\Entity\Student</parameter>
-          <parameter key="name">Student</parameter>
-        </parameter>
+      <parameter key="site_name">Interniet Plush</parameter>
+      <parameter key="list" type="collection">
+        <parameter key="max_results">20</parameter>
+        <parameter key="actions" type="collection"/>
       </parameter>
       <parameter key="design" type="collection">
         <parameter key="assets" type="collection">
@@ -426,15 +425,93 @@
             <parameter key="mime_type">image/x-icon</parameter>
           </parameter>
         </parameter>
+        <parameter key="menu" type="collection">
+          <parameter type="collection">
+            <parameter key="label">Objects</parameter>
+            <parameter key="children" type="collection">
+              <parameter type="collection">
+                <parameter key="entity">Mark</parameter>
+                <parameter key="label">Marks</parameter>
+                <parameter key="icon">tag</parameter>
+              </parameter>
+              <parameter type="collection">
+                <parameter key="entity">Student</parameter>
+              </parameter>
+              <parameter type="collection">
+                <parameter key="entity">Classes</parameter>
+                <parameter key="label">Classes</parameter>
+              </parameter>
+            </parameter>
+          </parameter>
+          <parameter type="collection">
+            <parameter key="label">-------------------------------</parameter>
+          </parameter>
+          <parameter type="collection">
+            <parameter key="label">Go to App</parameter>
+            <parameter key="url">../student/display</parameter>
+          </parameter>
+        </parameter>
         <parameter key="theme">default</parameter>
         <parameter key="color_scheme">dark</parameter>
         <parameter key="brand_color">#205081</parameter>
         <parameter key="form_theme" type="collection">
           <parameter>@EasyAdmin/form/bootstrap_3_horizontal_layout.html.twig</parameter>
         </parameter>
-        <parameter key="menu" type="collection"/>
       </parameter>
-      <parameter key="site_name">EasyAdmin</parameter>
+      <parameter key="entities" type="collection">
+        <parameter key="Student" type="collection">
+          <parameter key="class">AppBundle\Entity\Student</parameter>
+          <parameter key="help">This is a entity specific message!</parameter>
+          <parameter key="label">Students</parameter>
+          <parameter key="list" type="collection">
+            <parameter key="title">List of all %entity_label%</parameter>
+            <parameter key="max_results">5</parameter>
+            <parameter key="fields" type="collection">
+              <parameter type="collection">
+                <parameter key="property">IDName</parameter>
+                <parameter key="label">ID + name</parameter>
+                <parameter key="type">string</parameter>
+              </parameter>
+              <parameter type="collection">
+                <parameter key="property">id</parameter>
+                <parameter key="label">L.p.</parameter>
+                <parameter key="type">smallint</parameter>
+              </parameter>
+              <parameter>name</parameter>
+              <parameter type="collection">
+                <parameter key="property">classes</parameter>
+              </parameter>
+              <parameter>marks</parameter>
+              <parameter>address</parameter>
+            </parameter>
+          </parameter>
+          <parameter key="show" type="collection">
+            <parameter key="title">%entity_label% (#%entity_id%)</parameter>
+          </parameter>
+          <parameter key="search" type="collection">
+            <parameter key="sort" type="collection">
+              <parameter>name</parameter>
+              <parameter>ASC</parameter>
+            </parameter>
+          </parameter>
+          <parameter key="name">Student</parameter>
+        </parameter>
+        <parameter key="Classes" type="collection">
+          <parameter key="class">AppBundle\Entity\Classes</parameter>
+          <parameter key="name">Classes</parameter>
+        </parameter>
+        <parameter key="Mark" type="collection">
+          <parameter key="help">null</parameter>
+          <parameter key="class">AppBundle\Entity\Mark</parameter>
+          <parameter key="list" type="collection">
+            <parameter key="dql_filter">entity.markValue &gt; 3 AND entity.markValue &lt; 7 AND entity.id != '24'</parameter>
+          </parameter>
+          <parameter key="search" type="collection">
+            <parameter key="dql_filter"></parameter>
+          </parameter>
+          <parameter key="name">Mark</parameter>
+        </parameter>
+      </parameter>
       <parameter key="formats" type="collection">
         <parameter key="date">Y-m-d</parameter>
         <parameter key="time">H:i:s</parameter>
@@ -442,10 +519,6 @@
       </parameter>
       <parameter key="disabled_actions" type="collection"/>
       <parameter key="translation_domain">messages</parameter>
-      <parameter key="list" type="collection">
-        <parameter key="actions" type="collection"/>
-        <parameter key="max_results">15</parameter>
-      </parameter>
       <parameter key="search" type="collection"/>
       <parameter key="edit" type="collection">
         <parameter key="actions" type="collection"/>
@@ -1828,14 +1901,6 @@
       </call>
       <call method="addListener">
         <argument>kernel.request</argument>
-        <argument type="collection">
-          <argument type="service" id="debug.debug_handlers_listener"/>
-          <argument>configure</argument>
-        </argument>
-        <argument>2048</argument>
-      </call>
-      <call method="addListener">
-        <argument>console.command</argument>
         <argument type="collection">
           <argument type="service" id="debug.debug_handlers_listener"/>
           <argument>configure</argument>

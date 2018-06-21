@@ -86,8 +86,45 @@ knp_snappy:
         options:    []
 
 easy_admin:
+    site_name: 'Interniet Plush'
+    list:
+      max_results: 20
+    design:
+      assets:
+        css:
+          # - '//example.org/css/admin1.css'
+        js:
+          # - '//example.org/js/admin1.js'
+      menu:
+        - label: 'Objects'
+          children:
+            - { entity: 'Mark', label: 'Marks', icon: 'tag'}
+            - { entity: 'Student'}
+            - { entity: 'Classes', label: 'Classes'}
+        - { label: '-------------------------------' }
+        - { label: 'Go to App', url: '../student/display' }
     entities:
         # change the following to the namespaces of your own entities
-        - AppBundle\Entity\Student
-        - AppBundle\Entity\Classes
-        - AppBundle\Entity\Marks
+        Student:
+          class: AppBundle\Entity\Student
+          help: 'This is a entity specific message!'
+          label: 'Students'
+          list:
+            title: 'List of all %%entity_label%%'
+            max_results: 5
+            fields: [{property: 'IDName', label: 'ID + name', type: 'string'}, { property: 'id', label: 'L.p.', type: 'smallint' }, 'name', {property: 'classes'}, 'marks', 'address']
+          show:
+            title: '%%entity_label%% (#%%entity_id%%)'
+          search:
+          #when displaying search result, sort them by field 'name'
+            sort: ['name', 'ASC']
+        Classes: AppBundle\Entity\Classes
+        Mark:
+          help: null
+          class: AppBundle\Entity\Mark
+          list:
+            # By default the dql_filter option from the list view is also used in the search view.
+            dql_filter: "entity.markValue > 3 AND entity.markValue < 7 AND entity.id != '24'"
+          search:
+            # override, since search by default uses the same filter rules as list view
+            dql_filter: ''

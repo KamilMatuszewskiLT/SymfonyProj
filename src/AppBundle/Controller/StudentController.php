@@ -30,12 +30,6 @@ class StudentController extends Controller
         $studentId = array();
         $classId = array();
 
-        $students = $dataGetter->getAllStudents();
-        for($i = 0 ; $i < count($students) ; $i++){
-            $studentAllMarks[$i] = $students[$i]->getMarks();
-        }
-
-
         while ($row = $classesList->fetch()) {
             $query = $this->getDoctrine()->getManager()->getConnection()->prepare("SELECT name FROM student WHERE id = " . (string) $row['student_id']);
             $query->execute();
