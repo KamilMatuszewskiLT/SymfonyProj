@@ -84,3 +84,10 @@ knp_snappy:
         enabled:    true
         binary:     C:\wamp64\bin\php\php7.2.4\DBExample\vendor\wemersonjanuario\wkhtmltopdf-windows\bin\64bit\wkhtmltopdf
         options:    []
+
+easy_admin:
+    entities:
+        # change the following to the namespaces of your own entities
+        - AppBundle\Entity\Student
+        - AppBundle\Entity\Classes
+        - AppBundle\Entity\Marks

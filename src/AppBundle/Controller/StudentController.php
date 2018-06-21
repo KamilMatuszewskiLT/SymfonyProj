@@ -3,6 +3,8 @@ namespace AppBundle\Controller;
 
 use AppBundle\Entity\Classes;
 use AppBundle\Entity\Student;
+use AppBundle\Service\AverageMarkCalculator;
+use AppBundle\Service\DBDataGetter;
 use Psr\Log\LoggerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
@@ -27,6 +29,13 @@ class StudentController extends Controller
         $classesList->execute();
         $studentId = array();
         $classId = array();
+
+        $students = $dataGetter->getAllStudents();
+        for($i = 0 ; $i < count($students) ; $i++){
+            $studentAllMarks[$i] = $students[$i]->getMarks();
+        }
+
+
         while ($row = $classesList->fetch()) {
             $query = $this->getDoctrine()->getManager()->getConnection()->prepare("SELECT name FROM student WHERE id = " . (string) $row['student_id']);
             $query->execute();

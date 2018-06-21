@@ -1,6 +1,7 @@
 <?php
 namespace AppBundle\Entity;
 
+use AppBundle\Service\AverageMarkCalculator;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -45,7 +46,8 @@ class Student
         $this->marks = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
-    public function checkIfAttendsClass(Classes $class){
+    public function checkIfAttendsClass(Classes $class)
+    {
         $classesOfStudent = $this->getClasses();
         for ($i = 0; $i < count($classesOfStudent); $i++) {
             if ($class->getId() == $classesOfStudent[$i]->getId()) {
@@ -53,6 +55,23 @@ class Student
             }
         }
         return false;
+    }
+
+    public function getStudentMarksAverages()
+    {
+        $averagesCalc = new AverageMarkCalculator();
+        $allMarks = $this->getMarks();
+        $averages = array();
+        $currentClassID = 0;
+        $sortedMarks = array();
+        for($i = 0 ; $i < count($allMarks) ; $i++){
+            $currentClassID = $allMarks[$i]->getClassId();
+            if($currentClassID != $allMarks[$i]->getClassId()){
+                $currentClassID = $allMarks[$i]->getClassId();
+            }
+
+        }
+
     }
 
     /**

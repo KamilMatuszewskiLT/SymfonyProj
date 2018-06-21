@@ -1,5 +1,0 @@
-_assetic:
-    resource: .
-    type: assetic
-_app:
-    resource: 'C:\wamp64\bin\php\php7.2.4\DBExample/app/config/routing_dev.yml'

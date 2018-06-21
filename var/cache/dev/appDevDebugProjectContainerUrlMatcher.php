@@ -199,6 +199,39 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
+        elseif (0 === strpos($pathinfo, '/admin')) {
+            // easyadmin
+            if ('/admin' === $trimmedPathinfo) {
+                $ret = array (  '_controller' => 'EasyCorp\\Bundle\\EasyAdminBundle\\Controller\\AdminController::indexAction',  '_route' => 'easyadmin',);
+                if ('/' === substr($pathinfo, -1)) {
+                    // no-op
+                } elseif ('GET' !== $canonicalMethod) {
+                    goto not_easyadmin;
+                } else {
+                    return array_replace($ret, $this->redirect($rawPathinfo.'/', 'easyadmin'));
+                }
+
+                return $ret;
+            }
+            not_easyadmin:
+
+            // admin
+            if ('/admin' === $trimmedPathinfo) {
+                $ret = array (  '_controller' => 'EasyCorp\\Bundle\\EasyAdminBundle\\Controller\\AdminController::indexAction',  '_route' => 'admin',);
+                if ('/' === substr($pathinfo, -1)) {
+                    // no-op
+                } elseif ('GET' !== $canonicalMethod) {
+                    goto not_admin;
+                } else {
+                    return array_replace($ret, $this->redirect($rawPathinfo.'/', 'admin'));
+                }
+
+                return $ret;
+            }
+            not_admin:
+
+        }
+
         if ('/' === $pathinfo && !$allow) {
             throw new Symfony\Component\Routing\Exception\NoConfigurationException();
         }

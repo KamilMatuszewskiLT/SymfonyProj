@@ -76,20 +76,6 @@ class Mark
     }
 
     /**
-     * Set studentId
-     *
-     * @param \AppBundle\Entity\Student $studentId
-     *
-     * @return Mark
-     */
-    public function setStudentId(\AppBundle\Entity\Student $studentId = null)
-    {
-        $this->studentId = $studentId;
-
-        return $this;
-    }
-
-    /**
      * Get studentId
      *
      * @return \AppBundle\Entity\Student
@@ -99,19 +85,6 @@ class Mark
         return $this->studentId;
     }
 
-    /**
-     * Set classId
-     *
-     * @param \AppBundle\Entity\Classes $classId
-     *
-     * @return Mark
-     */
-    public function setClassId(\AppBundle\Entity\Classes $classId = null)
-    {
-        $this->classId = $classId;
-
-        return $this;
-    }
 
     /**
      * Get classId
