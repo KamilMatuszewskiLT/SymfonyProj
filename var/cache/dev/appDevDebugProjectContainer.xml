@@ -501,6 +501,20 @@
           <parameter key="name">Classes</parameter>
         </parameter>
         <parameter key="Mark" type="collection">
+          <parameter key="form" type="collection">
+            <parameter key="title">Add mark</parameter>
+            <parameter key="fields" type="collection">
+              <parameter type="collection">
+                <parameter key="property">id</parameter>
+              </parameter>
+              <parameter type="collection">
+                <parameter key="property">markValue</parameter>
+              </parameter>
+            </parameter>
+          </parameter>
+          <parameter key="edit" type="collection">
+            <parameter key="title">Edit mark</parameter>
+          </parameter>
           <parameter key="help">null</parameter>
           <parameter key="class">AppBundle\Entity\Mark</parameter>
           <parameter key="list" type="collection">

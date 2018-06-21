@@ -120,6 +120,13 @@ easy_admin:
             sort: ['name', 'ASC']
         Classes: AppBundle\Entity\Classes
         Mark:
+          form:  # 'form' is applied to both 'new' and 'edit' views
+            title: 'Add mark'
+            fields:
+              - {property: 'id'}
+              - {property: 'markValue'}
+          edit:
+            title: 'Edit mark'
           help: null
           class: AppBundle\Entity\Mark
           list:
