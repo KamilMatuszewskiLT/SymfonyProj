@@ -60,6 +60,13 @@ class Mark
      */
     public function setMarkValue($markValue)
     {
+        if(!isset($markValue)){
+            throw new \InvalidArgumentException ('No value given.');
+        } else if(!is_int($markValue)){
+            throw new \InvalidArgumentException ('Value given is not of type int.');
+        } else if($markValue < 1 || $markValue > 6) {
+            throw new \InvalidArgumentException ('Given mark value is invalid (has to be 1-6).');
+        }
         $this->markValue = $markValue;
 
         return $this;
