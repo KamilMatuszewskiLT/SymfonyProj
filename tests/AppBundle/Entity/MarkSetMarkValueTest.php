@@ -20,5 +20,11 @@ class MarkSetMarkValueTest extends \PHPUnit_Framework_TestCase
         $mark1->setMarkValue($markValue);
         self::assertEquals($markValue, $mark1->getMarkValue());
     }
-
+    public function testSetMarkValueWithANonInt()
+    {
+        $this->expectException(\InvalidArgumentException::class);
+        $mark1 = new Mark();
+        $markValue = "45uioh";
+        $mark1->setMarkValue($markValue);
+    }
 }

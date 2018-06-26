@@ -46,7 +46,7 @@ class Mark
      *
      * @return integer
      */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
@@ -58,11 +58,11 @@ class Mark
      *
      * @return Mark
      */
-    public function setMarkValue($markValue)
+    public function setMarkValue($markValue): Mark
     {
         if(!isset($markValue)){
             throw new \InvalidArgumentException ('No value given.');
-        } else if(!is_int($markValue)){
+        } else if(!(is_int($markValue))){
             throw new \InvalidArgumentException ('Value given is not of type int.');
         } else if($markValue < 1 || $markValue > 6) {
             throw new \InvalidArgumentException ('Given mark value is invalid (has to be 1-6).');
@@ -77,7 +77,7 @@ class Mark
      *
      * @return integer
      */
-    public function getMarkValue()
+    public function getMarkValue(): int
     {
         return $this->markValue;
     }
@@ -101,5 +101,33 @@ class Mark
     public function getClassId()
     {
         return $this->classId;
+    }
+
+    /**
+     * Set studentId.
+     *
+     * @param \AppBundle\Entity\Student|null $studentId
+     *
+     * @return Mark
+     */
+    public function setStudentId(\AppBundle\Entity\Student $studentId = null)
+    {
+        $this->studentId = $studentId;
+
+        return $this;
+    }
+
+    /**
+     * Set classId.
+     *
+     * @param \AppBundle\Entity\Classes|null $classId
+     *
+     * @return Mark
+     */
+    public function setClassId(\AppBundle\Entity\Classes $classId = null)
+    {
+        $this->classId = $classId;
+
+        return $this;
     }
 }

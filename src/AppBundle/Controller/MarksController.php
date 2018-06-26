@@ -5,6 +5,7 @@ use AppBundle\Entity\Classes;
 use AppBundle\Entity\Mark;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Config\Definition\Exception\Exception;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
@@ -39,6 +40,7 @@ class MarksController extends Controller
         }
 
         $newMark = new Mark;
+        try{ settype($mark, "integer"); } catch(\Exception $e) { throw new Exception("Can't set type of given mark value to int. Error:" . $e);}
         $newMark->setMarkValue($mark);
         $newMark->setStudentId($stud);
         $newMark->setClassId($class);
