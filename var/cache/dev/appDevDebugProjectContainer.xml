@@ -433,6 +433,7 @@
                 <parameter key="entity">Mark</parameter>
                 <parameter key="label">Marks</parameter>
                 <parameter key="icon">tag</parameter>
+                <parameter key="default">true</parameter>
               </parameter>
               <parameter type="collection">
                 <parameter key="entity">Student</parameter>
@@ -483,6 +484,7 @@
               </parameter>
               <parameter>marks</parameter>
               <parameter>address</parameter>
+              <parameter>active</parameter>
             </parameter>
           </parameter>
           <parameter key="show" type="collection">
@@ -501,8 +503,14 @@
           <parameter key="name">Classes</parameter>
         </parameter>
         <parameter key="Mark" type="collection">
+          <parameter key="help">This is a custom mark message</parameter>
+          <parameter key="class">AppBundle\Entity\Mark</parameter>
           <parameter key="form" type="collection">
             <parameter key="title">Add mark</parameter>
+          </parameter>
+          <parameter key="edit" type="collection">
+            <parameter key="help">null</parameter>
+            <parameter key="title">Edit mark</parameter>
             <parameter key="fields" type="collection">
               <parameter type="collection">
                 <parameter key="property">id</parameter>
@@ -512,11 +520,6 @@
               </parameter>
             </parameter>
           </parameter>
-          <parameter key="edit" type="collection">
-            <parameter key="title">Edit mark</parameter>
-          </parameter>
-          <parameter key="help">null</parameter>
-          <parameter key="class">AppBundle\Entity\Mark</parameter>
           <parameter key="list" type="collection">
             <parameter key="dql_filter">entity.markValue &gt; 3 AND entity.markValue &lt; 7 AND entity.id != '24'</parameter>
           </parameter>

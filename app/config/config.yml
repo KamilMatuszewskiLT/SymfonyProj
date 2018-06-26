@@ -98,7 +98,7 @@ easy_admin:
       menu:
         - label: 'Objects'
           children:
-            - { entity: 'Mark', label: 'Marks', icon: 'tag'}
+            - { entity: 'Mark', label: 'Marks', icon: 'tag', default: true} #The 'default: true' parameter sets the default view when loading admin panel
             - { entity: 'Student'}
             - { entity: 'Classes', label: 'Classes'}
         - { label: '-------------------------------' }
@@ -112,7 +112,7 @@ easy_admin:
           list:
             title: 'List of all %%entity_label%%'
             max_results: 5
-            fields: [{property: 'IDName', label: 'ID + name', type: 'string'}, { property: 'id', label: 'L.p.', type: 'smallint' }, 'name', {property: 'classes'}, 'marks', 'address']
+            fields: [{property: 'IDName', label: 'ID + name', type: 'string'}, { property: 'id', label: 'L.p.', type: 'smallint' }, 'name', {property: 'classes'}, 'marks', 'address', 'active']
           show:
             title: '%%entity_label%% (#%%entity_id%%)'
           search:
@@ -120,15 +120,16 @@ easy_admin:
             sort: ['name', 'ASC']
         Classes: AppBundle\Entity\Classes
         Mark:
+          help: "This is a custom mark message"
+          class: AppBundle\Entity\Mark
           form:  # 'form' is applied to both 'new' and 'edit' views
             title: 'Add mark'
+          edit:
+            help: null #This cancels the help message
+            title: 'Edit mark'
             fields:
               - {property: 'id'}
               - {property: 'markValue'}
-          edit:
-            title: 'Edit mark'
-          help: null
-          class: AppBundle\Entity\Mark
           list:
             # By default the dql_filter option from the list view is also used in the search view.
             dql_filter: "entity.markValue > 3 AND entity.markValue < 7 AND entity.id != '24'"

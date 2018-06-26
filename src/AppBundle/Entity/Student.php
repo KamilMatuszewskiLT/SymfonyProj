@@ -19,6 +19,12 @@ class Student
     private $id;
 
     /**
+     * @ORM\Column(type = "boolean", nullable=false, options={"default":"1"}, name="active")
+     * Doesn't do anything, just for testing.
+     */
+    private $active = 1;
+
+    /**
      * @ORM\Column(type = "string", length = 50)
      * @Assert\NotBlank(message="Wpisz imię.")
      */
@@ -44,6 +50,7 @@ class Student
     {
         $this->classes = new \Doctrine\Common\Collections\ArrayCollection();
         $this->marks = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->active = 1;
     }
 
     public function checkIfAttendsClass(Classes $class)
@@ -181,5 +188,54 @@ class Student
     public function getMarks()
     {
         return $this->marks;
+    }
+
+
+    /**
+     * Add mark
+     *
+     * @param \AppBundle\Entity\Mark $mark
+     *
+     * @return Student
+     */
+    public function addMark(\AppBundle\Entity\Mark $mark)
+    {
+        $this->marks[] = $mark;
+
+        return $this;
+    }
+
+    /**
+     * Remove mark
+     *
+     * @param \AppBundle\Entity\Mark $mark
+     */
+    public function removeMark(\AppBundle\Entity\Mark $mark)
+    {
+        $this->marks->removeElement($mark);
+    }
+
+    /**
+     * Set active
+     *
+     * @param boolean $active
+     *
+     * @return Student
+     */
+    public function setActive($active)
+    {
+        $this->active = $active;
+
+        return $this;
+    }
+
+    /**
+     * Get active
+     *
+     * @return boolean
+     */
+    public function getActive()
+    {
+        return $this->active;
     }
 }

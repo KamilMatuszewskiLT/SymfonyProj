@@ -1,6 +1,7 @@
 <?php
 namespace AppBundle\Entity;
 
+use AppBundle\Service\AverageMarkCalculator;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -16,6 +17,12 @@ class Student
      * @ORM\GeneratedValue(strategy = "AUTO") 
      */
     private $id;
+
+    /**
+     * @ORM\Column(type = "boolean", nullable=false, options={"default":"1"}, name="active")
+     * Doesn't do anything, just for testing.
+     */
+    private $active = 1;
 
     /**
      * @ORM\Column(type = "string", length = 50)
@@ -42,6 +49,41 @@ class Student
     public function __construct()
     {
         $this->classes = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->marks = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->active = 1;
+    }
+
+    public function checkIfAttendsClass(Classes $class)
+    {
+        $classesOfStudent = $this->getClasses();
+        for ($i = 0; $i < count($classesOfStudent); $i++) {
+            if ($class->getId() == $classesOfStudent[$i]->getId()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public function getStudentMarksAverages()
+    {
+        $averagesCalc = new AverageMarkCalculator();
+        $allMarks = $this->getMarks();
+        $averages = array();
+        $currentClassID = 0;
+        $sortedMarks = array();
+        for($i = 0 ; $i < count($allMarks) ; $i++){
+            $currentClassID = $allMarks[$i]->getClassId();
+            if($currentClassID != $allMarks[$i]->getClassId()){
+                $currentClassID = $allMarks[$i]->getClassId();
+            }
+
+        }
+
+    }
+
+    // This function is used for EasyAdmin virtual property
+    public function getIDName(){
+        return $this->getId().'-'.$this->getName();
     }
 
     /**
@@ -136,5 +178,40 @@ class Student
     public function getClasses()
     {
         return $this->classes;
+    }
+
+    /**
+     * Get marks
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getMarks()
+    {
+        return $this->marks;
+    }
+
+
+    /**
+     * Add mark
+     *
+     * @param \AppBundle\Entity\Mark $mark
+     *
+     * @return Student
+     */
+    public function addMark(\AppBundle\Entity\Mark $mark)
+    {
+        $this->marks[] = $mark;
+
+        return $this;
+    }
+
+    /**
+     * Remove mark
+     *
+     * @param \AppBundle\Entity\Mark $mark
+     */
+    public function removeMark(\AppBundle\Entity\Mark $mark)
+    {
+        $this->marks->removeElement($mark);
     }
 }

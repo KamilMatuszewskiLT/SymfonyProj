@@ -64,10 +64,10 @@ class Student extends \AppBundle\Entity\Student implements \Doctrine\ORM\Proxy\P
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\Student' . "\0" . 'id', '' . "\0" . 'AppBundle\\Entity\\Student' . "\0" . 'name', '' . "\0" . 'AppBundle\\Entity\\Student' . "\0" . 'address', '' . "\0" . 'AppBundle\\Entity\\Student' . "\0" . 'classes', '' . "\0" . 'AppBundle\\Entity\\Student' . "\0" . 'marks'];
+            return ['__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\Student' . "\0" . 'id', '' . "\0" . 'AppBundle\\Entity\\Student' . "\0" . 'active', '' . "\0" . 'AppBundle\\Entity\\Student' . "\0" . 'name', '' . "\0" . 'AppBundle\\Entity\\Student' . "\0" . 'address', '' . "\0" . 'AppBundle\\Entity\\Student' . "\0" . 'classes', '' . "\0" . 'AppBundle\\Entity\\Student' . "\0" . 'marks'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\Student' . "\0" . 'id', '' . "\0" . 'AppBundle\\Entity\\Student' . "\0" . 'name', '' . "\0" . 'AppBundle\\Entity\\Student' . "\0" . 'address', '' . "\0" . 'AppBundle\\Entity\\Student' . "\0" . 'classes', '' . "\0" . 'AppBundle\\Entity\\Student' . "\0" . 'marks'];
+        return ['__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\Student' . "\0" . 'id', '' . "\0" . 'AppBundle\\Entity\\Student' . "\0" . 'active', '' . "\0" . 'AppBundle\\Entity\\Student' . "\0" . 'name', '' . "\0" . 'AppBundle\\Entity\\Student' . "\0" . 'address', '' . "\0" . 'AppBundle\\Entity\\Student' . "\0" . 'classes', '' . "\0" . 'AppBundle\\Entity\\Student' . "\0" . 'marks'];
     }
 
     /**
@@ -307,6 +307,50 @@ class Student extends \AppBundle\Entity\Student implements \Doctrine\ORM\Proxy\P
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getMarks', []);
 
         return parent::getMarks();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function addMark(\AppBundle\Entity\Mark $mark)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addMark', [$mark]);
+
+        return parent::addMark($mark);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function removeMark(\AppBundle\Entity\Mark $mark)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeMark', [$mark]);
+
+        return parent::removeMark($mark);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setActive($active)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setActive', [$active]);
+
+        return parent::setActive($active);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getActive()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getActive', []);
+
+        return parent::getActive();
     }
 
 }
