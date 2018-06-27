@@ -176,7 +176,7 @@ class Student extends \AppBundle\Entity\Student implements \Doctrine\ORM\Proxy\P
     /**
      * {@inheritDoc}
      */
-    public function checkIfAttendsClass(\AppBundle\Entity\Classes $class)
+    public function checkIfAttendsClass(\AppBundle\Entity\Classes $class): bool
     {
 
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'checkIfAttendsClass', [$class]);
@@ -187,12 +187,12 @@ class Student extends \AppBundle\Entity\Student implements \Doctrine\ORM\Proxy\P
     /**
      * {@inheritDoc}
      */
-    public function getStudentMarksAverages()
+    public function getStudentMarksAverageForClass(\AppBundle\Entity\Classes $class): int
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getStudentMarksAverages', []);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getStudentMarksAverageForClass', [$class]);
 
-        return parent::getStudentMarksAverages();
+        return parent::getStudentMarksAverageForClass($class);
     }
 
     /**

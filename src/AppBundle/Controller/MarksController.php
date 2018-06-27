@@ -40,7 +40,9 @@ class MarksController extends Controller
         }
 
         $newMark = new Mark;
-        try{ settype($mark, "integer"); } catch(\Exception $e) { throw new Exception("Can't set type of given mark value to int. Error:" . $e);}
+        if(!settype($mark, "integer")){
+            throw new \Exception("Couldn't set variable containing mark value to type int.");
+        }
         $newMark->setMarkValue($mark);
         $newMark->setStudentId($stud);
         $newMark->setClassId($class);

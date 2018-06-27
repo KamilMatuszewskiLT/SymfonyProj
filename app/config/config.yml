@@ -107,6 +107,7 @@ easy_admin:
         # change the following to the namespaces of your own entities
         Student:
           class: AppBundle\Entity\Student
+          controller: AppBundle\Controller\StudentController
           help: 'This is a entity specific message!'
           label: 'Students'
           list:

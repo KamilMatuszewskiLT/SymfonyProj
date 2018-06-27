@@ -39,7 +39,7 @@ class Mark
     {
         $this->studentId = new \Doctrine\Common\Collections\ArrayCollection();
         $this->classId = new \Doctrine\Common\Collections\ArrayCollection();
-    }    
+    }
 
     /**
      * Get id

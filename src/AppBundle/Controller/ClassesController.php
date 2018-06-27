@@ -69,4 +69,6 @@ class ClassesController extends Controller
         );
         return $this->redirect("/class/display");
     }
+
+
 }

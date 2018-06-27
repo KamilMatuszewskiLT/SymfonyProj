@@ -193,6 +193,13 @@ class __TwigTemplate_a867fd9b719c20a737db26050081054714457e22e90b865f04470409aad
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 74
+        echo "
+        ";
+        // line 75
+        echo twig_escape_filter($this->env, (isset($context["query"]) || array_key_exists("query", $context) ? $context["query"] : (function () { throw new Twig_Error_Runtime('Variable "query" does not exist.', 75, $this->source); })()), "html", null, true);
+        echo "
+";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -213,7 +220,7 @@ class __TwigTemplate_a867fd9b719c20a737db26050081054714457e22e90b865f04470409aad
 
     public function getDebugInfo()
     {
-        return array (  186 => 69,  183 => 68,  179 => 67,  173 => 63,  164 => 60,  161 => 59,  157 => 58,  148 => 51,  139 => 48,  136 => 47,  132 => 46,  119 => 35,  109 => 31,  103 => 28,  98 => 26,  94 => 25,  90 => 24,  86 => 22,  82 => 21,  67 => 9,  63 => 8,  59 => 7,  53 => 3,  44 => 2,  15 => 1,);
+        return array (  200 => 75,  197 => 74,  186 => 69,  183 => 68,  179 => 67,  173 => 63,  164 => 60,  161 => 59,  157 => 58,  148 => 51,  139 => 48,  136 => 47,  132 => 46,  119 => 35,  109 => 31,  103 => 28,  98 => 26,  94 => 25,  90 => 24,  86 => 22,  82 => 21,  67 => 9,  63 => 8,  59 => 7,  53 => 3,  44 => 2,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -291,6 +298,8 @@ class __TwigTemplate_a867fd9b719c20a737db26050081054714457e22e90b865f04470409aad
                 X</a>
         </div>
     {% endfor %}
+
+        {{ query }}
 {% endblock %}", "student/display.html.twig", "C:\\wamp64\\bin\\php\\php7.2.4\\DBExample\\app\\Resources\\views\\student\\display.html.twig");
     }
 }

@@ -53,7 +53,7 @@ class Student
         $this->active = 1;
     }
 
-    public function checkIfAttendsClass(Classes $class)
+    public function checkIfAttendsClass(Classes $class): bool
     {
         $classesOfStudent = $this->getClasses();
         for ($i = 0; $i < count($classesOfStudent); $i++) {
@@ -64,21 +64,22 @@ class Student
         return false;
     }
 
-    public function getStudentMarksAverages()
+    public function getStudentMarksAverageForClass(Classes $class): int
     {
         $averagesCalc = new AverageMarkCalculator();
-        $allMarks = $this->getMarks();
-        $averages = array();
-        $currentClassID = 0;
-        $sortedMarks = array();
-        for($i = 0 ; $i < count($allMarks) ; $i++){
-            $currentClassID = $allMarks[$i]->getClassId();
-            if($currentClassID != $allMarks[$i]->getClassId()){
-                $currentClassID = $allMarks[$i]->getClassId();
+        if(!$this->checkIfAttendsClass($class)){
+            return 0;
+        } else {
+            $allMarks = $this->getMarks();
+            $classMarks = array();
+
+            for($i = 0 ; $i < count($allMarks) ; $i++){
+                if($allMarks[$i]->getClassID() == $class->getId()){
+                    $classMarks[]=$allMarks[$i]->getMarkValue();
+                }
             }
-
         }
-
+        return $averagesCalc->calculateMarkAverages($classMarks);
     }
 
     // This function is used for EasyAdmin virtual property
