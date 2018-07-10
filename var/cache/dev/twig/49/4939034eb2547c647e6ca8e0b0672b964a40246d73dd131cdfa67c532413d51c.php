@@ -123,7 +123,7 @@ class __TwigTemplate_ac38243bb6f18ec993e087a54e541ddb6f180d9949d4c8e84bc53432932
                 echo "\">
                                 ";
                 // line 45
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("paginator.next", array(), "EasyAdminBundle"), "html", null, true);
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Następna strona", array(), "EasyAdminBundle"), "html", null, true);
                 echo " <i class=\"fa fa-angle-right\"></i>
                             </a>
                         </li>
@@ -134,7 +134,7 @@ class __TwigTemplate_ac38243bb6f18ec993e087a54e541ddb6f180d9949d4c8e84bc53432932
                             <span>
                                 ";
                 // line 51
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("paginator.next", array(), "EasyAdminBundle"), "html", null, true);
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Poprzednia strona", array(), "EasyAdminBundle"), "html", null, true);
                 echo " <i class=\"fa fa-angle-right\"></i>
                             </span>
                         </li>
@@ -153,7 +153,7 @@ class __TwigTemplate_ac38243bb6f18ec993e087a54e541ddb6f180d9949d4c8e84bc53432932
                 echo "\">
                                 ";
                 // line 59
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("paginator.last", array(), "EasyAdminBundle"), "html", null, true);
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Ostatnia strona", array(), "EasyAdminBundle"), "html", null, true);
                 echo " <i class=\"fa fa-angle-double-right\"></i>
                             </a>
                         </li>
@@ -164,7 +164,7 @@ class __TwigTemplate_ac38243bb6f18ec993e087a54e541ddb6f180d9949d4c8e84bc53432932
                             <span>
                                 ";
                 // line 65
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("paginator.last", array(), "EasyAdminBundle"), "html", null, true);
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Ostatnia strona", array(), "EasyAdminBundle"), "html", null, true);
                 echo " <i class=\"fa fa-angle-double-right\"></i>
                             </span>
                         </li>
@@ -246,13 +246,13 @@ class __TwigTemplate_ac38243bb6f18ec993e087a54e541ddb6f180d9949d4c8e84bc53432932
                     {% if paginator.hasNextPage %}
                         <li>
                             <a href=\"{{ path('easyadmin', _paginator_request_parameters|merge({ page: paginator.nextPage }) ) }}\">
-                                {{ 'paginator.next'|trans }} <i class=\"fa fa-angle-right\"></i>
+                                {{ 'Następna strona'|trans }} <i class=\"fa fa-angle-right\"></i>
                             </a>
                         </li>
                     {% else %}
                         <li class=\"disabled\">
                             <span>
-                                {{ 'paginator.next'|trans }} <i class=\"fa fa-angle-right\"></i>
+                                {{ 'Poprzednia strona'|trans }} <i class=\"fa fa-angle-right\"></i>
                             </span>
                         </li>
                     {% endif %}
@@ -260,13 +260,13 @@ class __TwigTemplate_ac38243bb6f18ec993e087a54e541ddb6f180d9949d4c8e84bc53432932
                     {% if paginator.currentPage < paginator.nbPages %}
                         <li>
                             <a href=\"{{ path('easyadmin', _paginator_request_parameters|merge({ page: paginator.nbPages }) ) }}\">
-                                {{ 'paginator.last'|trans }} <i class=\"fa fa-angle-double-right\"></i>
+                                {{ 'Ostatnia strona'|trans }} <i class=\"fa fa-angle-double-right\"></i>
                             </a>
                         </li>
                     {% else %}
                         <li class=\"disabled\">
                             <span>
-                                {{ 'paginator.last'|trans }} <i class=\"fa fa-angle-double-right\"></i>
+                                {{ 'Ostatnia strona'|trans }} <i class=\"fa fa-angle-double-right\"></i>
                             </span>
                         </li>
                     {% endif %}

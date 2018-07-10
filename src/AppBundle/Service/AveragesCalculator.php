@@ -19,19 +19,18 @@ class AveragesCalculator
      * Calculates average of an array of integers.
      * @property array marks An array of integers
      */
-    public function calculateAverage(array $marks)
+    public static function calculateAverage(array $marks)
     {
-        $this->standardArrayChecks($marks);
+        AveragesCalculator::standardArrayChecks($marks);
         if(!(IsArrayOfType::all($marks, 'is_int'))){
             throw new \InvalidArgumentException ('Not all mark values in array are of type int: ' . var_dump($marks));
         }
-
             $marks = array_filter($marks);
             $average = array_sum($marks)/count($marks);
 
         return $average;
     }
-    public function standardArrayChecks($args){
+    public static function standardArrayChecks($args){
         if(!(is_array($args))){
             throw new \InvalidArgumentException ('Given parameter is not an array: ' . var_dump($args));
         }

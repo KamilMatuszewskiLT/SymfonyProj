@@ -155,6 +155,11 @@ class appTestDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBun
         }
         not_homepage:
 
+        // app_exercise_display
+        if ('/ex' === $pathinfo) {
+            return array (  '_controller' => 'AppBundle\\Controller\\ExerciseController::displayAction',  '_route' => 'app_exercise_display',);
+        }
+
         if (0 === strpos($pathinfo, '/student')) {
             // app_marks_addmark
             if (0 === strpos($pathinfo, '/student/addMark') && preg_match('#^/student/addMark/(?P<studId>\\d+)/(?P<classId>\\d+)/(?P<mark>\\d+)$#sD', $pathinfo, $matches)) {

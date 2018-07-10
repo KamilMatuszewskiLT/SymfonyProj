@@ -48,4 +48,14 @@ class AverageMarkCalculatorTest extends \PHPUnit_Framework_TestCase
         $this->expectException(\InvalidArgumentException::class);
         $this->averageMarksCalc->calculateMarkAverages(array());
     }
+
+    public function testReturnType(){
+        $mark1 = new Mark();
+        $mark1->setMarkValue(1);
+        $mark2 = new Mark();
+        $mark2->setMarkValue(2);
+        $result = $this->averageMarksCalc->calculateMarkAverages(array($mark1,$mark2));
+        var_dump($result);
+        self::assertEquals("double", gettype($result));
+    }
 }

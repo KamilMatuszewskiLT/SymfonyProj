@@ -42,13 +42,13 @@
                     {% if paginator.hasNextPage %}
                         <li>
                             <a href="{{ path('easyadmin', _paginator_request_parameters|merge({ page: paginator.nextPage }) ) }}">
-                                {{ 'paginator.next'|trans }} <i class="fa fa-angle-right"></i>
+                                {{ 'Następna strona'|trans }} <i class="fa fa-angle-right"></i>
                             </a>
                         </li>
                     {% else %}
                         <li class="disabled">
                             <span>
-                                {{ 'paginator.next'|trans }} <i class="fa fa-angle-right"></i>
+                                {{ 'Poprzednia strona'|trans }} <i class="fa fa-angle-right"></i>
                             </span>
                         </li>
                     {% endif %}
@@ -56,13 +56,13 @@
                     {% if paginator.currentPage < paginator.nbPages %}
                         <li>
                             <a href="{{ path('easyadmin', _paginator_request_parameters|merge({ page: paginator.nbPages }) ) }}">
-                                {{ 'paginator.last'|trans }} <i class="fa fa-angle-double-right"></i>
+                                {{ 'Ostatnia strona'|trans }} <i class="fa fa-angle-double-right"></i>
                             </a>
                         </li>
                     {% else %}
                         <li class="disabled">
                             <span>
-                                {{ 'paginator.last'|trans }} <i class="fa fa-angle-double-right"></i>
+                                {{ 'Ostatnia strona'|trans }} <i class="fa fa-angle-double-right"></i>
                             </span>
                         </li>
                     {% endif %}

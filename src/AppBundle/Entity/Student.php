@@ -3,6 +3,7 @@ namespace AppBundle\Entity;
 
 use AppBundle\Service\AverageMarkCalculator;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Config\Definition\Exception\Exception;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -43,13 +44,14 @@ class Student
     private $classes;
     /**
      * @ORM\OneToMany(targetEntity="Mark", mappedBy="studentId")
+     *
      */
     private $marks;
 
     public function __construct()
     {
-        $this->classes = new \Doctrine\Common\Collections\ArrayCollection();
         $this->marks = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->classes = new \Doctrine\Common\Collections\ArrayCollection();
         $this->active = 1;
     }
 
@@ -64,22 +66,34 @@ class Student
         return false;
     }
 
-    public function getStudentMarksAverageForClass(Classes $class): int
+    public function checkIfHasMarksInClass(Classes $class): bool
     {
-        $averagesCalc = new AverageMarkCalculator();
-        if(!$this->checkIfAttendsClass($class)){
-            return 0;
-        } else {
-            $allMarks = $this->getMarks();
-            $classMarks = array();
+        if(count($this->getMarks()) < 1 ){
+            return false;
+        }
+            $marks = $this->getMarks();
+            foreach ($marks as $mark) {
+                if ($mark->getClassId() == $class) {
+                    return true;
+                } else return false;
+            }
+    }
 
-            for($i = 0 ; $i < count($allMarks) ; $i++){
-                if($allMarks[$i]->getClassID() == $class->getId()){
-                    $classMarks[]=$allMarks[$i]->getMarkValue();
+    public function getStudentMarksAverageForClass(Classes $class): float
+    {
+        if(!$this->checkIfAttendsClass($class)){
+           throw new \InvalidArgumentException("Student doesn't attend this class!");
+        } else if(!$this->checkIfHasMarksInClass($class)){
+            throw new \InvalidArgumentException("Student doesn't have any marks in given class.");
+        } else {
+            $classMarks = array();
+            foreach ($this->marks as $mark){
+                if($mark->getClassId()->getId() == $class->getId()){
+                    $classMarks[]=$mark;
                 }
             }
         }
-        return $averagesCalc->calculateMarkAverages($classMarks);
+        return AverageMarkCalculator::calculateMarkAverages($classMarks);
     }
 
     // This function is used for EasyAdmin virtual property
@@ -238,5 +252,10 @@ class Student
     public function getActive()
     {
         return $this->active;
+    }
+
+    public function __toString()
+    {
+        return $this->getName();
     }
 }

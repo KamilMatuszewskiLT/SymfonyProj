@@ -2,6 +2,7 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Student;
+use function PHPSTORM_META\type;
 use Psr\Log\LoggerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -82,6 +83,20 @@ class StudentController_UpdateAction extends Controller
             }
         }
 
+        //Get student's mark averages
+        foreach ($classes as $class) {
+                if ($stud->checkIfHasMarksInClass($class)) {
+                    $averages[] = [$class->getName() => $stud->getStudentMarksAverageForClass($class)];
+                }
+                $markses[] = $class->getMarks();
+        }
+        foreach ($markses as $mark){
+            foreach ($mark as $m) {
+               $avdump[] = print_r($m->getMarkValue());
+            }
+        }
+
+
         // Print to PDF
         switch ($param) {
             case "pdf":
@@ -111,7 +126,8 @@ class StudentController_UpdateAction extends Controller
                 break;
             case null:
             default:
-                return $this->render("student/update.html.twig", array('student' => $stud, 'allClasses' => $allClasses, 'classes' => $classes, 'marks' => $marks));
+                return $this->render("student/update.html.twig",
+                    array('student' => $stud, 'allClasses' => $allClasses, 'classes' => $classes, 'marks' => $marks, 'averages' => $averages, 'avdump' => $avdump));
         }
     }
 }

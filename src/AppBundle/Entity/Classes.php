@@ -2,6 +2,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use phpDocumentor\Reflection\Types\String_;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -138,5 +139,10 @@ class Classes
     public function getMarks()
     {
         return $this->marks;
+    }
+
+    public function __toString()
+    {
+        return $this->getName();
     }
 }

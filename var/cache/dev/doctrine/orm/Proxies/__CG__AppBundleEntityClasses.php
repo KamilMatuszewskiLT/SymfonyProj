@@ -276,4 +276,15 @@ class Classes extends \AppBundle\Entity\Classes implements \Doctrine\ORM\Proxy\P
         return parent::getMarks();
     }
 
+    /**
+     * {@inheritDoc}
+     */
+    public function __toString()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, '__toString', []);
+
+        return parent::__toString();
+    }
+
 }

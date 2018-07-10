@@ -435,8 +435,12 @@
             <parameter key="label">-------------------------------</parameter>
           </parameter>
           <parameter type="collection">
-            <parameter key="label">Go to App</parameter>
+            <parameter key="label">Display students list</parameter>
             <parameter key="url">../student/display</parameter>
+          </parameter>
+          <parameter type="collection">
+            <parameter key="label">Display classes list</parameter>
+            <parameter key="url">../class/display</parameter>
           </parameter>
         </parameter>
         <parameter key="theme">default</parameter>
@@ -448,6 +452,7 @@
       </parameter>
       <parameter key="entities" type="collection">
         <parameter key="Student" type="collection">
+          <parameter key="controller">AppBundle\Controller\Extra\StudentController</parameter>
           <parameter key="class">AppBundle\Entity\Student</parameter>
           <parameter key="help">This is a entity specific message!</parameter>
           <parameter key="label">Students</parameter>
@@ -473,16 +478,14 @@
               <parameter>address</parameter>
               <parameter>active</parameter>
             </parameter>
+            <parameter key="actions" type="collection">
+              <parameter>redirect</parameter>
+            </parameter>
           </parameter>
           <parameter key="show" type="collection">
             <parameter key="title">%entity_label% (#%entity_id%)</parameter>
           </parameter>
-          <parameter key="search" type="collection">
-            <parameter key="sort" type="collection">
-              <parameter>name</parameter>
-              <parameter>ASC</parameter>
-            </parameter>
-          </parameter>
+          <parameter key="search">null</parameter>
           <parameter key="name">Student</parameter>
         </parameter>
         <parameter key="Classes" type="collection">
@@ -490,6 +493,7 @@
           <parameter key="name">Classes</parameter>
         </parameter>
         <parameter key="Mark" type="collection">
+          <parameter key="controller">AppBundle\Controller\Extra\MarksController</parameter>
           <parameter key="help">This is a custom mark message</parameter>
           <parameter key="class">AppBundle\Entity\Mark</parameter>
           <parameter key="form" type="collection">
@@ -512,6 +516,11 @@
           </parameter>
           <parameter key="search" type="collection">
             <parameter key="dql_filter"></parameter>
+            <parameter key="fields" type="collection">
+              <parameter type="collection">
+                <parameter key="property">markValue</parameter>
+              </parameter>
+            </parameter>
           </parameter>
           <parameter key="name">Mark</parameter>
         </parameter>
@@ -707,6 +716,18 @@
       <tag name="controller.service_arguments"/>
     </service>
     <service id="AppBundle\Controller\DefaultController" class="AppBundle\Controller\DefaultController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+    </service>
+    <service id="AppBundle\Controller\ExerciseController" class="AppBundle\Controller\ExerciseController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+    </service>
+    <service id="AppBundle\Controller\Extra\ClassesController" class="AppBundle\Controller\Extra\ClassesController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+    </service>
+    <service id="AppBundle\Controller\Extra\MarksController" class="AppBundle\Controller\Extra\MarksController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+    </service>
+    <service id="AppBundle\Controller\Extra\StudentController" class="AppBundle\Controller\Extra\StudentController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
     </service>
     <service id="AppBundle\Controller\MarksController" class="AppBundle\Controller\MarksController" public="true" autowire="true" autoconfigure="true">
@@ -4264,6 +4285,14 @@
     <service id="abstract.instanceof.AppBundle\Controller\ClassesController" class="AppBundle\Controller\ClassesController" public="true" autowire="true" autoconfigure="true" abstract="true"/>
     <service id="instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.AppBundle\Controller\DefaultController" class="AppBundle\Controller\DefaultController" public="true" autowire="true" abstract="true"/>
     <service id="abstract.instanceof.AppBundle\Controller\DefaultController" class="AppBundle\Controller\DefaultController" public="true" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id="instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.AppBundle\Controller\ExerciseController" class="AppBundle\Controller\ExerciseController" public="true" autowire="true" abstract="true"/>
+    <service id="abstract.instanceof.AppBundle\Controller\ExerciseController" class="AppBundle\Controller\ExerciseController" public="true" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id="instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.AppBundle\Controller\Extra\ClassesController" class="AppBundle\Controller\Extra\ClassesController" public="true" autowire="true" abstract="true"/>
+    <service id="abstract.instanceof.AppBundle\Controller\Extra\ClassesController" class="AppBundle\Controller\Extra\ClassesController" public="true" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id="instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.AppBundle\Controller\Extra\MarksController" class="AppBundle\Controller\Extra\MarksController" public="true" autowire="true" abstract="true"/>
+    <service id="abstract.instanceof.AppBundle\Controller\Extra\MarksController" class="AppBundle\Controller\Extra\MarksController" public="true" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id="instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.AppBundle\Controller\Extra\StudentController" class="AppBundle\Controller\Extra\StudentController" public="true" autowire="true" abstract="true"/>
+    <service id="abstract.instanceof.AppBundle\Controller\Extra\StudentController" class="AppBundle\Controller\Extra\StudentController" public="true" autowire="true" autoconfigure="true" abstract="true"/>
     <service id="instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.AppBundle\Controller\MarksController" class="AppBundle\Controller\MarksController" public="true" autowire="true" abstract="true"/>
     <service id="abstract.instanceof.AppBundle\Controller\MarksController" class="AppBundle\Controller\MarksController" public="true" autowire="true" autoconfigure="true" abstract="true"/>
     <service id="instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.AppBundle\Controller\StudentController" class="AppBundle\Controller\StudentController" public="true" autowire="true" abstract="true"/>

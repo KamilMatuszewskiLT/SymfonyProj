@@ -102,25 +102,29 @@ easy_admin:
             - { entity: 'Student'}
             - { entity: 'Classes', label: 'Classes'}
         - { label: '-------------------------------' }
-        - { label: 'Go to App', url: '../student/display' }
+        - { label: 'Display students list', url: '../student/display' }
+        - { label: 'Display classes list', url: '../class/display' }
     entities:
         # change the following to the namespaces of your own entities
         Student:
+          controller: AppBundle\Controller\Extra\StudentController
           class: AppBundle\Entity\Student
-          controller: AppBundle\Controller\StudentController
+         # controller: AppBundle\Controller\StudentController
           help: 'This is a entity specific message!'
           label: 'Students'
           list:
             title: 'List of all %%entity_label%%'
             max_results: 5
             fields: [{property: 'IDName', label: 'ID + name', type: 'string'}, { property: 'id', label: 'L.p.', type: 'smallint' }, 'name', {property: 'classes'}, 'marks', 'address', 'active']
+            actions: ['redirect']
           show:
             title: '%%entity_label%% (#%%entity_id%%)'
           search:
           #when displaying search result, sort them by field 'name'
-            sort: ['name', 'ASC']
+
         Classes: AppBundle\Entity\Classes
         Mark:
+          controller: AppBundle\Controller\Extra\MarksController
           help: "This is a custom mark message"
           class: AppBundle\Entity\Mark
           form:  # 'form' is applied to both 'new' and 'edit' views
@@ -137,3 +141,5 @@ easy_admin:
           search:
             # override, since search by default uses the same filter rules as list view
             dql_filter: ''
+            fields:
+              - property: markValue

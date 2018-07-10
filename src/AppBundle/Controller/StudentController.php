@@ -78,7 +78,7 @@ class StudentController extends Controller
         $stud = $this->getDoctrine()
             ->getRepository('AppBundle:Student')
             ->findAll();
-        return $this->render('student/display.html.twig', array('data' => $stud, 'form' => $form->createView(), 'students' => $studentId, 'classes' => $classId, 'query' => var_dump($request->query)));
+        return $this->render('student/display.html.twig', array('data' => $stud, 'form' => $form->createView(), 'students' => $studentId, 'classes' => $classId));
     }
     /**
      * @Route("/student/delete/{id}", name="student_delete", requirements={"id"="\d+"})

@@ -204,18 +204,59 @@ class __TwigTemplate_775db7cb597bc61e4ec112fa97dfd327d77f3262e067dbe4bea10e4e08c
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['mark'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 64
-        echo "        </table>
+        echo "
+                <table id=\"averagesTable\" class=\"table\">
+                    <tr>
+                        <th>Class</th>
+                        <th>Average</th>
+                    </tr>
+                    ";
+        // line 70
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["averages"]) || array_key_exists("averages", $context) ? $context["averages"] : (function () { throw new Twig_Error_Runtime('Variable "averages" does not exist.', 70, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["classes"]) {
+            // line 71
+            echo "                    ";
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable($context["classes"]);
+            foreach ($context['_seq'] as $context["class"] => $context["average"]) {
+                // line 72
+                echo "                        <tr>
+                            <td>";
+                // line 73
+                echo twig_escape_filter($this->env, $context["class"], "html", null, true);
+                echo "</td>
+                            <td>";
+                // line 74
+                echo twig_escape_filter($this->env, $context["average"], "html", null, true);
+                echo "</td>
+                        </tr>
+                    ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['class'], $context['average'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 77
+            echo "                    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['classes'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 78
+        echo "                </table>
+
+        </table>
         </div>
         <div>
             ";
-        // line 67
+        // line 83
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new Twig_Error_Runtime('Variable "app" does not exist.', 67, $this->source); })()), "flashes", array(0 => "notice"), "method"));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new Twig_Error_Runtime('Variable "app" does not exist.', 83, $this->source); })()), "flashes", array(0 => "notice"), "method"));
         foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-            // line 68
+            // line 84
             echo "                <div class=\"flash-notice\">
                     ";
-            // line 69
+            // line 85
             echo twig_escape_filter($this->env, $context["message"], "html", null, true);
             echo "
                     <a class=\"flash-notice-X\" href=\"#\" onclick=\"window.location.reload(true);\">
@@ -226,7 +267,21 @@ class __TwigTemplate_775db7cb597bc61e4ec112fa97dfd327d77f3262e067dbe4bea10e4e08c
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 74
+        // line 90
+        echo "    ";
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["avdump"]) || array_key_exists("avdump", $context) ? $context["avdump"] : (function () { throw new Twig_Error_Runtime('Variable "avdump" does not exist.', 90, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["x"]) {
+            // line 91
+            echo "    ";
+            echo twig_escape_filter($this->env, $context["x"], "html", null, true);
+            echo "
+    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['x'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 93
         echo "
         ";
         
@@ -249,7 +304,7 @@ class __TwigTemplate_775db7cb597bc61e4ec112fa97dfd327d77f3262e067dbe4bea10e4e08c
 
     public function getDebugInfo()
     {
-        return array (  230 => 74,  219 => 69,  216 => 68,  212 => 67,  207 => 64,  198 => 61,  194 => 60,  190 => 59,  187 => 58,  183 => 57,  173 => 49,  167 => 48,  158 => 44,  153 => 42,  148 => 39,  139 => 35,  132 => 33,  126 => 32,  120 => 31,  114 => 30,  108 => 29,  102 => 28,  96 => 25,  91 => 22,  88 => 21,  84 => 20,  78 => 17,  74 => 16,  70 => 15,  58 => 6,  53 => 3,  44 => 2,  15 => 1,);
+        return array (  285 => 93,  276 => 91,  271 => 90,  260 => 85,  257 => 84,  253 => 83,  246 => 78,  240 => 77,  231 => 74,  227 => 73,  224 => 72,  219 => 71,  215 => 70,  207 => 64,  198 => 61,  194 => 60,  190 => 59,  187 => 58,  183 => 57,  173 => 49,  167 => 48,  158 => 44,  153 => 42,  148 => 39,  139 => 35,  132 => 33,  126 => 32,  120 => 31,  114 => 30,  108 => 29,  102 => 28,  96 => 25,  91 => 22,  88 => 21,  84 => 20,  78 => 17,  74 => 16,  70 => 15,  58 => 6,  53 => 3,  44 => 2,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -317,6 +372,22 @@ class __TwigTemplate_775db7cb597bc61e4ec112fa97dfd327d77f3262e067dbe4bea10e4e08c
                     <td><a id=\"deleter\" href=\"{{ path('mark_delete', { 'markId' : mark.markId, 'studId' : student.id }) }}\">X</a></th>
                 </tr>
             {% endfor %}
+
+                <table id=\"averagesTable\" class=\"table\">
+                    <tr>
+                        <th>Class</th>
+                        <th>Average</th>
+                    </tr>
+                    {% for classes in averages %}
+                    {% for class, average in classes %}
+                        <tr>
+                            <td>{{ class }}</td>
+                            <td>{{ average }}</td>
+                        </tr>
+                    {% endfor %}
+                    {% endfor %}
+                </table>
+
         </table>
         </div>
         <div>
@@ -327,6 +398,9 @@ class __TwigTemplate_775db7cb597bc61e4ec112fa97dfd327d77f3262e067dbe4bea10e4e08c
                         X</a>
                 </div>
             {% endfor %}
+    {% for x in avdump %}
+    {{ x }}
+    {%  endfor %}
 
         {% endblock %}", "student/update.html.twig", "C:\\wamp64\\bin\\php\\php7.2.4\\DBExample\\app\\Resources\\views\\student\\update.html.twig");
     }

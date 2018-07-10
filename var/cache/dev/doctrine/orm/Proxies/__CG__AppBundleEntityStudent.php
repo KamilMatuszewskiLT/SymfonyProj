@@ -187,7 +187,18 @@ class Student extends \AppBundle\Entity\Student implements \Doctrine\ORM\Proxy\P
     /**
      * {@inheritDoc}
      */
-    public function getStudentMarksAverageForClass(\AppBundle\Entity\Classes $class): int
+    public function checkIfHasMarksInClass(\AppBundle\Entity\Classes $class): bool
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'checkIfHasMarksInClass', [$class]);
+
+        return parent::checkIfHasMarksInClass($class);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getStudentMarksAverageForClass(\AppBundle\Entity\Classes $class): float
     {
 
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getStudentMarksAverageForClass', [$class]);
@@ -351,6 +362,17 @@ class Student extends \AppBundle\Entity\Student implements \Doctrine\ORM\Proxy\P
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getActive', []);
 
         return parent::getActive();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function __toString()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, '__toString', []);
+
+        return parent::__toString();
     }
 
 }

@@ -130,4 +130,9 @@ class Mark
 
         return $this;
     }
+
+    public function __toString()
+    {
+        return (string)$this->getMarkValue();
+    }
 }

@@ -5,6 +5,7 @@ use AppBundle\Entity\Classes;
 use AppBundle\Entity\Mark;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use EasyCorp\Bundle\EasyAdminBundle\Controller\AdminController as BaseAdminController;
 use Symfony\Component\Config\Definition\Exception\Exception;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -56,6 +57,10 @@ class MarksController extends Controller
         return $this->redirect("/student/update/$studId");
     }
 
+
+    public function indexAction(){
+        return $this->get(Mark::class)->getId();
+    }
     /**
       * @Route("/student/delMark/{studId}/{markId}",name="mark_delete" , requirements={
      *       "markId"="\d+",

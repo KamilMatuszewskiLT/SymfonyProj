@@ -6,7 +6,7 @@ use AppBundle\Service\IsArrayOfType;
 use AppBundle\Service\AveragesCalculator;
 
 
-class AverageMarkCalculator
+class AverageMarkCalculator extends AveragesCalculator
 {
     public function __construct() {}
 
@@ -14,10 +14,9 @@ class AverageMarkCalculator
      * Calculates average of an array of Mark objects.
      *  @property array marks An array of objects of class Mark
      */
-    public function calculateMarkAverages(array $marks)
+    public static function calculateMarkAverages(array $marks): float
     {
-        $avrgCalc = new AveragesCalculator();
-        $avrgCalc->standardArrayChecks($marks);
+        AveragesCalculator::standardArrayChecks($marks);
         for($i = 0 ; $i < count($marks) ; $i++ ){
             if(!(is_a($marks[$i], 'AppBundle\Entity\Mark'))){
                 throw new \InvalidArgumentException ('Not all members of array are of type Mark::class: ' . var_dump($marks));
@@ -32,6 +31,6 @@ class AverageMarkCalculator
             $marksToInts[$i] = $marks[$i]->getMarkValue();
         }
 
-        return $avrgCalc->calculateAverage($marksToInts);
+        return AveragesCalculator::calculateAverage($marksToInts);
     }
 }
