@@ -88,13 +88,8 @@ class StudentController_UpdateAction extends Controller
                 if ($stud->checkIfHasMarksInClass($class)) {
                     $averages[] = [$class->getName() => $stud->getStudentMarksAverageForClass($class)];
                 }
-                $markses[] = $class->getMarks();
         }
-        foreach ($markses as $mark){
-            foreach ($mark as $m) {
-               $avdump[] = print_r($m->getMarkValue());
-            }
-        }
+
 
 
         // Print to PDF
@@ -127,7 +122,7 @@ class StudentController_UpdateAction extends Controller
             case null:
             default:
                 return $this->render("student/update.html.twig",
-                    array('student' => $stud, 'allClasses' => $allClasses, 'classes' => $classes, 'marks' => $marks, 'averages' => $averages, 'avdump' => $avdump));
+                    array('student' => $stud, 'allClasses' => $allClasses, 'classes' => $classes, 'marks' => $marks, 'averages' => $averages,));
         }
     }
 }

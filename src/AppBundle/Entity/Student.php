@@ -71,12 +71,11 @@ class Student
         if(count($this->getMarks()) < 1 ){
             return false;
         }
-            $marks = $this->getMarks();
-            foreach ($marks as $mark) {
+            foreach ($this->getMarks() as $mark) {
                 if ($mark->getClassId() == $class) {
                     return true;
-                } else return false;
-            }
+                }
+            } return false;
     }
 
     public function getStudentMarksAverageForClass(Classes $class): float
